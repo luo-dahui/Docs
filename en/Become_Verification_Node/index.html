@@ -80,9 +80,6 @@
 <p><strong>Step1. Download MTool toolkit</strong></p>
 <pre><code class="hljs css language-bash">wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/1.0.0/mtool-client.zip
 </code></pre>
-<p>or</p>
-<pre><code class="hljs css language-bash">wget http://47.91.153.183/mtool/1.0.0/mtool-client.zip
-</code></pre>
 <p><strong>Step2. Extract the MTool toolkit</strong></p>
 <pre><code class="hljs css language-bash">(<span class="hljs-keyword">if</span> ! <span class="hljs-built_in">command</span> -v unzip;<span class="hljs-keyword">then</span> sudo apt install unzip; <span class="hljs-keyword">fi</span>;) &amp;&amp; unzip mtool-client.zip &amp;&amp; <span class="hljs-built_in">cd</span> mtool-client
 </code></pre>
@@ -91,9 +88,6 @@
 <p>The script is downloaded to the <font color=red>mtool-client</font> directory, otherwise the script cannot find the path of the new version of mtool.</p>
 </blockquote>
 <pre><code class="hljs css language-bash">wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.sh
-</code></pre>
-<p>or</p>
-<pre><code class="hljs css language-bash">wget http://47.91.153.183/opensource/scripts/mtool_install.sh
 </code></pre>
 <p><strong>Step4. Execute command</strong></p>
 <pre><code class="hljs css language-bash">chmod +x mtool_install.sh &amp;&amp; ./mtool_install.sh
@@ -123,9 +117,6 @@
 <h3><a class="anchor" aria-hidden="true" id="configure-verification-node-information"></a><a href="#configure-verification-node-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure verification node information</h3>
 <h4><a class="anchor" aria-hidden="true" id="download-the-script"></a><a href="#download-the-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download the script</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> <span class="hljs-variable">$MTOOLDIR</span> &amp;&amp; wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/platon_validator_conf.sh
-</code></pre>
-<p>or</p>
-<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> <span class="hljs-variable">$MTOOLDIR</span> &amp;&amp; wget http://47.91.153.183/opensource/scripts/platon_validator_conf.sh
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="run-the-script-configuration"></a><a href="#run-the-script-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run the script configuration</h4>
 <pre><code class="hljs css language-bash">$ chmod +x platon_validator_conf.sh &amp;&amp; ./platon_validator_conf.sh
@@ -173,7 +164,7 @@
 <p>Note: After the user completes the staking operation, the avatar customized by the user can be displayed on PlatScan.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="initiate-a-staking-operation"></a><a href="#initiate-a-staking-operation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initiate a staking operation</h2>
-<p>If the consensus node deployment is complete and is catching up the blocknumber of <a href="https://platscan.platon.network">Platscan</a>, you can use MTool for staking operations. Please ensure that the balance of the staking account is sufficient before staking. The minimum threshold for staking is 1 million LAT.</p>
+<p>If the consensus node deployment is complete and is catching up the blocknumber of <a href="https://platscan.platon.network">Platscan</a>, you can use MTool for staking operations. Please ensure that the balance of the staking account is sufficient before staking. The minimum threshold for staking is one hundred thousand LAT.</p>
 <p>The GalaxyRally activity: <a href="https://platon.network/galaxy">https://platon.network/galaxy</a></p>
 <p>Note:</p>
 <ul>
@@ -196,7 +187,7 @@ SUCCESS
 <li>keystore: staking wallet file</li>
 <li>amount: staking amount, not less than 100000LAT-staking threshold, no more than 8 decimal places</li>
 <li>restrictedamount: not less than 100000LAT - staking threshold, no more than 8 decimal points (staking using locked balance)</li>
-<li>autoamount: Not less than 10000atp-Priority to use the lock-up balance staking, if the lock-up balance is not enough for the staking deposit, then use free amount staking</li>
+<li>autoamount: Not less than 10000LAT-Priority to use the lock-up balance staking, if the lock-up balance is not enough for the staking deposit, then use free amount staking</li>
 <li>benefit_address: benefit account to receive block-packing reward and staking reward</li>
 <li>delegated_reward_rate：Delegated bonus ratio, type is integer range is [0,10000], unit: ten thousand percent, e.g. enter 5000, it means the bonus ratio is 50%</li>
 <li>node_name：node name，30 bytes(beginning with a letter, including alphabet, number, space, _, -, #)</li>

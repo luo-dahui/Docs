@@ -80,9 +80,6 @@
 <p><strong>step1. 下载MTool工具包</strong></p>
 <pre><code class="hljs css language-bash">wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/1.0.0/mtool-client.zip
 </code></pre>
-<p>或者</p>
-<pre><code class="hljs css language-bash">wget http://47.91.153.183/mtool/1.0.0/mtool-client.zip
-</code></pre>
 <p><strong>step2. 解压MTool工具包</strong></p>
 <pre><code class="hljs css language-bash">(<span class="hljs-keyword">if</span> ! <span class="hljs-built_in">command</span> -v unzip;<span class="hljs-keyword">then</span> sudo apt install unzip; <span class="hljs-keyword">fi</span>;) &amp;&amp; unzip mtool-client.zip &amp;&amp; <span class="hljs-built_in">cd</span> mtool-client
 </code></pre>
@@ -91,9 +88,6 @@
 <p>脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径。</p>
 </blockquote>
 <pre><code class="hljs css language-bash">wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.sh
-</code></pre>
-<p>或者</p>
-<pre><code class="hljs css language-bash">wget http://47.91.153.183/opensource/scripts/mtool_install.sh
 </code></pre>
 <p><strong>step4. 执行命令</strong></p>
 <pre><code class="hljs">chmod +<span class="hljs-meta">x</span> mtool_install.sh <span class="hljs-variable">&amp;&amp;</span> ./mtool_install.sh
@@ -123,9 +117,6 @@
 <h3><a class="anchor" aria-hidden="true" id="配置验证节点信息"></a><a href="#配置验证节点信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置验证节点信息</h3>
 <h4><a class="anchor" aria-hidden="true" id="下载脚本"></a><a href="#下载脚本" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>下载脚本</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> <span class="hljs-variable">$MTOOLDIR</span> &amp;&amp; wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/platon_validator_conf.sh
-</code></pre>
-<p>或者</p>
-<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> <span class="hljs-variable">$MTOOLDIR</span> &amp;&amp; wget http://47.91.153.183/opensource/scripts/platon_validator_conf.sh
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="运行脚本配置"></a><a href="#运行脚本配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>运行脚本配置</h4>
 <pre><code class="hljs css language-bash">chmod +x platon_validator_conf.sh &amp;&amp; ./platon_validator_conf.sh
@@ -173,9 +164,9 @@
 <p>提示：用户完成质押操作后，即可在PlatScan上显示用户自定义的头像。</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="发起质押操作"></a><a href="#发起质押操作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>发起质押操作</h2>
-<p>如果共识节点部署完成，并且节点已经追上 <a href="https://platscan.platon.network">Platscan</a> 网站上的块高，您就可以使用 MTool 进行质押操作。质押操作前请确确保质押账户余额足够，质押最低门槛为100万 LAT。如果是接入测试网，可以按照以下链接申请测试LAT。</p>
+<p>如果共识节点部署完成，并且节点已经追上 <a href="https://platscan.platon.network">Platscan</a> 网站上的块高，您就可以使用 MTool 进行质押操作。质押操作前请确确保质押账户余额足够，质押最低门槛为10万 LAT。如果是接入测试网，可以按照以下链接申请测试LAT。</p>
 <ul>
-<li>请不要将质押账户的所有ATP进行质押，至少保留1个LAT，以备支付后续发起节点管理的交易手续费，比如升级提案的投票，解质押等交易。</li>
+<li>请不要将质押账户的所有LAT进行质押，至少保留1个LAT，以备支付后续发起节点管理的交易手续费，比如升级提案的投票，解质押等交易。</li>
 </ul>
 <p>执行命令</p>
 <pre><code class="hljs css language-bash">mtool-client staking --config <span class="hljs-variable">$MTOOLDIR</span>/validator/validator_config.json --keystore <span class="hljs-variable">$MTOOLDIR</span>/keystore/staking.json --amount 100000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
