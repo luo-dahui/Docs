@@ -104,7 +104,7 @@ sudo systemctl <span class="hljs-built_in">enable</span> ntp &amp;&amp; sudo sys
 <pre><code class="hljs css language-bash">sudo apt remove `apt search platon|awk -F/ <span class="hljs-string">'/installed/{print $1}'</span>` --purge -y &amp;&amp;
 sudo add-apt-repository ppa:ppatwo/platon &amp;&amp;
 sudo apt-get update &amp;&amp;
-sudo apt install -y platon0.15.1 &amp;&amp;
+sudo apt install -y platon1.0.0 &amp;&amp;
 platon version
 </code></pre>
 <p>After executing the commands above,  <code>platon</code> and<code>platonkey</code> binary should be successfully installed in the <code>/usr/bin</code> directory on your system. You can execute corresponding commands in any directory.</p>
