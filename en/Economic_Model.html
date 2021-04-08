@@ -126,10 +126,10 @@
 <p>The token in the PlatON public blockchain is called LAT. LAT does not have a hard cap, and is divided into initial issuance and additional issuance.</p>
 <h4><a class="anchor" aria-hidden="true" id="initial-release"></a><a href="#initial-release" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initial release</h4>
 <p>LAT's initial issuance is distributed to the founding team, PlatON Foundation, academic fund, ecological fund, and private equity issuers in a certain proportion. This is achieved by writing the allocated account and balance parameter information into the genesis block configuration. And introduce the corresponding locking mechanism.</p>
-<p>The initial issuance of locks is controlled through the restricting contract, and the lock-up and unlocking are performed according to the set restricting period. The amount of the restricted Token    cannot be unlocked in advance. In order to improve the processing performance of the system, the locking period must be a multiple of the Epoch (10750blocks). Therefore, the unlocking point (unlocking block height) of each locking period is the Epoch block (the last block of the Epoch).</p>
-<p>In order to protect the equity of the restricting account, the restricting LAT can be used to verify the pledge and delegate of the node. When the pledge or delegate is released, the pledged and delegate LAT returns to the restricting contract.</p>
-<p>According to the restricting plan, when the unlocked block is reached, the restricting contract automatically unlocks the corresponding LAT to the restricting account address.</p>
-<p>Assume that the account A's restricting plan is (a total of 1000LAT):</p>
+<p>The initial issuance of locks is controlled through the Lockup contract, and the lock-up and unlocking are performed according to the set Lockup period. The amount of the Locked up Tokens  cannot be unlocked in advance. In order to improve the processing performance of the system, the locking period must be a multiple of the Epoch (10750blocks). Therefore, the unlocking point (unlocking block height) of each locking period is the Epoch block (the last block of the Epoch).</p>
+<p>In order to protect the equity of the locked-up account, the Locked-up balance can be used to verify the pledge and delegate of the node. When the pledge or delegate is released, the pledged and delegate LAT returns to the Lockup contract.</p>
+<p>According to the Lockup plan, when the unlocked block is reached, the Lockup contract automatically unlocks the corresponding LAT to the locked-up account address.</p>
+<p>Assume that the account A's Lockup plan is (a total of 1000LAT):</p>
 <ul>
 <li><p>Locked for 1 Epoch, locked quantity: 100LAT</p></li>
 <li><p>Locked for 2 Epoch, locked quantity: 300LAT</p></li>
@@ -137,8 +137,8 @@
 </ul>
 <p>The unlocking process flow is shown in the following figure:</p>
 <p><img src="/docs/img/en/PlatON_economic_plan.assets/unlock_the_restricting_normally.png" alt="unlock_the_restricting_normally"/></p>
-<p>Due to the existence of the locked LAT for pledge or delegate, and the pledge or delegate was returned without expiry, the unlocked block was reached. The account balance in the restricting contract was not enough to unlock the amount. At this time, the processing method is to fully unlock and record A &quot;number of accounts owed&quot;, and check whether there is &quot;number of accounts owed&quot; in each settlement block, and whether the locked balance of the account in the restricting contract is recorded, and if necessary, continue to unlock until the &quot;account owed&quot; returns zero.</p>
-<p>At the same time, it should be pointed out that when restricting LAT is used to verify the node pledge, and the LAT pledged is reduced by penalties, the system will feed back the restricting contract, and deduct the corresponding amount of &quot;locked to be unlocked&quot;.</p>
+<p>Due to the existence of the locked LAT for pledge or delegate, and the pledge or delegate was returned without expiry, the unlocked block was reached. The account balance in the Lockup  contract was not enough to unlock the amount. At this time, the processing method is to fully unlock and record A &quot;number of accounts owed&quot;, and check whether there is &quot;number of accounts owed&quot; in each settlement block, and whether the locked balance of the account in the Lockup contract is recorded, and if necessary, continue to unlock until the &quot;account owed&quot; returns zero.</p>
+<p>At the same time, it should be pointed out that when Locked-up balance is used to verify the node pledge, and the LAT pledged is reduced by penalties, the system will feed back the Lockup contract, and deduct the corresponding amount of &quot;locked to be unlocked&quot;.</p>
 <h4><a class="anchor" aria-hidden="true" id="lat-issue"></a><a href="#lat-issue" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LAT issue</h4>
 <p>The additional issue is mainly to motivate miners to maintain distributed ledgers. In the case that pure transaction fees cannot be met as incentives for miners, the additional block issuance will compensate them for the costs and risks. At the same time, the continuous issuance can dilute the holder's Token, thereby promoting more people to participate in PoS consensus validator and ensuring a more stable network.</p>
 <p>There are usually two ways to issue additional shares:</p>
@@ -193,7 +193,7 @@
 <p>Any LAT holder can pledge a certain amount of LAT (must exceed a predetermined minimum amount) as a deposit to become Alternative Validator Candidate
 s, and the total number of Alternative Validator Candidates is unlimited. LAT can be pledged from two sources:</p>
 <p>(1) LAT of account balance: refers to the balance of the account, which is the LAT circulated in the account and can be used at any time.</p>
-<p>(2) LAT of account lockout: refers to the part of LAT that is not unlocked when the account is locked in the restricting contract.</p>
+<p>(2) LAT of account lockout: refers to the part of LAT that is not unlocked when the account is locked in the Lockup contract.</p>
 <p>To become a  Alternative Validator Candidate, you also need to submit the true version number of the node program, the signature of the real version number of the node program, the public key of the BLS, the Proof of the public key of the BLS, and a revenue account for receiving block rewards and Staking rewards (follow-up) Support for modification), the percentage of rewards (including support for block production and staking rewards) allocated by the node to the client (subsequent support modification), description of the node (subsequent support modification), the node's official homepage (subsequent support modification), Node's third-party information disclosure ID (optional, <a href="https://keybase.io">keybase.io</a> 16-bit characters generated by the account-support for subsequent amendments), name of the node being pledged (subsequent support for modification), node ID of the pledged And the number of LAT pledged. The pledge needs to comply with the following rules:</p>
 <ul>
 <li>Nodes cannot be repeatedly staking.</li>
@@ -209,7 +209,7 @@ s, and the total number of Alternative Validator Candidates is unlimited. LAT ca
 <p>All Alternative Validator Candidate can increase the number of staking LAT at any time, thereby improving the ranking of alternative validator candidates.</p>
 <ul>
 <li><p>If the pledge is being cancelled or punished, the pledge cancellation is being processed (the return of the pledged LAT requires a period of freezing) or completed (the pledged LAT has been released to the original staking account), the pledge cannot be increased.</p></li>
-<li><p>The LAT used to increase the pledge can be the LAT of the account balance or the LAT of the restricting account .</p></li>
+<li><p>The LAT used to increase the pledge can be the LAT of the account balance or the LAT of the locked-up account .</p></li>
 <li><p>Pledge can only be increased from the initial staking account.</p></li>
 </ul>
 <h5><a class="anchor" aria-hidden="true" id="alternative-validator-selection"></a><a href="#alternative-validator-selection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Alternative Validator selection</h5>
@@ -291,7 +291,7 @@ s, and the total number of Alternative Validator Candidates is unlimited. LAT ca
 <ul>
 <li><p>LAT delegated from two sources:</p>
 <p>(1)  LAT of account balance: refers to the balance of the account, which is the LAT circulating in the account and can be used at any time.</p>
-<p>(2) LAT for account lockout: refers to the part of the account where the account is locked in the restricting contract.</p></li>
+<p>(2) LAT for account lockout: refers to the part of the account where the account is locked in the Lockup contract.</p></li>
 <li><p>To prevent malicious delegation attacks, there is a minimum LAT limit for a single delegation.</p></li>
 <li><p>LAT commissioned enters the next epoch and starts to lock. LAT commissioned does not actively redeem. LAT commissioned will continue to be locked. The system does not support the automatic redemption function. At the same time, only when a complete epoch is locked will it participate in sharing node revenue.</p></li>
 <li><p>Once the alternative validator candidate applies for withdrawal or is withdrawn by the system, he cannot continue to delegate. The original entrusted LAT will be unlocked, and users need to actively redeem the entrusted LAT.</p></li>
@@ -380,7 +380,7 @@ s, and the total number of Alternative Validator Candidates is unlimited. LAT ca
 <p>$c$: Number of blocks in the system epoch, fixed at 10750 blocks</p></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="punishment-mechanism"></a><a href="#punishment-mechanism" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Punishment mechanism</h3>
-<p>Unlike PoW public chains, PoS public chains generally do not rely on computing power to maintain system security. PoS public chains require participating nodes to pledge a certain amount of tokens as a guarantee. When a node behaves badly, the system will reduce the node's The pledged deposit is punished to increase the cost of evil, restrict and regulate the behavior of nodes, and ensure the stability and security of the system. PlatON also introduced corresponding punishment mechanisms.</p>
+<p>Unlike PoW public chains, PoS public chains generally do not rely on computing power to maintain system security. PoS public chains require participating nodes to pledge a certain amount of tokens as a guarantee. When a node behaves badly, the system will reduce the node's The pledged deposit is punished to increase the cost of evil, Lockup and regulate the behavior of nodes, and ensure the stability and security of the system. PlatON also introduced corresponding punishment mechanisms.</p>
 <h4><a class="anchor" aria-hidden="true" id="punished-behavior"></a><a href="#punished-behavior" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Punished behavior</h4>
 <p>In PlatON, any node that attempts to fork the blockchain and stay offline for a long time may be penalized by Slash.</p>
 <ul>
@@ -495,14 +495,14 @@ s, and the total number of Alternative Validator Candidates is unlimited. LAT ca
 </tbody>
 </table>
 <ul>
-<li>Restricting  transactions</li>
+<li>Lockup transactions</li>
 </ul>
 <table>
 <thead>
 <tr><th>Name of Trade</th><th>Transaction fixed gas consumption</th><th>Trading dynamic gas consumption rules</th></tr>
 </thead>
 <tbody>
-<tr><td>Create a restricting plan</td><td>68000</td><td>Unlock times of this lockup×21000</td></tr>
+<tr><td>Create a Lockup plan</td><td>68000</td><td>Unlock times of this lockup×21000</td></tr>
 </tbody>
 </table>
 <ul>
