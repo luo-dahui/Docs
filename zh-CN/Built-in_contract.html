@@ -98,8 +98,9 @@
 <li>程序的真实版本,通过节点的<code>RPC</code>接口获取</li>
 <li>程序的真实版本签名,通过节点的<code>RPC</code>接口获取</li>
 <li>bls的公钥，bls是一种聚合签名算法，公钥通过节点的<code>RPC</code>接口获取</li>
-<li>bls的证明，证明通过节点的<code>RPC</code>接口获取<br>
-<strong>输出：</strong>无</li>
+<li>bls的证明，证明通过节点的<code>RPC</code>接口获取
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 <li><p>修改验证节点信息
 该接口主要用来修改验证人的收益账户，委托分成比例，节点信息等。分成比例每次修改间隔需大于10个共识周期，每次修改的幅度不能大于5%。<br>
@@ -110,52 +111,76 @@
 <li>外部Id</li>
 <li>被质押节点的名称</li>
 <li>节点的第三方主页</li>
-<li>节点的描述<br>
-<strong>输出：</strong>无</li>
+<li>节点的描述
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 <li><p>增加验证节点质押金额
 该接口用来增加质押金额，提高节点权重。每次增加金额的最小值为10<code>LAT</code>。验证人的新权重会在下个结算周期生效。<br>
 <strong>输入：</strong></p>
 <ul>
 <li>节点id</li>
-<li>需要增加的金额<br>
-<strong>输出：</strong>无</li>
+<li>需要增加的金额
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 <li><p>解除质押
 该接口主要用来退出验证节点。用户无法减持质押，只能完全退出质押，退出后质押金会锁定168个周期后从<code>Staking合约</code>中退还给用户质押时的账户。在锁定期间，节点将不会被选为验证人参与共识。<br>
-<strong>输入：</strong>要解除质押的节点id<br>
-<strong>输出：</strong>无</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>要解除质押的节点id
+<strong>输出：</strong></li>
+<li>无</li>
+</ul></li>
 <li><p>查询当前结算周期的验证人队列
 该接口用来查询当前结算周期的验证人信息。每个结算周期结束都会根据所有候选验证人的总权重更新下个结算周期的验证人列表。<br>
-<strong>输入：</strong>无<br>
-<strong>输出：</strong>当前所有验证人的信息列表</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无
+<strong>输出：</strong></li>
+<li>当前所有验证人的信息列表</li>
+</ul></li>
 <li><p>getValidatorList:查询共识周期验证人列表
 该接口用来查询当前共识周期被选中出块的验证人列表。每个共识轮为430个块，在410块的时候会从当前结算周期的验证人队列中产生下个共识轮可以参与出块的验证人列表。<br>
-<strong>输入：</strong>  <br>
-<strong>输出：</strong>当前共识周期的验证人信息列表</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无
+<strong>输出：</strong></li>
+<li>当前共识周期的验证人信息列表</li>
+</ul></li>
 <li><p>getCandidateList:查询候选验证人信息列表<br>
 该接口用来查询所有候选验证人信息列表，任何成功质押的节点都是候选验证人。<br>
-<strong>输入：</strong>无<br>
-<strong>输出：</strong>获取当前所有候选验证人的信息列表</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无
+<strong>输出：</strong></li>
+<li>获取当前所有候选验证人的信息列表</li>
+</ul></li>
 <li><p>getRelatedListByDelAddr: 查询委托人委托的验证人<br>
 该接口用来查询指定的委托人委托了哪些验证人。<br>
-<strong>输入：</strong>委托人的账户地址<br>
-<strong>输出：</strong></p>
+<strong>输入：</strong></p>
 <ul>
+<li>委托人的账户地址
+<strong>输出：</strong></li>
 <li>验证人的节点Id</li>
 <li>验证人质押节点时的区块高度</li>
 </ul></li>
 <li><p>getCandidateInfo: 查询节点的质押信息<br>
 该接口用来查询节点的质押信息<br>
-<strong>输入：</strong>验证人的节点Id<br>
-<strong>输出：</strong>节点的信息</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>验证人的节点Id
+<strong>输出：</strong></li>
+<li>节点的信息</li>
+</ul></li>
 <li><p>delegate：委托/增持委托验证人<br>
 该接口用来委托或者增持委托一个验证人节点。已经质押过节点的用户将无法进行委托。用户可以随时将<code>LAT</code>委托给验证人，每次委托的最小金额为10<code>LAT</code>，委托成功后，委托人委托给候选验证人的<code>LAT</code>转移到<code>Staking合约</code>。验证人的新权重会在下个共识周期生效。当验证人被选中参与共识时，会与委托人共享出块与Staking奖励。<br>
 <strong>输入：</strong></p>
 <ul>
 <li>委托的验证人的节点ID</li>
-<li>委托的金额<br>
-<strong>输出：</strong>无</li>
+<li>委托的金额
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 </ol>
 <ol start="11">
@@ -164,8 +189,9 @@
 <strong>输入：</strong>
 <ul>
 <li>委托的节点ID</li>
-<li>委托的金额<br>
-<strong>输出：</strong>无</li>
+<li>委托的金额
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 </ol>
 <ol start="12">
@@ -175,7 +201,7 @@
 <ul>
 <li>发起质押时的区块高度</li>
 <li>委托人账户地址</li>
-<li>验证人的节点Id<br>
+<li>验证人的节点Id
 <strong>输出：</strong></li>
 <li>验证人的节点id</li>
 <li>发起质押时的区块高度</li>
@@ -189,16 +215,28 @@
 </ul></li>
 <li><p>getAvgPackTime: 查询打包区块的平均时间
 该接口用来查询打包区块的平均时间。<br>
-<strong>输入：</strong>无<br>
-<strong>输出：</strong>打包区块的平均时间（单位为毫秒）</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无
+<strong>输出：</strong></li>
+<li>打包区块的平均时间（单位为毫秒）</li>
+</ul></li>
 <li><p>getPackageReward: 查询结算周期区块奖励
 该接口用来查询当前结算周期的区块奖励。<br>
-<strong>输入：</strong>无<br>
-<strong>输出：</strong>区块奖励</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无
+<strong>输出：</strong></li>
+<li>区块奖励</li>
+</ul></li>
 <li><p>getStakingReward:查询结算周期的质押奖励<br>
 该接口用来查询当前结算周期的质押奖励。<br>
-<strong>输入：</strong>无<br>
-<strong>输出：</strong>质押奖励</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无<br>
+<strong>输出：</strong></li>
+<li>质押奖励</li>
+</ul></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="治理合约"></a><a href="#治理合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>治理合约</h3>
 <p>PlatON采用的链上治理方式，使其能够按照<code>LAT</code>持有人的要求发展。治理的目标是确保多数股权始终可以控制网络。任何在社区讨论的治理修改方案，都可通过验证人在链上发起提案并投票公决。
@@ -217,14 +255,22 @@
 <ul>
 <li>提交提案的验证人</li>
 <li>提案ID(一般指线下给某个提案分配的一个ID，或者是像GITHUB网站上某个帖子的ID)<br>
-<strong>输出：</strong>无</li>
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 </ol>
 <ol start="2">
 <li><p>submitVersion：发起升级提案<br>
 该接口用来发起升级提案。提案只能由验证人来发起。提案通过后链上版本升级。验证人投票即视为支持票，投票截止时间过后，当支持率大于66.7%时，该提案进入到预生效阶段，于下个结算周期正式生效。<br>
-<strong>输入：</strong>提交提案的验证人，提案ID，升级的版本，投票共识轮数量（投票的截止时间）<br>
-<strong>输出：</strong>无</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>提交提案的验证人</li>
+<li>提案ID</li>
+<li>升级的版本</li>
+<li>投票共识轮数量（投票的截止时间）
+<strong>输出：</strong></li>
+<li>无</li>
+</ul></li>
 <li><p>submitParam：发起参数提案<br>
 该接口用来发起参数提案。参数提案用来改变链上一些可以治理的参数。验证人可以投支持/反对/弃权票，投票截止时间约为2周左右，当投票率大于50%且投票的人中支持率大于66.7%时，该提案通过。<br>
 <strong>输入：</strong></p>
@@ -234,7 +280,8 @@
 <li>参数模块</li>
 <li>参数名称</li>
 <li>参数新值<br>
-<strong>输出：</strong>无</li>
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 </ol>
 <ol start="4">
@@ -246,8 +293,9 @@
 <li>提案ID</li>
 <li>升级的版本</li>
 <li>投票共识轮数量（投票的截止时间）</li>
-<li>待取消的升级提案ID<br>
-<strong>输出：</strong>无</li>
+<li>待取消的升级提案ID
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 </ol>
 <ol start="5">
@@ -259,8 +307,9 @@
 <li>提案ID</li>
 <li>投票类型，赞成/反对/弃权</li>
 <li>节点代码版本（通过<code>RPC接口</code>从节点获取）</li>
-<li>代码版本签名（通过<code>RPC接口</code>从节点获取）<br>
-<strong>输出：</strong>无</li>
+<li>代码版本签名（通过<code>RPC接口</code>从节点获取）
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 <li><p>declareVersion： 发起版本声明<br>
 该接口用来发起版本声明。当PlatON网络通过升级提案升级到新版本的期间，各未投票的验证节点需要同步升级节点到最新版本，并通过版本声明在网络中更新自己的版本状态，否则将不会被选择共识出块。<br>
@@ -268,14 +317,16 @@
 <ul>
 <li>节点ID</li>
 <li>节点代码版本（通过<code>RPC接口</code>从节点获取）</li>
-<li>代码版本签名（通过<code>RPC接口</code>从节点获取）<br>
-<strong>输出：</strong>无</li>
+<li>代码版本签名（通过<code>RPC接口</code>从节点获取）
+<strong>输出：</strong></li>
+<li>无</li>
 </ul></li>
 <li><p>getProposal: 查询提案<br>
 该接口用来查询指定的提案。<br>
-<strong>输入：</strong>提案ID<br>
-<strong>输出：</strong></p>
+<strong>输入：</strong></p>
 <ul>
+<li>提案ID<br>
+<strong>输出：</strong></li>
 <li>提案ID</li>
 <li>提案节点ID</li>
 <li>提案类型</li>
@@ -285,9 +336,10 @@
 </ul></li>
 <li><p>getTallyResult: 查询提案状态
 该接口用来查询提案当前的状态
-<strong>输入：</strong>提案ID
-<strong>输出：</strong></p>
+<strong>输入：</strong></p>
 <ul>
+<li>提案ID
+<strong>输出：</strong></li>
 <li>提案ID</li>
 <li>赞成票数量</li>
 <li>反对票数量</li>
@@ -299,12 +351,18 @@
 </ul></li>
 <li><p>listProposal: 查询提案列表<br>
 该接口用来查询处于投票中以及已结束的提案列表。<br>
-<strong>输入：</strong>无<br>
-<strong>输出：</strong> 提案信息列表，参考查询提案的输出值</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无
+<strong>输出：</strong> 提案信息列表，参考查询提案的输出值</li>
+</ul></li>
 <li><p>getActiveVersion: 查询链的版本<br>
 该接口用来查询链当前的生效版本<br>
-<strong>输入：</strong>无<br>
-<strong>输出：</strong>当前链的版本号</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>无
+<strong>输出：</strong>当前链的版本号</li>
+</ul></li>
 </ol>
 <ol start="11">
 <li><p>getGovernParamValue: 查询治理参数值<br>
@@ -312,15 +370,16 @@
 <strong>输入：</strong></p>
 <ul>
 <li>参数模块</li>
-<li>参数名称<br>
-<strong>输出：</strong>参数值</li>
+<li>参数名称
+<strong>输出：</strong></li>
+<li>参数值</li>
 </ul></li>
 <li><p>getAccuVerifiersCount: 查询提案的累积可投票人数<br>
 该接口用来查询提案的累积可投票人数。<br>
 <strong>输入：</strong></p>
 <ul>
 <li>提案ID</li>
-<li>区块hash<br>
+<li>区块hash
 <strong>输出：</strong></li>
 <li>可投票的人数</li>
 <li>投了赞成票的人数</li>
@@ -329,8 +388,17 @@
 </ul></li>
 <li><p>listGovernParam: 查询治理参数列表<br>
 该接口用来查询某个模块的所有治理参数。<br>
-<strong>输入：</strong>参数模块，如果为空，可查询所有治理参数<br>
-<strong>输出：</strong>参数模块，参数名称，参数说明，旧参数值，参数值，生效块高</p></li>
+<strong>输入：</strong></p>
+<ul>
+<li>参数模块，如果为空，可查询所有治理参数
+<strong>输出：</strong></li>
+<li>参数模块</li>
+<li>参数名称</li>
+<li>参数说明</li>
+<li>旧参数值</li>
+<li>参数值</li>
+<li>生效块高</li>
+</ul></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="惩罚合约"></a><a href="#惩罚合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>惩罚合约</h3>
 <p>惩罚合约主要为了系统安全监测各个节点的行为，对破坏系统安全的违规节点执行处罚，具有以下两大功能：</p>
