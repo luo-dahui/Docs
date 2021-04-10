@@ -141,6 +141,91 @@ This interface is used to query the validator information of the current epoch. 
 <p>This interface is used to query the list of validators selected to produce blocks in the current consensus round. Each consensus round has 430 blocks. At block 410, a list of validators who can participate in the next consensus round will be generated from the validator queue in the current settlement round.</p>
 <p>**Enter: ** None</p>
 <p>**Output: **List of validator information for the current consensus round</p>
+<ol start="7">
+<li><p>Query the list of candidate  information</p>
+<p>This interface is used to query the information list of all candidate verifiers, and any node that successfully pledges is a candidate verifier.</p>
+<p>**Enter: ** None</p>
+<p>**Output: **List of candidate information</p></li>
+<li><p>Query the validator entrusted by the delegator</p>
+<p>This interface is used to query which verifiers the specified principal has delegated.</p>
+<p>**Enter: ** account address</p>
+<p>**Output: **</p>
+<ul>
+<li>validator's node Id</li>
+<li>Block height when validators staking</li>
+</ul></li>
+<li><p>Query the staking information of a node</p>
+<p>This interface is used to query the staking information of the node.</p>
+<p>**Enter: ** Verifier's node Id</p>
+<p>**Output: ** node information</p></li>
+<li><p>delegation
+This interface is used to delegate or accumulate to delegate a validator node. Users who have already pledged nodes will not be able to delegate. The user can delegate <code>LAT</code> to the validator at any time, and the minimum amount of each delegation is 10<code>LAT</code>. After the delegation is successful, the <code>LAT</code> delegated by the delegator to the candidate validator is transferred to the <code>Staking contract</code>. The new weights of validators will take effect in the next consensus cycle. When the validator is selected to participate in the consensus, the block and staking rewards will be shared with the delegator.</p>
+<p>**Enter: **</p>
+<ul>
+<li>Node ID of the delegated validator</li>
+<li>delegate amount</li>
+</ul>
+<p>**Output: ** None</p></li>
+<li><p>Reduce delegation
+This interface is used to reduce holdings or cancel delegation operations. The principal can reduce or cancel the entrustment at any time. The minimum amount of each reduction entrusted is 10 <code>LAT</code>. After the operation is completed, the <code>LAT</code> will be returned from the <code>Staking contract</code> to the principal's account in real time. If the holding is reduced After the remaining commission is less than 10 <code>LAT</code>, the commission of the principal will be revoked. The profit obtained by the validator in the current cycle will be distributed to the delegator according to the commission amount after the reduction.</p>
+<p>**Enter: **</p>
+<ul>
+<li>Node ID of the delegated validator</li>
+<li>delegate amount</li>
+</ul>
+<p>**Output: ** None</p></li>
+<li><p>Query delegation
+This interface is used to query the user's delegation information.</p>
+<p>**Enter: **</p></li>
+</ol>
+<pre><code class="hljs">  - Block height when staking 
+  - account address
+  - Verifier's node Id 
+
+**Output: ** 
+
+  - Verifier's node id
+  - Block height when staking is initiated
+  - The settlement cycle of the most recent delegation to the candidate
+  - Initiation of the `von` entrustment for the lock-up period of the free amount of the entrusted account
+  - Initiation of the delegated `von` during the hesitation period of the free amount of the entrusted account
+  - Initiate the `von` entrusted for the lock-up period of the lock-up amount of the entrusted account
+  - Initiating the von von entrusted with the hesitation period of the lock-up amount of the entrusted account
+  - Entrusted income to be collected
+  - Settlement period when the order is withdrawn (used to calculate the income and the amount withdrawn)
+</code></pre>
+<ol start="13">
+<li><p>Average time to query packaged blocks
+This interface is used to query the average time of a packed block.</p>
+<p>**Enter: ** None</p>
+<p>**Output: **</p>
+<p>-The average time to pack a block (in milliseconds)</p></li>
+</ol>
+<ol start="14">
+<li>Query the block reward of the epoch
+This interface is used to query the block reward of the current epoch.</li>
+</ol>
+<p>**Enter: ** None</p>
+<p>**Output: **</p>
+<pre><code class="hljs"> - Block reward
+</code></pre>
+<ol start="15">
+<li><p>Query the staking reward of the epoch
+This interface is used to query the staking reward of the current epoch.</p>
+<p>**Enter: ** None</p>
+<p>**Output: **</p>
+<ul>
+<li>staking reward</li>
+</ul></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="governance-contract"></a><a href="#governance-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Governance contract</h3>
+<p>The on-chain governance method adopted by PlatON enables it to develop in accordance with the requirements of <code>LAT</code> holders. The goal of governance is to ensure that majority ownership can always control the network. Any governance modification plan discussed in the community can be initiated by a validator on the chain and voted for a referendum.</p>
+<ul>
+<li><code>Text proposal</code> can be used to vote on content discussed in certain communities. The process includes the voting stage, where the vote is passed and the vote fails.</li>
+<li><code>Version proposal</code> can be used to upgrade the version of the chain. The process includes the voting stage, voting failure, pre-validation, validation, and cancellation.</li>
+<li><code>Cancel Proposal</code> can be used to cancel previously initiated proposals. The process includes the voting stage, where the vote is passed and the vote fails.</li>
+<li><code>Parameter proposal</code> can be used to change some manageable parameters and optimize the ecology of the chain. The process includes the voting stage, where the vote is passed and the vote fails.</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="slashing-contract"></a><a href="#slashing-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slashing contract</h3>
 <p>The slashing contract is mainly for system security to monitor the behavior of each node, Penalties will be imposed on violating nodes that violate system security, the contract has the following two major functions：</p>
 <ul>
@@ -187,7 +272,7 @@ This interface is used to query the validator information of the current epoch. 
 <p>**Enter: **None</p>
 <p>**Output: **Array (details of each delegated income to be received), including: node ID, delegated income, node staking block height</p></li>
 </ol>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PlatON_Governance_Solution"><span class="arrow-prev">← </span><span class="function-name-prevnext">PlatON Governance Solution</span></a><a class="docs-next button" href="/docs/en/Secure_Multi_Party_Computation"><span>Secure Multi Party Computation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#platon-built-in-contract">PlatON Built-in contract</a><ul class="toc-headings"><li><a href="#staking-contract">Staking contract</a></li><li><a href="#slashing-contract">Slashing contract</a></li><li><a href="#lockup-contract">Lockup contract</a></li><li><a href="#delegationreward-contract">DelegationReward contract</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PlatON_Governance_Solution"><span class="arrow-prev">← </span><span class="function-name-prevnext">PlatON Governance Solution</span></a><a class="docs-next button" href="/docs/en/Secure_Multi_Party_Computation"><span>Secure Multi Party Computation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#platon-built-in-contract">PlatON Built-in contract</a><ul class="toc-headings"><li><a href="#staking-contract">Staking contract</a></li><li><a href="#governance-contract">Governance contract</a></li><li><a href="#slashing-contract">Slashing contract</a></li><li><a href="#lockup-contract">Lockup contract</a></li><li><a href="#delegationreward-contract">DelegationReward contract</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
