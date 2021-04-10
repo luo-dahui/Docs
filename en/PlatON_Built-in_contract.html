@@ -86,8 +86,8 @@ The interaction between the validator and the delegator is mainly done through t
 <li>Create verification node</li>
 </ol>
 <p>This interface makes the node become a verification node by staking <code>LAT</code> into the <code>staking contract</code>. Before staking, you need your own node to access the network, and ensure that the node's private key and bls private key are securely stored. When staking, you must fill in the node information, accept the income account of the block reward and the pledge reward, the reward share for the principal (the more the share, the more likely it is to attract more users to entrust), the amount of <code>LAT</code> you want to pledge (pledge The gold has a threshold of 100000 <code>LAT</code>, if it is lower than this amount, the pledge will fail) and other information. If the pledge is successful, the node will appear in the list of candidate validators, and the pledge deposit will be transferred from the balance of the user account/locking contract account to the <code>Staking contract</code>. The total weight of the validator is equal to the amount of <code>LAT</code> pledged by oneself plus the total amount of <code>LAT</code> delegated. The higher the total weight, the greater the probability of being selected as a consensus.</p>
-<p>**Enter: **<br>
-- The type of amount used as a pledge (free amount or locked balance, or both)
+<p>**Enter: **</p>
+<pre><code class="hljs">- The type of amount used as a pledge (free amount or locked balance, or both)
 - Earning accounts that accept block rewards and pledge rewards
 - External Id
 - Node name
@@ -95,50 +95,52 @@ The interaction between the validator and the delegator is mainly done through t
 - Description of the node
 - The amount of pledge
 - Proportion of rewards divided by commission
-- The real version of the program, obtained through the node's <code>RPC</code> interface
-- The real version signature of the program, obtained through the node's <code>RPC</code> interface
-- The public key of bls, which is an aggregate signature algorithm, the public key is obtained through the <code>RPC</code> interface of the node
-- Proof of bls, which is obtained through the node's <code>RPC</code> interface</p>
-<p>**Output: **
-- None</p>
+- The real version of the program, obtained through the node's `RPC` interface
+- The real version signature of the program, obtained through the node's `RPC` interface
+- The public key of bls, which is an aggregate signature algorithm, the public key is obtained through the `RPC` interface of the node
+- Proof of bls, which is obtained through the node's `RPC` interface
+</code></pre>
+<p>**Output: **None</p>
 <ol start="2">
 <li>Modify verification node information</li>
 </ol>
 <p>This interface is mainly used to modify the validator's income account, delegated share ratio, node information, etc. The interval for each modification of the share ratio must be greater than 10 consensus periods, and the magnitude of each modification cannot be greater than 5%.</p>
-<p>**Enter: **<br>
-- Income account for receiving block rewards and pledge rewards
+<p>**Enter: **</p>
+<pre><code class="hljs">- Income account for receiving block rewards and pledge rewards
 - Proportion of rewards divided by commission
 - External Id
 - The name of the staked node
 - The third-party homepage of the node
-- Description of the node</p>
-<p>**Output: **
-- None</p>
+- Description of the node
+</code></pre>
+<p>**Output: **None</p>
 <ol start="3">
 <li>Increase the node Staking amount</li>
 </ol>
 <p>This interface is used to increase the node Staking amount and increase the node weight. The minimum amount of each increase is 10<code>LAT</code>. The validator’s new weight will take effect in the next epoch.</p>
-<p>**Enter: **
-- Node id
-- The amount that needs to be increased</p>
-<p>**Output: **
-- None</p>
+<p>**Enter: **</p>
+<pre><code class="hljs">- Node id
+- The amount that needs to be increased
+</code></pre>
+<p>**Output: **None</p>
 <ol start="4">
 <li>Release staking</li>
 </ol>
 <p>This interface is mainly used to exit the verification node. The user cannot reduce the pledge, but can only completely withdraw from the pledge. After the withdrawal, the pledge deposit will be locked for 168 cycles and then returned from the <code>Staking contract</code> to the user's account at the time of pledge. During the lock-up period, nodes will not be selected as validators to participate in the consensus.</p>
-<p>**Enter: **
--The id of the node to release the staking</p>
-<p>**Output: **
-- None</p>
+<p>**Enter: ** The id of the node to release the staking</p>
+<p>**Output: **None</p>
 <ol start="5">
 <li>Query the validator list of the current epoch
-This interface is used to query the validator information of the current settlement cycle. At the end of each settlement cycle, the list of validators for the next settlement cycle will be updated based on the total weight of all candidate validators.</li>
+This interface is used to query the validator information of the current epoch. At the end of each epoch, the list of validators for the next epoch will be updated based on the total weight of all candidate validators.</li>
 </ol>
-<p>**Enter: **
-- None</p>
-<p>**Output: **
-- Information list of all current validators</p>
+<p>**Enter: ** None</p>
+<p>**Output: **Information list of all current validators</p>
+<ol start="6">
+<li>Query the list of validators in the consensus round</li>
+</ol>
+<p>This interface is used to query the list of validators selected to produce blocks in the current consensus round. Each consensus round has 430 blocks. At block 410, a list of validators who can participate in the next consensus round will be generated from the validator queue in the current settlement round.</p>
+<p>**Enter: ** None</p>
+<p>**Output: **List of validator information for the current consensus round</p>
 <h3><a class="anchor" aria-hidden="true" id="slashing-contract"></a><a href="#slashing-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slashing contract</h3>
 <p>The slashing contract is mainly for system security to monitor the behavior of each node, Penalties will be imposed on violating nodes that violate system security, the contract has the following two major functions：</p>
 <ul>
