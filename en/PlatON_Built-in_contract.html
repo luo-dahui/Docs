@@ -151,34 +151,33 @@ The interaction between the validator and the delegator is mainly done through t
 <p>This interface is used to query the staking information of the node.</p>
 <p>**Enter: ** Verifier's node Id</p>
 <p>**Output: ** node information</p></li>
-<li><p>delegation</p></li>
-</ol>
+<li><p>delegation</p>
 <p>This interface is used to delegate or accumulate to delegate a validator node. Users who have already pledged nodes will not be able to delegate. The user can delegate <code>LAT</code> to the validator at any time, and the minimum amount of each delegation is 10<code>LAT</code>. After the delegation is successful, the <code>LAT</code> delegated by the delegator to the candidate validator is transferred to the <code>Staking contract</code>. The new weights of validators will take effect in the next consensus cycle. When the validator is selected to participate in the consensus, the block and staking rewards will be shared with the delegator.</p>
 <p>**Enter: **</p>
-<pre><code class="hljs">  - Node ID of the delegated validator
-  - delegate amount
-</code></pre>
-<p>**Output: ** None</p>
-<ol start="11">
-<li>Reduce delegation</li>
-</ol>
+<ul>
+<li>Node ID of the delegated validator</li>
+<li>delegate amount</li>
+</ul>
+<p>**Output: ** None</p></li>
+<li><p>Reduce delegation</p>
 <p>This interface is used to reduce holdings or cancel delegation operations. The principal can reduce or cancel the entrustment at any time. The minimum amount of each reduction entrusted is 10 <code>LAT</code>. After the operation is completed, the <code>LAT</code> will be returned from the <code>Staking contract</code> to the principal's account in real time. If the holding is reduced After the remaining commission is less than 10 <code>LAT</code>, the commission of the principal will be revoked. The profit obtained by the validator in the current cycle will be distributed to the delegator according to the commission amount after the reduction.</p>
 <p>**Enter: **</p>
-<pre><code class="hljs">  - Node ID of the delegated validator
-  - delegate amount
-</code></pre>
-<p>**Output: ** None</p>
-<ol start="12">
-<li>Query delegation</li>
-</ol>
+<ul>
+<li>Node ID of the delegated validator</li>
+<li>delegate amount</li>
+</ul>
+<p>**Output: ** None</p></li>
+<li><p>Query delegation</p>
 <p>This interface is used to query the user's delegation information.</p>
-<p>**Enter: **</p>
+<p>**Enter: **</p></li>
+</ol>
 <pre><code class="hljs">  - Block height when staking 
   - account address
   - Verifier's node Id 
-</code></pre>
-<p>**Output: **</p>
-<pre><code class="hljs">  - Verifier's node id
+
+**Output: ** 
+
+  - Verifier's node id
   - Block height when staking is initiated
   - The settlement cycle of the most recent delegation to the candidate
   - Initiation of the `von` entrustment for the lock-up period of the free amount of the entrusted account
@@ -189,29 +188,21 @@ The interaction between the validator and the delegator is mainly done through t
   - Settlement period when the order is withdrawn (used to calculate the income and the amount withdrawn)
 </code></pre>
 <ol start="13">
-<li>Average time to query packaged blocks</li>
-</ol>
+<li><p>Average time to query packaged blocks</p>
 <p>This interface is used to query the average time of a packed block.</p>
 <p>**Enter: ** None</p>
-<p>**Output: **</p>
-<pre><code class="hljs">-The average time to pack a block (in milliseconds)
-</code></pre>
-<ol start="14">
-<li>Query the block reward of the epoch</li>
+<p>**Output: ** The average time to pack a block (in milliseconds)</p></li>
 </ol>
+<ol start="14">
+<li><p>Query the block reward of the epoch</p>
 <p>This interface is used to query the block reward of the current epoch.</p>
 <p>**Enter: ** None</p>
-<p>**Output: **</p>
-<pre><code class="hljs"> - Block reward
-</code></pre>
-<ol start="15">
-<li>Query the staking reward of the epoch</li>
-</ol>
+<p>**Output: ** Block reward</p></li>
+<li><p>Query the staking reward of the epoch</p>
 <p>This interface is used to query the staking reward of the current epoch.</p>
 <p>**Enter: ** None</p>
-<p>**Output: **</p>
-<pre><code class="hljs"> - staking reward
-</code></pre>
+<p>**Output: ** staking reward</p></li>
+</ol>
 <h3><a class="anchor" aria-hidden="true" id="governance-contract"></a><a href="#governance-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Governance contract</h3>
 <p>The on-chain governance method adopted by PlatON enables it to develop in accordance with the requirements of <code>LAT</code> holders. The goal of governance is to ensure that majority ownership can always control the network. Any governance modification plan discussed in the community can be initiated by a validator on the chain and voted for a referendum.</p>
 <ul>
@@ -277,6 +268,86 @@ The interaction between the validator and the delegator is mainly done through t
  - Code version signature (obtained from the node through the `RPC interface`)
 </code></pre>
 <p>**Output: **None</p>
+<ol start="6">
+<li><p>DeclareVersion</p>
+<p>This interface is used to initiate version declarations. When the PlatON network is upgraded to a new version through an upgrade proposal, all verification nodes that have not voted need to upgrade their nodes to the latest version simultaneously, and update their version status in the network through a version statement, otherwise they will not be selected for consensus.</p>
+<p>**Enter: **</p></li>
+</ol>
+<pre><code class="hljs"> - Voted validator ID
+ - Node code version (obtained from the node through the `RPC interface`)
+ - Code version signature (obtained from the node through the `RPC interface`)
+</code></pre>
+<p>**Output: **None</p>
+<ol start="7">
+<li><p>Query proposal</p>
+<p>This interface is used to query the specified proposal.</p>
+<p>**Enter: ** Proposal ID</p>
+<p>**Output: **</p>
+<ul>
+<li>Proposal ID</li>
+<li>Proposal node ID</li>
+<li>Proposal type</li>
+<li>Proposal PID</li>
+<li>The block height of the submitted proposal</li>
+<li>The block height at which the proposal voting ends</li>
+</ul></li>
+<li><p>Query proposal status</p>
+<p>This interface is used to query the current status of the proposal</p>
+<p>**Enter: ** Proposal ID</p>
+<p>**Output: **</p>
+<ul>
+<li>Proposal ID</li>
+<li>Number of votes</li>
+<li>Number of negative votes</li>
+<li>Number of abstentions</li>
+<li>The total number of validators eligible to vote during the entire voting period</li>
+<li>What is the current status of the proposal</li>
+<li>If cancelled</li>
+<li>Cancelled ProposalID</li>
+</ul></li>
+<li><p>Query the list of proposals</p>
+<p>This interface is used to query the list of proposals that are in voting and have ended.</p>
+<p>**Enter: **None</p>
+<p>**Output: **Proposal information list, refer to the output value of query proposal</p></li>
+<li><p>Query chain version</p>
+<p>This interface is used to query the current effective version of the chain.</p>
+<p>**Enter: **None</p>
+<p>**Output: **The version number of the current chain</p></li>
+<li><p>Query governance parameter values</p>
+<p>This interface is used to query the governance parameter value of the current block height</p>
+<p>**Enter: **</p>
+<ul>
+<li>Parameter module</li>
+<li>parameter name</li>
+</ul>
+<p>**Output: **Parameter value</p></li>
+<li><p>Query the cumulative number of votes available for a proposal</p>
+<p>This interface is used to query the cumulative number of votes available for a proposal.</p>
+<p>**Enter: **</p>
+<ul>
+<li>Proposal ID</li>
+<li>Block hash</li>
+</ul>
+<p>**Output: **</p>
+<ul>
+<li>The number of people who can vote</li>
+<li>Number of people who voted yes</li>
+<li>Number of people who voted against</li>
+<li>Number of people who abstained from voting</li>
+</ul></li>
+<li><p>Query the list of governance parameters</p>
+<p>This interface is used to query all management parameters of a certain module.</p>
+<p>**Enter: **Parameter module, if it is empty, all governance parameters can be queried</p>
+<p>**Output: **</p>
+<ul>
+<li>Parameter module</li>
+<li>parameter name</li>
+<li>Parameter Description</li>
+<li>Old parameter value</li>
+<li>Parameter value</li>
+<li>Effective block height</li>
+</ul></li>
+</ol>
 <h3><a class="anchor" aria-hidden="true" id="slashing-contract"></a><a href="#slashing-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slashing contract</h3>
 <p>The slashing contract is mainly for system security to monitor the behavior of each node, Penalties will be imposed on violating nodes that violate system security, the contract has the following two major functions：</p>
 <ul>
