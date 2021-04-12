@@ -169,25 +169,24 @@ The interaction between the validator and the delegator is mainly done through t
 <p>**Output: ** None</p></li>
 <li><p>Query delegation</p>
 <p>This interface is used to query the user's delegation information.</p>
-<p>**Enter: **</p></li>
-</ol>
-<pre><code class="hljs">  - Block height when staking 
-  - account address
-  - Verifier's node Id 
-
-**Output: ** 
-
-  - Verifier's node id
-  - Block height when staking is initiated
-  - The settlement cycle of the most recent delegation to the candidate
-  - Initiation of the `von` entrustment for the lock-up period of the free amount of the entrusted account
-  - Initiation of the delegated `von` during the hesitation period of the free amount of the entrusted account
-  - Initiate the `von` entrusted for the lock-up period of the lock-up amount of the entrusted account
-  - Initiating the von von entrusted with the hesitation period of the lock-up amount of the entrusted account
-  - Entrusted income to be collected
-  - Settlement period when the order is withdrawn (used to calculate the income and the amount withdrawn)
-</code></pre>
-<ol start="13">
+<p>**Enter: **</p>
+<ul>
+<li>Block height when staking</li>
+<li>account address</li>
+<li>Verifier's node Id</li>
+</ul>
+<p>**Output: **</p>
+<ul>
+<li>Verifier's node id</li>
+<li>Block height when staking is initiated</li>
+<li>The settlement cycle of the most recent delegation to the candidate</li>
+<li>Initiation of the <code>von</code> entrustment for the lock-up period of the free amount of the entrusted account</li>
+<li>Initiation of the delegated <code>von</code> during the hesitation period of the free amount of the entrusted account</li>
+<li>Initiate the <code>von</code> entrusted for the lock-up period of the lock-up amount of the entrusted account</li>
+<li>Initiating the von von entrusted with the hesitation period of the lock-up amount of the entrusted account</li>
+<li>Entrusted income to be collected</li>
+<li>Settlement period when the order is withdrawn (used to calculate the income and the amount withdrawn)</li>
+</ul></li>
 <li><p>Average time to query packaged blocks</p>
 <p>This interface is used to query the average time of a packed block.</p>
 <p>**Enter: ** None</p>
@@ -221,17 +220,16 @@ The interaction between the validator and the delegator is mainly done through t
 <li>Proposal ID (generally refers to an ID assigned to a proposal offline, or an ID like a post on the GITHUB website)</li>
 </ul>
 <p>**Output: **None</p></li>
-<li><p>Create an version proposal</p></li>
-</ol>
+<li><p>Create an version proposal</p>
 <p>This interface is used to initiate an version proposal. Proposals can only be initiated by validators. After the proposal is passed, the on-chain version will be upgraded. The validator’s vote is regarded as a support vote. After the voting deadline has passed, when the support rate is greater than 66.7%, the proposal enters the pre-validation stage and will come into effect in the next settlement cycle.</p>
 <p>**Enter: **</p>
-<pre><code class="hljs"> - The validator who submitted the proposal
- - Proposal ID
- - Upgraded version
- - The number of voting consensus rounds (the deadline for voting)
-</code></pre>
-<p>**Output: **None</p>
-<ol start="3">
+<ul>
+<li>The validator who submitted the proposal</li>
+<li>Proposal ID</li>
+<li>Upgraded version</li>
+<li>The number of voting consensus rounds (the deadline for voting)</li>
+</ul>
+<p>**Output: **None</p></li>
 <li><p>Create an parameter proposal</p>
 <p>This interface is used to initiate parameter proposals. The parameter proposal is used to change some manageable parameters on the chain. The validator can vote for/again/abstaining votes. The voting deadline is about 2 weeks. When the voter turnout rate is greater than 50% and the voter approval rate is greater than 66.7%, the proposal is passed.</p></li>
 </ol>
@@ -244,19 +242,17 @@ The interaction between the validator and the delegator is mainly done through t
 </code></pre>
 <p>**Output: **None</p>
 <ol start="4">
-<li>Create an cancellation proposal</li>
-</ol>
+<li><p>Create an cancellation proposal</p>
 <p>This interface is used to initiate a cancellation proposal. Canceling a proposal can cancel the previously initiated text, parameters, and upgrade proposal. The voting deadline must be greater than the voting deadline of the cancelled proposal. After the voting deadline, when the voting rate is greater than 50</p>
 <p>**Enter: **</p>
-<pre><code class="hljs">  - The validator who submitted the proposal
-  - Proposal ID
-  - Upgraded version
-  - The number of voting consensus rounds (the deadline for voting)
-  - The ID of the upgrade proposal to be cancelled
- 
-**Output: **None
-</code></pre>
-<ol start="5">
+<ul>
+<li>The validator who submitted the proposal</li>
+<li>Proposal ID</li>
+<li>Upgraded version</li>
+<li>The number of voting consensus rounds (the deadline for voting)</li>
+<li>The ID of the upgrade proposal to be cancelled</li>
+</ul>
+<p>**Output: **None</p></li>
 <li><p>Vote</p>
 <p>This interface is used to vote on proposals in progress. Only yes votes can be voted for the version upgrade proposal, and the node needs to be upgraded to the new version before voting.</p>
 <p>**Enter: **</p></li>
