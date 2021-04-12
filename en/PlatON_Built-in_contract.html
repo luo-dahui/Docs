@@ -85,7 +85,7 @@ The interaction between the validator and the delegator is mainly done through t
 <ol>
 <li><p>Create verification node</p>
 <p>This interface makes the node become a verification node by staking <code>LAT</code> into the <code>staking contract</code>. Before staking, you need your own node to access the network, and ensure that the node's private key and bls private key are securely stored. When staking, you must fill in the node information, accept the income account of the block reward and the staking  reward, the reward share for the principal (the more the share, the more likely it is to attract more users to entrust), the amount of <code>LAT</code> you want to pledge (pledge The gold has a threshold of 100000 <code>LAT</code>, if it is lower than this amount, the pledge will fail) and other information. If the pledge is successful, the node will appear in the list of candidate validators, and the pledge deposit will be transferred from the balance of the user account/locking contract account to the <code>Staking contract</code>. The total weight of the validator is equal to the amount of <code>LAT</code> pledged by oneself plus the total amount of <code>LAT</code> delegated. The higher the total weight, the greater the probability of being selected as a consensus.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>The type of amount used as a pledge (free amount or locked balance, or both)</li>
 <li>Revenue accounts that receive block-out rewards and staking  rewards</li>
@@ -100,10 +100,10 @@ The interaction between the validator and the delegator is mainly done through t
 <li>The public key of bls, which is an aggregate signature algorithm, the public key is obtained through the <code>RPC</code> interface of the node</li>
 <li>Proof of bls, which is obtained through the node's <code>RPC</code> interface</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Modify verification node information</p>
 <p>This interface is mainly used to modify the validator's income account, delegated share ratio, node information, etc. The interval for each modification of the share ratio must be greater than 10 consensus periods, and the magnitude of each modification cannot be greater than 5%.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>The revenue account used to receive the block reward and staking reward</li>
 <li>Proportion of rewards divided by commission</li>
@@ -112,70 +112,70 @@ The interaction between the validator and the delegator is mainly done through t
 <li>The third-party homepage of the node</li>
 <li>Description of the node</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Increase the node Staking amount</p>
 <p>This interface is used to increase the node Staking amount and increase the node weight. The minimum amount of each increase is 10<code>LAT</code>. The validator’s new weight will take effect in the next epoch.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Node id</li>
 <li>Amount to be increased</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Release staking</p>
 <p>This interface is mainly used to exit the verification node. The user cannot reduce the pledge, but can only completely withdraw from the pledge. After the withdrawal, the pledge deposit will be locked for 168 cycles and then returned from the <code>Staking contract</code> to the user's account at the time of pledge. During the lock-up period, nodes will not be selected as validators to participate in the consensus.</p>
-<p>**Enter: ** The id of the node to release the staking</p>
-<p>**Output: **None</p></li>
+<p><strong>Enter:</strong> The id of the node to release the staking</p>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Query the validator list of the current epoch</p>
 <p>This interface is used to query the validator information of the current epoch. At the end of each epoch, the list of validators for the next epoch will be updated based on the total weight of all candidate validators.</p>
-<p>**Enter: ** None</p>
-<p>**Output: **List of all current verifiers</p></li>
+<p><strong>Enter:</strong> None</p>
+<p><strong>Output:</strong>List of all current verifiers</p></li>
 <li><p>Query the list of validators in the consensus round</p>
 <p>This interface is used to query the list of verifiers that have been selected out of blocks for the current consensus cycle. Each consensus round is 430 blocks, and at 410 blocks will generate a list of verifiers from the verifier queue of the current Epoch that can participate in the next consensus round to get out the blocks.</p>
-<p>**Enter: ** None</p>
-<p>**Output: **list of verifier information for the current consensus cycle</p></li>
+<p><strong>Enter:</strong> None</p>
+<p><strong>Output:</strong>list of verifier information for the current consensus cycle</p></li>
 </ol>
 <ol start="7">
 <li><p>Query the list of candidate  information</p>
 <p>This interface is used to query the list of all candidate verifier information. Any node that has successfully pledged is a candidate verifier.</p>
-<p>**Enter: ** None</p>
-<p>**Output: **List of candidate information</p></li>
+<p><strong>Enter:</strong> None</p>
+<p><strong>Output:</strong>List of candidate information</p></li>
 <li><p>Query the validator entrusted by the delegator</p>
 <p>This interface is used to query which validators have been delegated by the specified delegator.</p>
-<p>**Enter: ** account address</p>
-<p>**Output: **</p>
+<p><strong>Enter:</strong> account address</p>
+<p><strong>Output:</strong></p>
 <ul>
 <li>Node Id of the validator</li>
 <li>Block height when validators staking</li>
 </ul></li>
 <li><p>Query the staking information of a node</p>
 <p>This interface is used to query the staking information of the node.</p>
-<p>**Enter: ** Verifier's node Id</p>
-<p>**Output: ** node information</p></li>
+<p><strong>Enter:</strong> Verifier's node Id</p>
+<p><strong>Output:</strong> node information</p></li>
 <li><p>delegation</p>
 <p>This interface is used to delegate or incrementally delegate a verifier node. Users who have already pledged a node will not be able to delegate it. The user can delegate <code>LAT</code> to the verifier at any time with a minimum amount of 10 <code>LAT</code> per delegation. After a successful delegation, the <code>LAT</code> delegated by the delegator to the candidate verifier is transferred to the <code>Staking contract</code>. The new weight of the verifier will take effect in the next consensus cycle. When the verifier is selected to participate in the consensus, it will share the block-out and Staking rewards with the principal.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Node ID of the delegated validator</li>
 <li>delegate amount</li>
 </ul>
-<p>**Output: ** None</p></li>
+<p><strong>Output:</strong> None</p></li>
 <li><p>Decrease/revoke delegation</p>
 <p>This interface is used to reduce or revoke the delegate operation. The principal can reduce or revoke the commission at any time, and the minimum amount of each reduced commission is 10<code>LAT</code>. After the operation is completed, <code>LAT</code> will be returned to the principal's account from the <code>Staking contract</code> in real time, and if the remaining commission after the reduction is less than 10<code>LAT</code>, the commission of this principal will be revoked. The proceeds received by the validator in the current cycle will be distributed to the principal according to the amount of the mandate after the reduction.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Node ID of the delegated validator</li>
 <li>delegate amount</li>
 </ul>
-<p>**Output: ** None</p></li>
+<p><strong>Output:</strong> None</p></li>
 <li><p>Query delegation</p>
 <p>This interface is used to query the user's delegation information.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Block height when staking</li>
 <li>account address</li>
 <li>Verifier's node Id</li>
 </ul>
-<p>**Output: **</p>
+<p><strong>Output:</strong></p>
 <ul>
 <li>Verifier's node id</li>
 <li>Block height when staking is initiated</li>
@@ -189,16 +189,16 @@ The interaction between the validator and the delegator is mainly done through t
 </ul></li>
 <li><p>Query average time of packed blocks</p>
 <p>This interface is used to query the average time of packed blocks.</p>
-<p>**Enter: ** None</p>
-<p>**Output: ** average time of packed blocks (in milliseconds)</p></li>
+<p><strong>Enter:</strong> None</p>
+<p><strong>Output:</strong> average time of packed blocks (in milliseconds)</p></li>
 <li><p>Query the block reward of the epoch</p>
 <p>This interface is used to query the block reward of the current epoch.</p>
-<p>**Enter: ** None</p>
-<p>**Output: ** Block reward</p></li>
+<p><strong>Enter:</strong> None</p>
+<p><strong>Output:</strong> Block reward</p></li>
 <li><p>Query the staking reward of the epoch</p>
 <p>This interface is used to query the staking reward of the current epoch.</p>
-<p>**Enter: ** None</p>
-<p>**Output: ** staking reward</p></li>
+<p><strong>Enter:</strong> None</p>
+<p><strong>Output:</strong> staking reward</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="governance-contract"></a><a href="#governance-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Governance contract</h3>
 <p>The on-chain governance method adopted by PlatON enables it to develop in accordance with the requirements of <code>LAT</code> holders. The goal of governance is to ensure that majority ownership can always control the network. Any governance modification plan discussed in the community can be initiated by a validator on the chain and voted for a referendum.</p>
@@ -212,25 +212,25 @@ The interaction between the validator and the delegator is mainly done through t
 <ol>
 <li><p>Create a text proposal</p>
 <p>This interface is used to issue a text proposal. After the text proposal is issued, validators can vote for/against/abstain from the proposal. The voting deadline is about 2 weeks, and the proposal is passed when the voting rate is greater than 50% and the support rate among those who voted is greater than 66.7%.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>The validator who submitted the proposal</li>
 <li>Proposal ID (generally refers to an ID assigned to a proposal offline, or an ID like a post on the GITHUB website)</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Create an version proposal</p>
 <p>This interface is used to initiate an version proposal. Proposals can only be initiated by validators. After the proposal is passed, the on-chain version will be upgraded. The validator’s vote is regarded as a support vote. After the voting deadline has passed, when the support rate is greater than 66.7%, the proposal enters the pre-validation stage and will come into effect in the next Epoch.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>The validator who submitted the proposal</li>
 <li>Proposal ID</li>
 <li>Upgraded version</li>
 <li>The number of voting consensus rounds (the deadline for voting)</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Create an parameter proposal</p>
 <p>This interface is used to initiate parameter proposals. The parameter proposal is used to change some manageable parameters on the chain. The validator can vote for/again/abstaining votes. The voting deadline is about 2 weeks. When the voter turnout rate is greater than 50% and the voter approval rate is greater than 66.7%, the proposal is passed.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>The validator who submitted the proposal</li>
 <li>Proposal ID</li>
@@ -238,10 +238,10 @@ The interaction between the validator and the delegator is mainly done through t
 <li>parameter name</li>
 <li>The new value of the parameter</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Create an cancellation proposal</p>
 <p>This interface is used to initiate a cancellation proposal. Canceling a proposal can cancel the previously initiated text, parameters, and upgrade proposal. The voting deadline must be greater than the voting deadline of the cancelled proposal. After the voting deadline, when the voting rate is greater than 50</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>The validator who submitted the proposal</li>
 <li>Proposal ID</li>
@@ -249,10 +249,10 @@ The interaction between the validator and the delegator is mainly done through t
 <li>The number of voting consensus rounds (the deadline for voting)</li>
 <li>The ID of the upgrade proposal to be cancelled</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Vote</p>
 <p>This interface is used to vote on proposals in progress. Only yes votes can be voted for the version upgrade proposal, and the node needs to be upgraded to the new version before voting.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Voted validator ID</li>
 <li>Proposal ID</li>
@@ -260,20 +260,20 @@ The interaction between the validator and the delegator is mainly done through t
 <li>Node code version (obtained from the node through the <code>RPC interface</code>)</li>
 <li>Code version signature (obtained from the node through the <code>RPC interface</code>)</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>DeclareVersion</p>
 <p>This interface is used to initiate version declarations. When the PlatON network is upgraded to a new version through an upgrade proposal, all verification nodes that have not voted need to upgrade their nodes to the latest version simultaneously, and update their version status in the network through a version statement, otherwise they will not be selected for consensus.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Voted validator ID</li>
 <li>Node code version (obtained from the node through the <code>RPC interface</code>)</li>
 <li>Code version signature (obtained from the node through the <code>RPC interface</code>)</li>
 </ul>
-<p>**Output: **None</p></li>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Query proposal</p>
 <p>This interface is used to query the specified proposal.</p>
-<p>**Enter: ** Proposal ID</p>
-<p>**Output: **</p>
+<p><strong>Enter:</strong> Proposal ID</p>
+<p><strong>Output:</strong></p>
 <ul>
 <li>Proposal ID</li>
 <li>Proposal node ID</li>
@@ -284,8 +284,8 @@ The interaction between the validator and the delegator is mainly done through t
 </ul></li>
 <li><p>Query proposal status</p>
 <p>This interface is used to query the current status of the proposal</p>
-<p>**Enter: ** Proposal ID</p>
-<p>**Output: **</p>
+<p><strong>Enter:</strong> Proposal ID</p>
+<p><strong>Output:</strong></p>
 <ul>
 <li>Proposal ID</li>
 <li>Number of votes</li>
@@ -298,28 +298,28 @@ The interaction between the validator and the delegator is mainly done through t
 </ul></li>
 <li><p>Query the list of proposals</p>
 <p>This interface is used to query the list of proposals that are in voting and have ended.</p>
-<p>**Enter: **None</p>
-<p>**Output: **Proposal information list, refer to the output value of query proposal</p></li>
+<p><strong>Enter:</strong>None</p>
+<p><strong>Output:</strong>Proposal information list, refer to the output value of query proposal</p></li>
 <li><p>Query chain version</p>
 <p>This interface is used to query the current effective version of the chain.</p>
-<p>**Enter: **None</p>
-<p>**Output: **The version number of the current chain</p></li>
+<p><strong>Enter:</strong>None</p>
+<p><strong>Output:</strong>The version number of the current chain</p></li>
 <li><p>Query governance parameter values</p>
 <p>This interface is used to query the governance parameter value of the current block height</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Parameter module</li>
 <li>parameter name</li>
 </ul>
-<p>**Output: **Parameter value</p></li>
+<p><strong>Output:</strong>Parameter value</p></li>
 <li><p>Query the cumulative number of votes available for a proposal</p>
 <p>This interface is used to query the cumulative number of votes available for a proposal.</p>
-<p>**Enter: **</p>
+<p><strong>Enter:</strong></p>
 <ul>
 <li>Proposal ID</li>
 <li>Block hash</li>
 </ul>
-<p>**Output: **</p>
+<p><strong>Output:</strong></p>
 <ul>
 <li>The number of people who can vote</li>
 <li>Number of people who voted yes</li>
@@ -328,8 +328,8 @@ The interaction between the validator and the delegator is mainly done through t
 </ul></li>
 <li><p>Query the list of governance parameters</p>
 <p>This interface is used to query all management parameters of a certain module.</p>
-<p>**Enter: **Parameter module, if it is empty, all governance parameters can be queried</p>
-<p>**Output: **</p>
+<p><strong>Enter:</strong>Parameter module, if it is empty, all governance parameters can be queried</p>
+<p><strong>Output:</strong></p>
 <ul>
 <li>Parameter module</li>
 <li>parameter name</li>
@@ -344,20 +344,20 @@ The interaction between the validator and the delegator is mainly done through t
 <ul>
 <li><p>Slashing nodes that can't produce blocks</p>
 <p>According to system rules, each consensus round will have a batch of nodes responsible for producing the blocks of that round, the number of blocks to be produced is fixed for each consensus round, each node is assigned a time window and the number of blocks that need to be produced, generate blocks in turn to complete the block production of the entire consensus round. When a node does not produce a block within the specified time window, will switch to the next node to continue producing blocks, this cycle continues until the number of blocks required to complete the consensus round. The entire consensus round is completed and a new batch of nodes starts the next consensus round.</p>
-<p>If a node has not produced a block in the entire consensus round, then the zero block behavior of the node will be recorded. The Punish conditions are: start recording when the node generates zero blocks for the first time, count the production of blocks in each consensus round in the next period of time, if during this period the node participates in the consensus round again and produces a block, then the previous zero block records will be cleared and exempted from penalties, otherwise, the node will be punished when the statistical time is up, Impose a fine (amount of fine = current block reward*n) and state lock (automatically unlock after a period of lock and return to the normal state. During the lock-up period, the node has no rewards and cannot perform any actions, including modifying information, revoking staking, participating in block production, and accepting delegation).</p></li>
+<p>If a node has not produced a block in the entire consensus round, then the zero block behavior of the node will be recorded. The Punish conditions are:start recording when the node generates zero blocks for the first time, count the production of blocks in each consensus round in the next period of time, if during this period the node participates in the consensus round again and produces a block, then the previous zero block records will be cleared and exempted from penalties, otherwise, the node will be punished when the statistical time is up, Impose a fine (amount of fine = current block reward*n) and state lock (automatically unlock after a period of lock and return to the normal state. During the lock-up period, the node has no rewards and cannot perform any actions, including modifying information, revoking staking, participating in block production, and accepting delegation).</p></li>
 <li><p>Slashing double-production or double-signed nodes</p>
 <p>Under normal circumstances, a node will only generate one block at the same block height or only sign one of the blocks for different blocks of the same block height, otherwise it is a violation of the rules and will be punished, when this happens to a node, the evidence of violation will be recorded locally by the received node, users can use the <code>RPC</code> to call the <code>platon_evidences</code> interface to obtain evidence of violations, then send the evidence to the chain in the form of a transaction, the system will judge the evidence, if the evidence is true, the node will be punished.</p></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="contract-interface-2"></a><a href="#contract-interface-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contract interface</h4>
 <ol>
 <li><p>Report double sign/double production</p>
-<p>This interface is used to report the double-signature or double-production behavior of a node, the user sends the evidence to the penalty contract in the form of a transaction, After the system verifies that the evidence is true, the node will be fined and the staking will be forcibly released (disqualification of validators and alternative nodes), Part of the fine (default: 50%) will be awarded to the reporter as a reward and transferred to the account immediately (transferred to the account that initiated the reporting transaction).</p>
-<p>**Enter: **evidence type (double sign/double production), evidence (obtained by calling the <code>RPC</code> interface <code>platon_evidences</code>)</p>
-<p>**Output: **None</p></li>
+<p>This interface is used to report the double-signature or double-production behavior of a node, the user sends the evidence to the penalty contract in the form of a transaction, After the system verifies that the evidence is true, the node will be fined and the staking will be forcibly released (disqualification of validators and alternative nodes), Part of the fine (default:50%) will be awarded to the reporter as a reward and transferred to the account immediately (transferred to the account that initiated the reporting transaction).</p>
+<p><strong>Enter:</strong>evidence type (double sign/double production), evidence (obtained by calling the <code>RPC</code> interface <code>platon_evidences</code>)</p>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Check whether the evidence has been reported</p>
 <p>This interface is used to check whether the evidence to be reported has been used before initiating a report (already reported), after the user obtains the evidence by calling the <code>RPC</code> interface, he can first call the interface to check whether the evidence has been reported to avoid repeated reporting. Because the reporting interface requires a lot of cost, and regardless of whether the evidence has been reported (used) or not, the cost of the transaction will still be spent. So this interface can provide pre-check, all input parameters of this interface are parsed from the evidence list returned by the <code>RPC</code> interface <code>platon_evidences</code>.</p>
-<p>**Enter: **Evidence type (double sign/double production), node ID, block height to which the violation belongs</p>
-<p>**Output: **Transaction Hash (If the evidence has been reported, the hash of the reported transaction will be returned, otherwise empty)</p></li>
+<p><strong>Enter:</strong>Evidence type (double sign/double production), node ID, block height to which the violation belongs</p>
+<p><strong>Output:</strong>Transaction Hash (If the evidence has been reported, the hash of the reported transaction will be returned, otherwise empty)</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="lockup-contract"></a><a href="#lockup-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lockup contract</h3>
 <p>This contract can be used to lock the asset to restrict its circulation within a certain period of time, it can control the total asset circulation within a certain period of time or other lock-in requirements of external personnel, When the lock-up period of the asset ends, the asset will be automatically transferred to the receiving account (the receiving account after unlocking entered when the lock plan was initiated), after the locked asset is transferred to the lock-up contract, the ownership of the asset will belong to the unlocked receiving account, the asset cannot be used for trading during the lock-up period, although it belongs to the receiving account, the funds are stored in the lock-up contract and the account balance cannot be queried, the asset can only be obtained by querying the lock-up record in the lock-up contract. The contract will release the assets to the designated unlock recipient according to the release rules specified by the person who initiated the lock, the release rule can be customized to unlock all at a certain point in time and transfer to the recipient's account, it can also be defined as splitting an asset into N shares and releasing them in M phases, setting the release time of each phase to release one part until all the locked assets are released after the M period, and each time the asset is released, the asset arrives in time. The user account can be used freely.</p>
@@ -366,12 +366,12 @@ The interaction between the validator and the delegator is mainly done through t
 <ol>
 <li><p>Create a lockup plan</p>
 <p>This interface is used to create an asset lock, transfer the specified amount from the initiator's account to the lock-up contract, and transfer it to the specified recipient account when the specified time is reached.</p>
-<p>**Enter: **Recipient account, array (multiple lock-up plans, how much funds are released at each time point)</p>
-<p>**Output: **None</p></li>
+<p><strong>Enter:</strong>Recipient account, array (multiple lock-up plans, how much funds are released at each time point)</p>
+<p><strong>Output:</strong>None</p></li>
 <li><p>Query the lock-up plan</p>
 <p>This interface is used to query the lock-up plan under the specified account, and the specified account is the recipient's account after unlocking.</p>
-<p>**Enter: **account</p>
-<p>**Output: **All unreleased lock-up plans under the account, including: the total funds locked up, the total funds used for staking and delegation, and the funds released at each point in time</p></li>
+<p><strong>Enter:</strong>account</p>
+<p><strong>Output:</strong>All unreleased lock-up plans under the account, including:the total funds locked up, the total funds used for staking and delegation, and the funds released at each point in time</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="delegationreward-contract"></a><a href="#delegationreward-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DelegationReward contract</h3>
 <p>The contract is mainly used to deal with the business related to delegate income. When each user delegates a node, a delegation record will be generated, each delegation record will get dividends from the delegated node, the dividend amount is calculated from the node's income according to the dividend ratio set by the node to the delegator, the total dividends allocated will be divided equally according to the total delegations of the nodes, Each delegated unit will get a certain income, so the income that a single delegation can obtain is directly proportional to the delegated volume.</p>
@@ -380,12 +380,12 @@ The interaction between the validator and the delegator is mainly done through t
 <ol>
 <li><p>Receive delegated rewards</p>
 <p>This interface is used to extract delegated rewards that the user has not yet claimed, when a single user entrusts multiple nodes to generate multiple delegations, the interface can only process the rewards for 20 delegations at a time, the rest must be re-initiated to receive the operation (the rules for receiving 20 delegated rewards are sorted according to the number of Epochs that have not been claimed for each delegation, the more the number of unclaimed cycles, the priority to receive the delegated awards), if the number of delegated rewards waiting to be collected is less than 20, then directly collect all of them.</p>
-<p>**Enter: **None</p>
-<p>**Output: **Array (details of each delegated reward received), including: node ID, node staking block height, delegation income</p></li>
+<p><strong>Enter:</strong>None</p>
+<p><strong>Output:</strong>Array (details of each delegated reward received), including:node ID, node staking block height, delegation income</p></li>
 <li><p>Query delegation reward</p>
 <p>This interface can be used to query all pending delegation income details of the interface initiator, you can also specify to query a certain delegation or multiple delegations, the return result will be a sorted list of income details, the sorting rule is to sort in reverse order according to the number of unclaimed Epochs for each delegation (the return data will not be sorted if there are less than 20 delegated rewards to be received)。</p>
-<p>**Enter: **None</p>
-<p>**Output: **Array (details of each delegated income to be received), including: node ID, delegated income, node staking block height</p></li>
+<p><strong>Enter:</strong>None</p>
+<p><strong>Output:</strong>Array (details of each delegated income to be received), including:node ID, delegated income, node staking block height</p></li>
 </ol>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PlatON_Governance_Solution"><span class="arrow-prev">← </span><span class="function-name-prevnext">PlatON Governance Solution</span></a><a class="docs-next button" href="/docs/en/Secure_Multi_Party_Computation"><span>Secure Multi Party Computation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#platon-built-in-contract">PlatON Built-in contract</a><ul class="toc-headings"><li><a href="#staking-contract">Staking contract</a></li><li><a href="#governance-contract">Governance contract</a></li><li><a href="#slashing-contract">Slashing contract</a></li><li><a href="#lockup-contract">Lockup contract</a></li><li><a href="#delegationreward-contract">DelegationReward contract</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
