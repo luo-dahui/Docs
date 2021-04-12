@@ -152,67 +152,62 @@
 <p>该接口用来查询节点的质押信息</p>
 <p><strong>输入：</strong> 验证人的节点Id</p>
 <p><strong>输出：</strong>节点的信息</p></li>
-<li><p>委托/增持委托验证人</p></li>
-</ol>
+<li><p>委托/增持委托验证人</p>
 <p>该接口用来委托或者增持委托一个验证人节点。已经质押过节点的用户将无法进行委托。用户可以随时将<code>LAT</code>委托给验证人，每次委托的最小金额为10<code>LAT</code>，委托成功后，委托人委托给候选验证人的<code>LAT</code>转移到<code>Staking合约</code>。验证人的新权重会在下个共识周期生效。当验证人被选中参与共识时，会与委托人共享出块与Staking奖励。</p>
 <p><strong>输入：</strong></p>
-<pre><code class="hljs">- 委托的验证人的节点ID
-- 委托的金额
-</code></pre>
-<p><strong>输出：</strong>无</p>
-<ol start="11">
-<li>减持/撤销委托</li>
+<ul>
+<li>委托的验证人的节点ID</li>
+<li>委托的金额</li>
+</ul>
+<p><strong>输出：</strong>无</p></li>
 </ol>
+<ol start="11">
+<li><p>减持/撤销委托</p>
 <p>该接口用来做减持或者撤销委托操作。委托人可以随时减持或者撤销委托，每次减持委托的最小金额为10<code>LAT</code>，完成操作后，<code>LAT</code>会实时从<code>Staking合约</code>中退回到委托人的账户中，如果减持后剩余委托不足10<code>LAT</code>，该委托人的委托将会被撤销。验证人在当前周期获得的收益将按照减持后的委托金额来分配给委托人。</p>
 <p><strong>输入：</strong></p>
-<pre><code class="hljs">- 委托的节点ID
-- 委托的金额
-</code></pre>
-<p><strong>输出：</strong>无</p>
+<ul>
+<li>委托的节点ID</li>
+<li>委托的金额</li>
+</ul>
+<p><strong>输出：</strong>无</p></li>
+</ol>
 <ol start="12">
 <li>查询委托信息</li>
 </ol>
-<p>该接口用来查询用户的委托信息。</p>
-<p><strong>输入：</strong></p>
-<pre><code class="hljs">- 发起质押时的区块高度
-- 委托人账户地址
-- 验证人的节点Id
-</code></pre>
-<p><strong>输出：</strong></p>
-<pre><code class="hljs">- 验证人的节点id
-- 发起质押时的区块高度
-- 最近一次对该候选人发起的委托时的结算周期
-- 发起委托账户的自由金额的锁定期委托的`von`
-- 发起委托账户的自由金额的犹豫期委托的`von`
-- 发起委托账户的锁仓金额的锁定期委托的`von`
-- 发起委托账户的锁仓金额的犹豫期委托的`von`
-- 待领取的委托收益
-- 撤销委托时所属结算周期（用于计算收益，撤销数量）
+<pre><code class="hljs">该接口用来查询用户的委托信息。
+
+**输入：**
+
+ - 发起质押时的区块高度
+ - 委托人账户地址
+ - 验证人的节点Id
+
+**输出：**
+
+ - 验证人的节点id
+ - 发起质押时的区块高度
+ - 最近一次对该候选人发起的委托时的结算周期
+ - 发起委托账户的自由金额的锁定期委托的`von`
+ - 发起委托账户的自由金额的犹豫期委托的`von`
+ - 发起委托账户的锁仓金额的锁定期委托的`von`
+ - 发起委托账户的锁仓金额的犹豫期委托的`von`
+ - 待领取的委托收益
+ - 撤销委托时所属结算周期（用于计算收益，撤销数量）
 </code></pre>
 <ol start="13">
-<li>查询打包区块的平均时间</li>
-</ol>
+<li><p>查询打包区块的平均时间</p>
 <p>该接口用来查询打包区块的平均时间。</p>
 <p><strong>输入：</strong>无</p>
-<p><strong>输出：</strong></p>
-<pre><code class="hljs">- 打包区块的平均时间（单位为毫秒）
-</code></pre>
-<ol start="14">
-<li>查询结算周期区块奖励</li>
-</ol>
+<p><strong>输出：</strong>打包区块的平均时间（单位为毫秒）</p></li>
+<li><p>查询结算周期区块奖励</p>
 <p>该接口用来查询当前结算周期的区块奖励。</p>
 <p><strong>输入：</strong>无</p>
-<p><strong>输出：</strong></p>
-<pre><code class="hljs">- 区块奖励
-</code></pre>
-<ol start="15">
-<li>查询结算周期的质押奖励</li>
-</ol>
+<p><strong>输出：</strong>区块奖励</p></li>
+<li><p>查询结算周期的质押奖励</p>
 <p>该接口用来查询当前结算周期的质押奖励。</p>
 <p><strong>输入：</strong>无</p>
-<p><strong>输出：</strong></p>
-<pre><code class="hljs">- 质押奖励
-</code></pre>
+<p><strong>输出：</strong>质押奖励</p></li>
+</ol>
 <h3><a class="anchor" aria-hidden="true" id="治理合约"></a><a href="#治理合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>治理合约</h3>
 <p>PlatON采用的链上治理方式，使其能够按照<code>LAT</code>持有人的要求发展。治理的目标是确保多数股权始终可以控制网络。任何在社区讨论的治理修改方案，都可通过验证人在链上发起提案并投票公决。
 提案的发起与投票都是通过<code>治理合约</code>来操作。目前可以发起4种提案，提案说明如下:</p>
@@ -326,49 +321,50 @@
 <p>该接口用来查询处于投票中以及已结束的提案列表。</p>
 <p><strong>输入：</strong>无</p>
 <p><strong>输出：</strong> 提案信息列表，参考查询提案的输出值</p></li>
-<li><p>查询链的版本</p></li>
-</ol>
+<li><p>查询链的版本</p>
 <p>该接口用来查询链当前的生效版本</p>
 <p><strong>输入：</strong>无</p>
-<p><strong>输出：</strong>当前链的版本号</p>
-<ol start="11">
-<li>查询治理参数值</li>
+<p><strong>输出：</strong>当前链的版本号</p></li>
 </ol>
+<ol start="11">
+<li><p>查询治理参数值</p>
 <p>该接口用来查询当前块高的治理参数值</p>
 <p><strong>输入：</strong></p>
-<pre><code class="hljs">- 参数模块
-- 参数名称
-</code></pre>
+<ul>
+<li>参数模块</li>
+<li>参数名称</li>
+</ul>
 <p><strong>输出：</strong></p>
-<pre><code class="hljs">- 参数值
-</code></pre>
-<ol start="12">
-<li>查询提案的累积可投票人数</li>
-</ol>
+<ul>
+<li>参数值</li>
+</ul></li>
+<li><p>查询提案的累积可投票人数</p>
 <p>该接口用来查询提案的累积可投票人数。</p>
 <p><strong>输入：</strong></p>
-<pre><code class="hljs">- 提案ID
-- 区块hash
-</code></pre>
+<ul>
+<li>提案ID</li>
+<li>区块hash</li>
+</ul>
 <p><strong>输出：</strong></p>
-<pre><code class="hljs">- 可投票的人数
-- 投了赞成票的人数
-- 投了反对票的人数
-- 投了弃权票的人数
-</code></pre>
-<ol start="13">
-<li>查询治理参数列表</li>
-</ol>
+<ul>
+<li>可投票的人数</li>
+<li>投了赞成票的人数</li>
+<li>投了反对票的人数</li>
+<li>投了弃权票的人数</li>
+</ul></li>
+<li><p>查询治理参数列表</p>
 <p>该接口用来查询某个模块的所有治理参数。</p>
 <p><strong>输入：</strong>参数模块，如果为空，可查询所有治理参数</p>
 <p><strong>输出：</strong></p>
-<pre><code class="hljs">- 参数模块
-- 参数名称
-- 参数说明
-- 旧参数值
-- 参数值
-- 生效块高
-</code></pre>
+<ul>
+<li>参数模块</li>
+<li>参数名称</li>
+<li>参数说明</li>
+<li>旧参数值</li>
+<li>参数值</li>
+<li>生效块高</li>
+</ul></li>
+</ol>
 <h3><a class="anchor" aria-hidden="true" id="slashing合约"></a><a href="#slashing合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slashing合约</h3>
 <p>slashing合约主要为了系统安全监测各个节点的行为，对破坏系统安全的违规节点执行处罚，具有以下两大功能：</p>
 <ul>
