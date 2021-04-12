@@ -84,11 +84,11 @@ The interaction between the validator and the delegator is mainly done through t
 <h4><a class="anchor" aria-hidden="true" id="contract-interface"></a><a href="#contract-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contract interface</h4>
 <ol>
 <li><p>Create verification node</p>
-<p>This interface makes the node become a verification node by staking <code>LAT</code> into the <code>staking contract</code>. Before staking, you need your own node to access the network, and ensure that the node's private key and bls private key are securely stored. When staking, you must fill in the node information, accept the income account of the block reward and the pledge reward, the reward share for the principal (the more the share, the more likely it is to attract more users to entrust), the amount of <code>LAT</code> you want to pledge (pledge The gold has a threshold of 100000 <code>LAT</code>, if it is lower than this amount, the pledge will fail) and other information. If the pledge is successful, the node will appear in the list of candidate validators, and the pledge deposit will be transferred from the balance of the user account/locking contract account to the <code>Staking contract</code>. The total weight of the validator is equal to the amount of <code>LAT</code> pledged by oneself plus the total amount of <code>LAT</code> delegated. The higher the total weight, the greater the probability of being selected as a consensus.</p>
+<p>This interface makes the node become a verification node by staking <code>LAT</code> into the <code>staking contract</code>. Before staking, you need your own node to access the network, and ensure that the node's private key and bls private key are securely stored. When staking, you must fill in the node information, accept the income account of the block reward and the staking  reward, the reward share for the principal (the more the share, the more likely it is to attract more users to entrust), the amount of <code>LAT</code> you want to pledge (pledge The gold has a threshold of 100000 <code>LAT</code>, if it is lower than this amount, the pledge will fail) and other information. If the pledge is successful, the node will appear in the list of candidate validators, and the pledge deposit will be transferred from the balance of the user account/locking contract account to the <code>Staking contract</code>. The total weight of the validator is equal to the amount of <code>LAT</code> pledged by oneself plus the total amount of <code>LAT</code> delegated. The higher the total weight, the greater the probability of being selected as a consensus.</p>
 <p>**Enter: **</p>
 <ul>
 <li>The type of amount used as a pledge (free amount or locked balance, or both)</li>
-<li>Earning accounts that accept block rewards and pledge rewards</li>
+<li>Revenue accounts that receive block-out rewards and staking  rewards</li>
 <li>External Id</li>
 <li>Node name</li>
 <li>The third-party homepage of the node</li>
@@ -105,7 +105,7 @@ The interaction between the validator and the delegator is mainly done through t
 <p>This interface is mainly used to modify the validator's income account, delegated share ratio, node information, etc. The interval for each modification of the share ratio must be greater than 10 consensus periods, and the magnitude of each modification cannot be greater than 5%.</p>
 <p>**Enter: **</p>
 <ul>
-<li>Income account for receiving block rewards and pledge rewards</li>
+<li>The revenue account used to receive the block reward and staking reward</li>
 <li>Proportion of rewards divided by commission</li>
 <li>External Id</li>
 <li>The name of the staked node</li>
@@ -118,7 +118,7 @@ The interaction between the validator and the delegator is mainly done through t
 <p>**Enter: **</p>
 <ul>
 <li>Node id</li>
-<li>The amount that needs to be increased</li>
+<li>Amount to be increased</li>
 </ul>
 <p>**Output: **None</p></li>
 <li><p>Release staking</p>
@@ -128,23 +128,23 @@ The interaction between the validator and the delegator is mainly done through t
 <li><p>Query the validator list of the current epoch</p>
 <p>This interface is used to query the validator information of the current epoch. At the end of each epoch, the list of validators for the next epoch will be updated based on the total weight of all candidate validators.</p>
 <p>**Enter: ** None</p>
-<p>**Output: **Information list of all current validators</p></li>
+<p>**Output: **List of all current verifiers</p></li>
 <li><p>Query the list of validators in the consensus round</p>
-<p>This interface is used to query the list of validators selected to produce blocks in the current consensus round. Each consensus round has 430 blocks. At block 410, a list of validators who can participate in the next consensus round will be generated from the validator queue in the current settlement round.</p>
+<p>This interface is used to query the list of verifiers that have been selected out of blocks for the current consensus cycle. Each consensus round is 430 blocks, and at 410 blocks will generate a list of verifiers from the verifier queue of the current Epoch that can participate in the next consensus round to get out the blocks.</p>
 <p>**Enter: ** None</p>
-<p>**Output: **List of validator information for the current consensus round</p></li>
+<p>**Output: **list of verifier information for the current consensus cycle</p></li>
 </ol>
 <ol start="7">
 <li><p>Query the list of candidate  information</p>
-<p>This interface is used to query the information list of all candidate verifiers, and any node that successfully pledges is a candidate verifier.</p>
+<p>This interface is used to query the list of all candidate verifier information. Any node that has successfully pledged is a candidate verifier.</p>
 <p>**Enter: ** None</p>
 <p>**Output: **List of candidate information</p></li>
 <li><p>Query the validator entrusted by the delegator</p>
-<p>This interface is used to query which verifiers the specified principal has delegated.</p>
+<p>This interface is used to query which validators have been delegated by the specified delegator.</p>
 <p>**Enter: ** account address</p>
 <p>**Output: **</p>
 <ul>
-<li>validator's node Id</li>
+<li>Node Id of the validator</li>
 <li>Block height when validators staking</li>
 </ul></li>
 <li><p>Query the staking information of a node</p>
@@ -152,15 +152,15 @@ The interaction between the validator and the delegator is mainly done through t
 <p>**Enter: ** Verifier's node Id</p>
 <p>**Output: ** node information</p></li>
 <li><p>delegation</p>
-<p>This interface is used to delegate or accumulate to delegate a validator node. Users who have already pledged nodes will not be able to delegate. The user can delegate <code>LAT</code> to the validator at any time, and the minimum amount of each delegation is 10<code>LAT</code>. After the delegation is successful, the <code>LAT</code> delegated by the delegator to the candidate validator is transferred to the <code>Staking contract</code>. The new weights of validators will take effect in the next consensus cycle. When the validator is selected to participate in the consensus, the block and staking rewards will be shared with the delegator.</p>
+<p>This interface is used to delegate or incrementally delegate a verifier node. Users who have already pledged a node will not be able to delegate it. The user can delegate <code>LAT</code> to the verifier at any time with a minimum amount of 10 <code>LAT</code> per delegation. After a successful delegation, the <code>LAT</code> delegated by the delegator to the candidate verifier is transferred to the <code>Staking contract</code>. The new weight of the verifier will take effect in the next consensus cycle. When the verifier is selected to participate in the consensus, it will share the block-out and Staking rewards with the principal.</p>
 <p>**Enter: **</p>
 <ul>
 <li>Node ID of the delegated validator</li>
 <li>delegate amount</li>
 </ul>
 <p>**Output: ** None</p></li>
-<li><p>Reduce delegation</p>
-<p>This interface is used to reduce holdings or cancel delegation operations. The principal can reduce or cancel the entrustment at any time. The minimum amount of each reduction entrusted is 10 <code>LAT</code>. After the operation is completed, the <code>LAT</code> will be returned from the <code>Staking contract</code> to the principal's account in real time. If the holding is reduced After the remaining commission is less than 10 <code>LAT</code>, the commission of the principal will be revoked. The profit obtained by the validator in the current cycle will be distributed to the delegator according to the commission amount after the reduction.</p>
+<li><p>Decrease/revoke delegation</p>
+<p>This interface is used to reduce or revoke the delegate operation. The principal can reduce or revoke the commission at any time, and the minimum amount of each reduced commission is 10<code>LAT</code>. After the operation is completed, <code>LAT</code> will be returned to the principal's account from the <code>Staking contract</code> in real time, and if the remaining commission after the reduction is less than 10<code>LAT</code>, the commission of this principal will be revoked. The proceeds received by the validator in the current cycle will be distributed to the principal according to the amount of the mandate after the reduction.</p>
 <p>**Enter: **</p>
 <ul>
 <li>Node ID of the delegated validator</li>
@@ -179,7 +179,7 @@ The interaction between the validator and the delegator is mainly done through t
 <ul>
 <li>Verifier's node id</li>
 <li>Block height when staking is initiated</li>
-<li>The settlement cycle of the most recent delegation to the candidate</li>
+<li>The Epoch of the most recent delegation to the candidate</li>
 <li>Initiation of the <code>von</code> entrustment for the lock-up period of the free amount of the entrusted account</li>
 <li>Initiation of the delegated <code>von</code> during the hesitation period of the free amount of the entrusted account</li>
 <li>Initiate the <code>von</code> entrusted for the lock-up period of the lock-up amount of the entrusted account</li>
@@ -187,12 +187,10 @@ The interaction between the validator and the delegator is mainly done through t
 <li>Entrusted income to be collected</li>
 <li>Settlement period when the order is withdrawn (used to calculate the income and the amount withdrawn)</li>
 </ul></li>
-<li><p>Average time to query packaged blocks</p>
-<p>This interface is used to query the average time of a packed block.</p>
+<li><p>Query average time of packed blocks</p>
+<p>This interface is used to query the average time of packed blocks.</p>
 <p>**Enter: ** None</p>
-<p>**Output: ** The average time to pack a block (in milliseconds)</p></li>
-</ol>
-<ol start="14">
+<p>**Output: ** average time of packed blocks (in milliseconds)</p></li>
 <li><p>Query the block reward of the epoch</p>
 <p>This interface is used to query the block reward of the current epoch.</p>
 <p>**Enter: ** None</p>
@@ -213,7 +211,7 @@ The interaction between the validator and the delegator is mainly done through t
 <h4><a class="anchor" aria-hidden="true" id="contract-interface-1"></a><a href="#contract-interface-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contract interface</h4>
 <ol>
 <li><p>Create a text proposal</p>
-<p>This interface is used to send out text proposals. After the text proposal is sent, validators can vote for/again/abstaining votes. The voting deadline is about 2 weeks. When the voter turnout rate is greater than 50% and the voter approval rate is greater than 66.7%, the proposal is passed.</p>
+<p>This interface is used to issue a text proposal. After the text proposal is issued, validators can vote for/against/abstain from the proposal. The voting deadline is about 2 weeks, and the proposal is passed when the voting rate is greater than 50% and the support rate among those who voted is greater than 66.7%.</p>
 <p>**Enter: **</p>
 <ul>
 <li>The validator who submitted the proposal</li>
@@ -221,7 +219,7 @@ The interaction between the validator and the delegator is mainly done through t
 </ul>
 <p>**Output: **None</p></li>
 <li><p>Create an version proposal</p>
-<p>This interface is used to initiate an version proposal. Proposals can only be initiated by validators. After the proposal is passed, the on-chain version will be upgraded. The validator’s vote is regarded as a support vote. After the voting deadline has passed, when the support rate is greater than 66.7%, the proposal enters the pre-validation stage and will come into effect in the next settlement cycle.</p>
+<p>This interface is used to initiate an version proposal. Proposals can only be initiated by validators. After the proposal is passed, the on-chain version will be upgraded. The validator’s vote is regarded as a support vote. After the voting deadline has passed, when the support rate is greater than 66.7%, the proposal enters the pre-validation stage and will come into effect in the next Epoch.</p>
 <p>**Enter: **</p>
 <ul>
 <li>The validator who submitted the proposal</li>
@@ -381,11 +379,11 @@ The interaction between the validator and the delegator is mainly done through t
 <h4><a class="anchor" aria-hidden="true" id="contract-interface-4"></a><a href="#contract-interface-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contract interface</h4>
 <ol>
 <li><p>Receive delegated rewards</p>
-<p>This interface is used to extract delegated rewards that the user has not yet claimed, when a single user entrusts multiple nodes to generate multiple delegations, the interface can only process the rewards for 20 delegations at a time, the rest must be re-initiated to receive the operation (the rules for receiving 20 delegated rewards are sorted according to the number of settlement cycles that have not been claimed for each delegation, the more the number of unclaimed cycles, the priority to receive the delegated awards), if the number of delegated rewards waiting to be collected is less than 20, then directly collect all of them.</p>
+<p>This interface is used to extract delegated rewards that the user has not yet claimed, when a single user entrusts multiple nodes to generate multiple delegations, the interface can only process the rewards for 20 delegations at a time, the rest must be re-initiated to receive the operation (the rules for receiving 20 delegated rewards are sorted according to the number of Epochs that have not been claimed for each delegation, the more the number of unclaimed cycles, the priority to receive the delegated awards), if the number of delegated rewards waiting to be collected is less than 20, then directly collect all of them.</p>
 <p>**Enter: **None</p>
 <p>**Output: **Array (details of each delegated reward received), including: node ID, node staking block height, delegation income</p></li>
 <li><p>Query delegation reward</p>
-<p>This interface can be used to query all pending delegation income details of the interface initiator, you can also specify to query a certain delegation or multiple delegations, the return result will be a sorted list of income details, the sorting rule is to sort in reverse order according to the number of unclaimed settlement cycles for each delegation (the return data will not be sorted if there are less than 20 delegated rewards to be received)。</p>
+<p>This interface can be used to query all pending delegation income details of the interface initiator, you can also specify to query a certain delegation or multiple delegations, the return result will be a sorted list of income details, the sorting rule is to sort in reverse order according to the number of unclaimed Epochs for each delegation (the return data will not be sorted if there are less than 20 delegated rewards to be received)。</p>
 <p>**Enter: **None</p>
 <p>**Output: **Array (details of each delegated income to be received), including: node ID, delegated income, node staking block height</p></li>
 </ol>
