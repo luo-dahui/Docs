@@ -231,17 +231,16 @@ The interaction between the validator and the delegator is mainly done through t
 </ul>
 <p>**Output: **None</p></li>
 <li><p>Create an parameter proposal</p>
-<p>This interface is used to initiate parameter proposals. The parameter proposal is used to change some manageable parameters on the chain. The validator can vote for/again/abstaining votes. The voting deadline is about 2 weeks. When the voter turnout rate is greater than 50% and the voter approval rate is greater than 66.7%, the proposal is passed.</p></li>
-</ol>
+<p>This interface is used to initiate parameter proposals. The parameter proposal is used to change some manageable parameters on the chain. The validator can vote for/again/abstaining votes. The voting deadline is about 2 weeks. When the voter turnout rate is greater than 50% and the voter approval rate is greater than 66.7%, the proposal is passed.</p>
 <p>**Enter: **</p>
-<pre><code class="hljs">  - The validator who submitted the proposal
-  - Proposal ID
-  - Parameter module
-  - parameter name
-  - The new value of the parameter
-</code></pre>
-<p>**Output: **None</p>
-<ol start="4">
+<ul>
+<li>The validator who submitted the proposal</li>
+<li>Proposal ID</li>
+<li>Parameter module</li>
+<li>parameter name</li>
+<li>The new value of the parameter</li>
+</ul>
+<p>**Output: **None</p></li>
 <li><p>Create an cancellation proposal</p>
 <p>This interface is used to initiate a cancellation proposal. Canceling a proposal can cancel the previously initiated text, parameters, and upgrade proposal. The voting deadline must be greater than the voting deadline of the cancelled proposal. After the voting deadline, when the voting rate is greater than 50</p>
 <p>**Enter: **</p>
@@ -255,26 +254,24 @@ The interaction between the validator and the delegator is mainly done through t
 <p>**Output: **None</p></li>
 <li><p>Vote</p>
 <p>This interface is used to vote on proposals in progress. Only yes votes can be voted for the version upgrade proposal, and the node needs to be upgraded to the new version before voting.</p>
-<p>**Enter: **</p></li>
-</ol>
-<pre><code class="hljs"> - Voted validator ID
- - Proposal ID
- - Voting type, yes/no/abstain
- - Node code version (obtained from the node through the `RPC interface`)
- - Code version signature (obtained from the node through the `RPC interface`)
-</code></pre>
-<p>**Output: **None</p>
-<ol start="6">
+<p>**Enter: **</p>
+<ul>
+<li>Voted validator ID</li>
+<li>Proposal ID</li>
+<li>Voting type, yes/no/abstain</li>
+<li>Node code version (obtained from the node through the <code>RPC interface</code>)</li>
+<li>Code version signature (obtained from the node through the <code>RPC interface</code>)</li>
+</ul>
+<p>**Output: **None</p></li>
 <li><p>DeclareVersion</p>
 <p>This interface is used to initiate version declarations. When the PlatON network is upgraded to a new version through an upgrade proposal, all verification nodes that have not voted need to upgrade their nodes to the latest version simultaneously, and update their version status in the network through a version statement, otherwise they will not be selected for consensus.</p>
-<p>**Enter: **</p></li>
-</ol>
-<pre><code class="hljs"> - Voted validator ID
- - Node code version (obtained from the node through the `RPC interface`)
- - Code version signature (obtained from the node through the `RPC interface`)
-</code></pre>
-<p>**Output: **None</p>
-<ol start="7">
+<p>**Enter: **</p>
+<ul>
+<li>Voted validator ID</li>
+<li>Node code version (obtained from the node through the <code>RPC interface</code>)</li>
+<li>Code version signature (obtained from the node through the <code>RPC interface</code>)</li>
+</ul>
+<p>**Output: **None</p></li>
 <li><p>Query proposal</p>
 <p>This interface is used to query the specified proposal.</p>
 <p>**Enter: ** Proposal ID</p>
