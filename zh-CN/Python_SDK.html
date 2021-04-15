@@ -466,25 +466,21 @@ AttributeDict({<span class="hljs-string">'blockHash'</span>: HexBytes(<span clas
 <p>一个AttributeDict对象，其解析值为指定地址发出的交易数量。</p>
 <h5><a class="anchor" aria-hidden="true" id="（6）platonsendrawtransaction"></a><a href="#（6）platonsendrawtransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>（6）platon.sendRawTransaction()</h5>
 <p>向platon 链上提交一个签名的序列化的交易</p>
-<pre><code class="hljs">platon.send<span class="hljs-constructor">RawTransaction(<span class="hljs-params">signTransaction</span>，<span class="hljs-params">private</span>-<span class="hljs-params">key</span>)</span>
+<pre><code class="hljs">platon.send<span class="hljs-constructor">RawTransaction(<span class="hljs-params">signTransaction</span>，<span class="hljs-params">private_key</span>)</span>
 </code></pre>
 <p>参数：</p>
 <ul>
 <li><p><code>signTransaction</code>：Object - 要发送的签名交易对象，包含以下字段：</p>
 <ul>
-<li>from - String|Number: 交易发送方账户地址，不设置该字段的话，则使用platon.defaultAccount属性值。可设置为一个地址或本地钱包platon.accounts.wallet中的索引序号。</li>
-<li>to - String: 可选，消息的目标地址，对于合约创建交易该字段为null。</li>
-<li>value - Number|String|BN|BigNumber: (optional) The value transferred for the transaction in VON, also the endowment if it’s a contract-creation transaction.</li>
+<li><p>from - String|Number: 交易发送方账户地址，不设置该字段的话，则使用platon.defaultAccount属性值。可设置为一个地址或本地钱包platon.accounts.wallet中的索引序号。</p></li>
+<li><p>to - String: 可选，消息的目标地址，对于合约创建交易该字段为null。</p></li>
+<li><p>value - Number|String|BN|BigNumber: (optional) The value transferred for the transaction in VON, also the endowment if it’s a contract-creation transaction.</p></li>
+<li><p>gas - Number: 可选，默认值：待定，用于交易的gas总量，未用完的gas会退还。</p></li>
+<li><p>gasPrice - Number|String|BN|BigNumber: 可选，该交易的gas价格，单位为VON，默认值为platon.gasPrice属性值。</p></li>
+<li><p>data - String: 可选，可以是包含合约方法数据的ABI字符串，或者是合约创建交易中的初始化代码。</p></li>
+<li><p>nonce - Number: 可选，使用该字段覆盖使用相同nonce值的挂起交易。</p></li>
 </ul></li>
-<li><p>gas - Number: 可选，默认值：待定，用于交易的gas总量，未用完的gas会退还。</p>
-<ul>
-<li>gasPrice - Number|String|BN|BigNumber: 可选，该交易的gas价格，单位为VON，默认值为platon.gasPrice属性值。</li>
-</ul></li>
-<li><p>data - String: 可选，可以是包含合约方法数据的ABI字符串，或者是合约创建交易中的初始化代码。</p>
-<ul>
-<li>nonce - Number: 可选，使用该字段覆盖使用相同nonce值的挂起交易。</li>
-</ul></li>
-<li><p>private-key : 用于签名的私钥。</p></li>
+<li><p>private_key: 用于签名的私钥。</p></li>
 </ul>
 <p>返回值：</p>
 <p>返回值是包含32字节长的交易哈希值的HexBytes 。</p>
@@ -505,8 +501,8 @@ AttributeDict({<span class="hljs-string">'blockHash'</span>: HexBytes(<span clas
 <p>调用：</p>
 <pre><code class="hljs">platon.generate<span class="hljs-constructor">GasPrice(<span class="hljs-params">gas_price_strategy</span>)</span>
 </code></pre>
-<p>​         返回值：</p>
-<p>​                 以wei为单位的gas price数值。</p>
+<p>返回值：</p>
+<p>​     以wei为单位的gas price数值。</p>
 <h5><a class="anchor" aria-hidden="true" id="9-platonsetgaspricestrategy"></a><a href="#9-platonsetgaspricestrategy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(9) platon.setGasPriceStrategy()</h5>
 <p>设定选定的gas price 策略。</p>
 <p>调用：</p>
@@ -563,8 +559,8 @@ AttributeDict({<span class="hljs-string">'blockHash'</span>: HexBytes(<span clas
 <ul>
 <li><p>params</p>
 <ul>
-<li>'latest'，在节点中创建一个过滤器，以便当新块生成时进行通知。要检查状态是否变化。</li>
-<li>'pending' ，在节点中创建一个过滤器，以便当产生挂起交易时进行通知。 要检查状态是否发生变化。</li>
+<li><code>latest</code>，在节点中创建一个过滤器，以便当新块生成时进行通知。要检查状态是否变化。</li>
+<li><code>pending</code> ，在节点中创建一个过滤器，以便当产生挂起交易时进行通知。 要检查状态是否发生变化。</li>
 <li>字典类数据，创建一个过滤器，以便在客户端接收到匹配的whisper消息时进行通知。</li>
 </ul></li>
 </ul>
@@ -819,14 +815,12 @@ print(contractAddress)
 AttributeDict({<span class="hljs-string">'blockHash'</span>: HexBytes(<span class="hljs-string">'0xf73097d8e7b2cc385910a4af3a4dbc7588774bad3f2b6589052503b649af1525'</span>), <span class="hljs-string">'blockNumber'</span>: <span class="hljs-number">305798</span>, <span class="hljs-string">'contractAddress'</span>: <span class="hljs-string">'lax1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke'</span>, <span class="hljs-string">'cumulativeGasUsed'</span>: <span class="hljs-number">319449</span>, <span class="hljs-string">'from'</span>: <span class="hljs-string">'lax1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja'</span>, <span class="hljs-string">'gasUsed'</span>: <span class="hljs-number">319449</span>, <span class="hljs-string">'logs'</span>: [], <span class="hljs-string">'logsBloom'</span>: HexBytes(<span class="hljs-string">'0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'</span>), <span class="hljs-string">'status'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'to'</span>: <span class="hljs-literal">None</span>, <span class="hljs-string">'transactionHash'</span>: HexBytes(<span class="hljs-string">'0x143efc88f581c4356156519cde51064222ec5a42fcb4d83400a8b11893a95074'</span>), <span class="hljs-string">'transactionIndex'</span>: <span class="hljs-number">0</span>})
 lax1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke
 </code></pre>
-<blockquote>
 <p>其中：</p>
 <ul>
 <li>第一行数据为函数contract_deploy中的platon.sendTransaction的交易结果；</li>
 <li>第二行数据为platon.waitForTransactionReceipt获得的交易回执；</li>
 <li>第三行为合约部署成功的合约地址；</li>
 </ul>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="3-对helloworld合约进行调用交易发送"></a><a href="#3-对helloworld合约进行调用交易发送" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(3) 对Helloworld合约进行调用(交易发送)</h5>
 <p>在之前合约部署成功的基础上，进行交易发送。</p>
 <p>首先定义一个函数SendTxn(txn)。</p>
@@ -868,39 +862,32 @@ print(result)
 <li><p><strong>gas</strong>     燃料</p></li>
 <li><p><strong>value</strong> 值（新建合约账户的开始余额）</p></li>
 <li><p><strong>gasPrice</strong> 燃料价格</p>
-<p>需写入合理的数值</p>
-<p>调用方法ifControl，成功将参数20传入链上。然后通过对应方法getIfControlResult获得链上的对应信息和数据。</p>
+<p>需写入合理的数值，调用方法ifControl，成功将参数20传入链上。然后通过对应方法getIfControlResult获得链上的对应信息和数据。</p>
 <p>输出结果如下：</p>
-<pre><code class="hljs"><span class="hljs-meta">#输出：</span>
-<span class="hljs-number">0</span>x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9
-AttributeDict({'blockHash': HexBytes('0xbb1d1c3a7abecac<span class="hljs-number">991050</span>9ed3ff2ca97cebdba1e88db0b909ffd646a86d<span class="hljs-number">6959</span>7'), 'blockNumber': <span class="hljs-number">305801</span>, 'contractAddress': None, 'cumulativeGasUsed': <span class="hljs-number">42382</span>, 'from': 'lax1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja', 'gasUsed': <span class="hljs-number">42382</span>, 'logs': [], 'logsBloom': HexBytes('0x<span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000</span>'), 'status': <span class="hljs-number">1</span>, 'to': 'lax1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke', 'transactionHash': HexBytes('0x16c<span class="hljs-number">7638</span>7cdd06ab82a4beb330b<span class="hljs-number">3636</span>9a5cfa22b8cf6ddfff58c72aaae4a39df9'), 'transactionIndex': <span class="hljs-number">0</span>})
-</code></pre></li>
+<pre><code class="hljs"></code></pre></li>
 </ul>
-<p>you are a middle man</p>
+<p>#输出：
+0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9
+AttributeDict({'blockHash': HexBytes('0xbb1d1c3a7abecac9910509ed3ff2ca97cebdba1e88db0b909ffd646a86d69597'), 'blockNumber': 305801, 'contractAddress': None, 'cumulativeGasUsed': 42382, 'from': 'lax1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja', 'gasUsed': 42382, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': 'lax1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke', 'transactionHash': HexBytes('0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9'), 'transactionIndex': 0})</p>
 <pre><code class="hljs">
- 其中 
 
-​        第一行数据为函数SendTxn中的platon.sendRawTransaction的交易结果。
+<span class="routeros">其中 
 
-​        第二行数据为方法ifControl向链上发送信息，交易的结果。
+- 第一行数据为函数SendTxn中的platon.sendRawTransaction的交易结果。
 
-​        第三行为方法getIfControlResult获取链上信息，交易的结果。
+-  第二行数据为方法ifControl向链上发送信息，交易的结果。
 
-
+- 第三行为方法getIfControlResult获取链上信息，交易的结果。 
 
 <span class="hljs-comment">##### (4) evm合约的事件调用</span>
 
-evm合约通过事件可对相关交易的详细信息进行监听和日志记录输出。
-
-以evmevent合约为例：其在方法setVar中加入了event类型MyEvent。
+evm合约通过事件可对相关交易的详细信息进行监听和日志记录输出，以evmevent合约为例：其在方法setVar中加入了event类型MyEvent。
 
 greeter为部署成功的evm合约。
 
-先通过functions调用setVar,将参数传到链上，
+先通过functions调用setVar,将参数传到链上，然后通过greeter.events.MyEvent()，调用事件输出交易的详细日志。
 
-然后通过greeter.events.MyEvent()，调用事件输出交易的详细日志。
-
-其中.events方法为合约专用的事件api。
+其中events方法为合约专用的事件api。
 
 ```python
 greeter = platon.contract(<span class="hljs-attribute">address</span>=tx_receipt.contractAddress, <span class="hljs-attribute">abi</span>=abi)
@@ -917,7 +904,7 @@ tx_receipt = platon.waitForTransactionReceipt(tx_hash)
 
 topic_param = greeter.events.MyEvent().processReceipt(tx_receipt)
 <span class="hljs-builtin-name">print</span>(topic_param)
-</code></pre>
+</span></code></pre>
 <p>成功运行后输出：</p>
 <pre><code class="hljs css language-python">AttributeDict({<span class="hljs-string">'blockHash'</span>: HexBytes(<span class="hljs-string">'0x78fb61da83dae555c8a8a87fc3296f466afeb7f90e9a3b0ac5689e8b34435174'</span>), <span class="hljs-string">'blockNumber'</span>: <span class="hljs-number">2014683</span>, <span class="hljs-string">'contractAddress'</span>: <span class="hljs-literal">None</span>, <span class="hljs-string">'cumulativeGasUsed'</span>: <span class="hljs-number">43148</span>, <span class="hljs-string">'from'</span>: <span class="hljs-string">'lax1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl'</span>, <span class="hljs-string">'gasUsed'</span>: <span class="hljs-number">43148</span>, <span class="hljs-string">'logs'</span>: [AttributeDict({<span class="hljs-string">'address'</span>: <span class="hljs-string">'lax1vc6phdxhdkmztpznv5ueduw6cae3swe40whlsn'</span>, <span class="hljs-string">'topics'</span>: [HexBytes(<span class="hljs-string">'0x6c2b4666ba8da5a95717621d879a77de725f3d816709b9cbe9f059b8f875e284'</span>), HexBytes(<span class="hljs-string">'0x0000000000000000000000000000000000000000000000000000000000000064'</span>)], <span class="hljs-string">'data'</span>: <span class="hljs-string">'0x'</span>, <span class="hljs-string">'blockNumber'</span>: <span class="hljs-number">2014683</span>, <span class="hljs-string">'transactionHash'</span>: HexBytes(<span class="hljs-string">'0xe36b5d2b679d5635ab6dd2b620caa50a476fa84bd93bf7b6c8de807f3a9da483'</span>), <span class="hljs-string">'transactionIndex'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'blockHash'</span>: HexBytes(<span class="hljs-string">'0x78fb61da83dae555c8a8a87fc3296f466afeb7f90e9a3b0ac5689e8b34435174'</span>), <span class="hljs-string">'logIndex'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'removed'</span>: <span class="hljs-literal">False</span>})], <span class="hljs-string">'logsBloom'</span>: HexBytes(<span class="hljs-string">'0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000020080000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000004000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000008000000000000000'</span>), <span class="hljs-string">'status'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'to'</span>: <span class="hljs-string">'lax1vc6phdxhdkmztpznv5ueduw6cae3swe40whlsn'</span>, <span class="hljs-string">'transactionHash'</span>: HexBytes(<span class="hljs-string">'0xe36b5d2b679d5635ab6dd2b620caa50a476fa84bd93bf7b6c8de807f3a9da483'</span>), <span class="hljs-string">'transactionIndex'</span>: <span class="hljs-number">0</span>})
 (AttributeDict({<span class="hljs-string">'args'</span>: AttributeDict({<span class="hljs-string">'_var'</span>: <span class="hljs-number">100</span>}), <span class="hljs-string">'event'</span>: <span class="hljs-string">'MyEvent'</span>, <span class="hljs-string">'logIndex'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'transactionIndex'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'transactionHash'</span>: HexBytes(<span class="hljs-string">'0xe36b5d2b679d5635ab6dd2b620caa50a476fa84bd93bf7b6c8de807f3a9da483'</span>), <span class="hljs-string">'address'</span>: <span class="hljs-string">'lax1vc6phdxhdkmztpznv5ueduw6cae3swe40whlsn'</span>, <span class="hljs-string">'blockHash'</span>: HexBytes(<span class="hljs-string">'0x78fb61da83dae555c8a8a87fc3296f466afeb7f90e9a3b0ac5689e8b34435174'</span>), <span class="hljs-string">'blockNumber'</span>: <span class="hljs-number">2014683</span>}),)
@@ -926,8 +913,7 @@ topic_param = greeter.events.MyEvent().processReceipt(tx_receipt)
 <p>第一行为调用函数setVar，交易成功后的交易回执。</p>
 <p>第二行为调用事件MyEvent()，获取的交易日志信息。</p>
 <p>其中'args'对应的值中：</p>
-<p>'_var'为唯一的参数值，</p>
-<p>而在evm合约的event中，数据的基本类型为uint、int、bool、address、bytex。</p>
+<p>'_var'为唯一的参数值，而在evm合约的event中，数据的基本类型为uint、int、bool、address、bytex。</p>
 <h4><a class="anchor" aria-hidden="true" id="sdk-对wasm合约的调用："></a><a href="#sdk-对wasm合约的调用：" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SDK 对wasm合约的调用：</h4>
 <h5><a class="anchor" aria-hidden="true" id="1-使用platon-cdt在本机对wasm合约进行编译"></a><a href="#1-使用platon-cdt在本机对wasm合约进行编译" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(1) 使用PlatON-CDT在本机对wasm合约进行编译</h5>
 <p>以wasmcontract.cpp为例。本机安装PlatON-CDT成功后，在PlatON-CDT/build/bin中输入代码 。</p>
@@ -1326,11 +1312,8 @@ dict
 }
 </code></pre>
 <ul>
-<li>where Epoch: represents a multiple of the billing period.
-The product of the number of blocks per billing cycle indicates that the locked fund
-s are released at the target block height. Epoch * The number of blocks per cycle is
-at least greater than the maximum irreversible block height.</li>
-<li>Amount: indicates the amount to be released on the target block.</li>
+<li>Epoch: 代表结算周期的倍数。每个计费周期的区块数乘积表示锁定的资金s在目标块高度释放。Epoch*每个周期的块数为至少大于最大不可逆块高度。</li>
+<li>Amount: 指示要在目标块上释放的数量。</li>
 </ul></li>
 <li><p><strong>pri_key</strong>: 交易私钥。</p></li>
 <li><p><strong>transaction_cfg</strong>: 交易基础配置。</p>
@@ -1388,13 +1371,9 @@ dict
 <li><p><strong>verifier</strong>:  提交提案的验证人。</p></li>
 <li><p><strong>pip_id</strong>:  PIPID。</p></li>
 <li><p><strong>new_version</strong>:新的版本。</p></li>
-<li><p><strong>end_voting_rounds</strong>:投票共识轮数。<br>
-Explanation: Assume that the transaction submitted by the proposal is rounded when the consensus round
-number of the package is packed into the block, then the proposal voting block is high,
-which is the 230th block height of the round of the round1 + endVotingRounds
-(assuming a consensus round out of block 250, ppos The list is 20 blocks high in advance,
-250, 20 are configurable), where 0 &lt; endVotingRounds &lt;= 4840 (about 2 weeks, the actual discussion
-can be calculated according to the configuration), and is an integer).</p></li>
+<li><p><strong>end_voting_rounds</strong>:投票共识轮数。</p>
+<p>说明：假设在共识回合中对提案提交的交易进行了舍入程序包的编号被打包到该区块中，那么提案投票区块为高，这是回合1 + endVotingRounds的回合的第230个块高度（假设协商一致意见出自第250块，ppos该列表提前了20块， 250、20是可配置的），其中0 &lt;endVotingRounds &lt;= 4840（大约2周，实际讨论
+（可以根据配置进行计算），并且是整数）。</p></li>
 <li><p><strong>pri_key</strong>: 交易私钥。</p></li>
 <li><p><strong>transaction_cfg</strong>:交易基础配置。</p>
 <pre><code class="hljs"><span class="hljs-symbol">type:</span> 
