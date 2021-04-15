@@ -184,8 +184,8 @@ HexBytes(<span class="hljs-string">'0xd7278090a36507640ea6b7a0034b69b0d240766fa3
 <p>Compile the input abi_type and value to Keccak-256</p>
 <p>parameter:</p>
 <ul>
-<li>value: true value</li>
-<li>abi_type: a list of strings in solidity format equal to value</li>
+<li>value: true value.</li>
+<li>abi_type: a list of strings in solidity format equal to value.</li>
 </ul>
 <p>transfer</p>
 <pre><code class="hljs css language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>Web3.solidityKeccak([<span class="hljs-string">'uint8[]'</span>], [[<span class="hljs-number">97</span>, <span class="hljs-number">98</span>, <span class="hljs-number">99</span>]])
@@ -198,20 +198,20 @@ HexBytes(<span class="hljs-string">"0x2ff37b5607484cd4eecf6d13292e22bd6e5401eaff
 <h4><a class="anchor" aria-hidden="true" id="4-on-chain-query-api"></a><a href="#4-on-chain-query-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>4</strong> On-chain query api</h4>
 <p>After successfully connecting with the nodes on the Platon chain, you can query the relevant information of the nodes on the chain through the api in platon</p>
 <h5><a class="anchor" aria-hidden="true" id="1-platonblocknumber"></a><a href="#1-platonblocknumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(1) platon.blockNumber</h5>
-<p>Returns the current block number</p>
+<p>Returns the current block number.</p>
 <p>Return value:</p>
 <p>An AttributeDict object whose parsed value is the number of the most recent block, Number type.</p>
 <h5><a class="anchor" aria-hidden="true" id="2-platonsyncing"></a><a href="#2-platonsyncing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(2) platon.syncing</h5>
-<p>Used to check whether the node is currently synchronized with the network</p>
+<p>Used to check whether the node is currently synchronized with the network.</p>
 <p>return value:</p>
 <p>An AttributeDict object with a resolved value of <code>Object</code> or <code>Bool</code>. If the node has not been synchronized with the network,
 It returns false, otherwise it returns a synchronization object with the following properties:</p>
 <ul>
-<li><p>startingBlock-Number: Synchronization starting block number</p></li>
-<li><p>currentBlock-Number: currently synchronized block number</p></li>
-<li><p>highestBlock-Number: Estimated target synchronization block number</p></li>
-<li><p>knownStates-Number: Estimated states to be downloaded</p></li>
-<li><p>pulledStates-Number: downloaded states</p></li>
+<li><p>startingBlock-Number: Synchronization starting block number.</p></li>
+<li><p>currentBlock-Number: currently synchronized block number.</p></li>
+<li><p>highestBlock-Number: Estimated target synchronization block number.</p></li>
+<li><p>knownStates-Number: Estimated states to be downloaded.</p></li>
+<li><p>pulledStates-Number: downloaded states.</p></li>
 </ul>
 <h5><a class="anchor" aria-hidden="true" id="3-platongasprice"></a><a href="#3-platongasprice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(3) platon.gasPrice</h5>
 <p>Used to get the current gas price, which is determined by the median gas price of several recent blocks.</p>
@@ -230,7 +230,7 @@ It returns false, otherwise it returns a synchronization object with the followi
 <p>return value</p>
 <p>An AttributeDict object whose value is the public status information of all the blocks in the block tree.</p>
 <h5><a class="anchor" aria-hidden="true" id="7-platongetbalanceaddress"></a><a href="#7-platongetbalanceaddress" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(7) platon.getBalance(address)</h5>
-<p>Used to get the balance of a specific account address in a specified block</p>
+<p>Used to get the balance of a specific account address in a specified block.</p>
 <p>parameter:</p>
 <ul>
 <li><code>address</code>: String-the account address to check the balance, bech32 address format, the beginning of lax is the testnet, the beginning of lat is the mainnet</li>
@@ -275,9 +275,9 @@ AttributeDict({<span class="hljs-string">'blockTree'</span>: AttributeDict({<spa
 </code></pre>
 <p>parameter:</p>
 <ul>
-<li><code>address</code>: String-the address to be read</li>
-<li><code>position</code>: Number-index number in storage</li>
-<li><code>defaultBlock</code>: Number|String-Optional, use this parameter to override the platon.defaultBlock attribute value</li>
+<li><code>address</code>: String-the address to be read.</li>
+<li><code>position</code>: Number-index number in storage.</li>
+<li><code>defaultBlock</code>: Number|String-Optional, use this parameter to override the platon.defaultBlock attribute value.</li>
 </ul>
 <p>return value:</p>
 <p>An AttributeDict object whose parsed value is the content of the specified location in the storage.</p>
@@ -288,8 +288,8 @@ AttributeDict({<span class="hljs-string">'blockTree'</span>: AttributeDict({<spa
 </code></pre>
 <p>parameter:</p>
 <ul>
-<li><code>address</code>: String-the address of the code to be read</li>
-<li><code>defaultBlock</code>: Number|String-Optional, use this parameter to override the platon.defaultBlock attribute value</li>
+<li><code>address</code>: String-the address of the code to be read.</li>
+<li><code>defaultBlock</code>: Number|String-Optional, use this parameter to override the platon.defaultBlock attribute value.</li>
 </ul>
 <p>return value:</p>
 <p>An AttributeDict object whose parsed value is the code string at the specified address.</p>
@@ -306,24 +306,24 @@ AttributeDict({<span class="hljs-string">'blockTree'</span>: AttributeDict({<spa
 <p>return value:</p>
 <p>An AttributeDict object whose parsed value is a block object that meets the search conditions and has the following fields:</p>
 <ul>
-<li><p>number-Number: block number, the block in pending state is null</p></li>
-<li><p>hash 32 Bytes-String: block hash, the block in pending state is null</p></li>
-<li><p>parentHash 32 Bytes-String: parent block hash</p></li>
-<li><p>nonce 8 Bytes-String: The hash of the generated proof-of-work, the pending block is null</p></li>
-<li><p>sha3Uncles 32 Bytes-String: SHA3 value of the uncle data in the block</p></li>
-<li><p>logsBloom 256 Bytes-String: The bloom filter of the log in the block, and the block in the pending state is null</p></li>
-<li><p>transactionsRoot 32 Bytes-String: the root node of the transaction tree in the block</p></li>
-<li><p>stateRoot 32 Bytes-String: The root node of the final state tree in the block</p></li>
-<li><p>miner-String: The address of the miner receiving the reward</p></li>
-<li><p>difficulty-String: difficulty value of the block</p></li>
-<li><p>totalDifficulty-String: The total difficulty value of the whole chain up to the block</p></li>
-<li><p>extraData-String: Block &quot;extra data&quot; field</p></li>
-<li><p>size-Number: block size in bytes</p></li>
-<li><p>gasLimit-Number: The maximum gas value allowed in the block</p></li>
-<li><p>gasUsed-Number: The total amount of gas used by all transactions in the block</p></li>
-<li><p>timestamp-Number: the unix timestamp of the block</p></li>
-<li><p>transactions-Array: transaction object array, or 32-byte transaction hash value, depending on the setting of returnTransactionObjects</p></li>
-<li><p>uncles-Array: Uncle block hash value array</p>
+<li><p>number-Number: block number, the block in pending state is null.</p></li>
+<li><p>hash 32 Bytes-String: block hash, the block in pending state is null.</p></li>
+<li><p>parentHash 32 Bytes-String: parent block hash.</p></li>
+<li><p>nonce 8 Bytes-String: The hash of the generated proof-of-work, the pending block is null.</p></li>
+<li><p>sha3Uncles 32 Bytes-String: SHA3 value of the uncle data in the block.</p></li>
+<li><p>logsBloom 256 Bytes-String: The bloom filter of the log in the block, and the block in the pending state is null.</p></li>
+<li><p>transactionsRoot 32 Bytes-String: the root node of the transaction tree in the block.</p></li>
+<li><p>stateRoot 32 Bytes-String: The root node of the final state tree in the block.</p></li>
+<li><p>miner-String: The address of the miner receiving the reward.</p></li>
+<li><p>difficulty-String: difficulty value of the block.</p></li>
+<li><p>totalDifficulty-String: The total difficulty value of the whole chain up to the block.</p></li>
+<li><p>extraData-String: Block &quot;extra data&quot; field.</p></li>
+<li><p>size-Number: block size in bytes.</p></li>
+<li><p>gasLimit-Number: The maximum gas value allowed in the block.</p></li>
+<li><p>gasUsed-Number: The total amount of gas used by all transactions in the block.</p></li>
+<li><p>timestamp-Number: the unix timestamp of the block.</p></li>
+<li><p>transactions-Array: transaction object array, or 32-byte transaction hash value, depending on the setting of returnTransactionObjects.</p></li>
+<li><p>uncles-Array: Uncle block hash value array.</p>
 <h5><a class="anchor" aria-hidden="true" id="11-platongetblocktransactioncount"></a><a href="#11-platongetblocktransactioncount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(11) platon.getBlockTransactionCount()</h5>
 <p>The method returns the number of transactions in the specified block.</p>
 <p>transfer:</p>
@@ -364,10 +364,10 @@ AttributeDict({<span class="hljs-string">'blockTree'</span>: AttributeDict({<spa
 </code></pre>
 <p>parameter:</p>
 <ul>
-<li><p><code>hashStringOrNumber</code>: String-the block number or the hash value of the block, or use the following string: &quot;genesis, &quot;latest&quot; or &quot;pending&quot; to specify the block</p></li>
-<li><p><code>indexNumber</code>: Number-transaction index position</p>
+<li><p><code>hashStringOrNumber</code>: String-the block number or the hash value of the block, or use the following string: &quot;genesis, &quot;latest&quot; or &quot;pending&quot; to specify the block.</p></li>
+<li><p><code>indexNumber</code>: Number-transaction index position.</p>
 <p>return value:</p>
-<p>An AttributeDict object whose parsed value is a transaction object. Refer to platon.getTransaction() for the specific content description of the object</p></li>
+<p>An AttributeDict object whose parsed value is a transaction object. Refer to platon.getTransaction() for the specific content description of the object.</p></li>
 </ul>
 <h5><a class="anchor" aria-hidden="true" id="15-platongettransactionbyblock"></a><a href="#15-platongettransactionbyblock" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(15) platon.getTransactionByBlock()</h5>
 <p>Returns the transaction object of the specified index number in the specified block.</p>
@@ -376,10 +376,10 @@ AttributeDict({<span class="hljs-string">'blockTree'</span>: AttributeDict({<spa
 </code></pre>
 <p>parameter:</p>
 <ul>
-<li><p><code>hashStringOrNumber</code>: Number |String-the block number or the hash value of the block, or use the following string: &quot;genesis, &quot;latest&quot; or &quot;pending&quot; to specify the block</p></li>
-<li><p><code>indexNumber</code>: Number-transaction index position</p>
+<li><p><code>hashStringOrNumber</code>: Number |String-the block number or the hash value of the block, or use the following string: &quot;genesis, &quot;latest&quot; or &quot;pending&quot; to specify the block.</p></li>
+<li><p><code>indexNumber</code>: Number-transaction index position.</p>
 <p>return value:</p>
-<p>An AttributeDict object whose parsed value is a transaction object. Refer to platon.getTransaction() for the specific content description of the object</p></li>
+<p>An AttributeDict object whose parsed value is a transaction object. Refer to platon.getTransaction() for the specific content description of the object.</p></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="5-send-transaction-api-on-chain"></a><a href="#5-send-transaction-api-on-chain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>5</strong> Send transaction api on chain:</h4>
 <h5><a class="anchor" aria-hidden="true" id="1-sendtransactiontransactionobject"></a><a href="#1-sendtransactiontransactionobject" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(1) sendTransaction(transactionObject)</h5>
@@ -388,35 +388,35 @@ AttributeDict({<span class="hljs-string">'blockTree'</span>: AttributeDict({<spa
 <ul>
 <li><p><code>transactionObject</code>: Object-The transaction object to be sent, including the following fields:</p>
 <ul>
-<li>from-String|Number: The account address of the transaction sender. If this field is not set, the platon.defaultAccount attribute value is used. Can be set as an address or the index number in the local wallet platon.accounts.wallet</li>
-<li>to-String: Optional, the destination address of the message, this field is null for contract creation transactions</li>
+<li>from-String|Number: The account address of the transaction sender. If this field is not set, the platon.defaultAccount attribute value is used. Can be set as an address or the index number in the local wallet platon.accounts.wallet.</li>
+<li>to-String: Optional, the destination address of the message, this field is null for contract creation transactions.</li>
 <li>value-Number|String|BN|BigNumber: (optional) The value transferred for the transaction in VON, also the endowment if it’s a contract-creation transaction.</li>
-<li>gas-Number: optional, default value: to be determined, the total amount of gas used for transactions, unused gas will be refunded</li>
-<li>gasPrice-Number|String|BN|BigNumber: Optional, the gas price of the transaction, the unit is VON, the default value is platon.gasPrice attribute value</li>
-<li>data-String: Optional, it can be an ABI string containing contract method data, or the initialization code in the contract creation transaction</li>
-<li>nonce-Number: Optional, use this field to cover pending transactions that use the same nonce value</li>
+<li>gas-Number: optional, default value: to be determined, the total amount of gas used for transactions, unused gas will be refunded.</li>
+<li>gasPrice-Number|String|BN|BigNumber: Optional, the gas price of the transaction, the unit is VON, the default value is platon.gasPrice attribute value.</li>
+<li>data-String: Optional, it can be an ABI string containing contract method data, or the initialization code in the contract creation transaction.</li>
+<li>nonce-Number: Optional, use this field to cover pending transactions that use the same nonce value.</li>
 </ul>
 <p>return value:</p>
 <p>The return value of the <code>platon.sendTransaction()</code> method is a 32-byte transaction hash value.</p></li>
 </ul>
 <h5><a class="anchor" aria-hidden="true" id="2-waitfortransactionreceipttransaction_hash-timeout"></a><a href="#2-waitfortransactionreceipttransaction_hash-timeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(2) waitForTransactionReceipt(transaction_hash, timeout)</h5>
-<p>Return the receipt object of the specified transaction within the specified time</p>
+<p>Return the receipt object of the specified transaction within the specified time.</p>
 <p>parameter:</p>
 <ul>
 <li><p><code>transaction_hash</code>: String-the hash value of the transaction.</p></li>
 <li><p><code>timeout</code>: Number- Optional waiting time length, in seconds. The default is 120.</p>
 <p>return value:</p>
 <p>An AttributeDict object whose parsed value is the receipt object of the transaction or null. The receipt object has the following fields:</p></li>
-<li><p><code>blockHash</code> 32 Bytes-String: The hash value of the exchange in the block</p></li>
-<li><p><code>blockNumber</code>-Number: The number of the exchange in the block</p></li>
-<li><p><code>transactionHash</code> 32 Bytes-String: hash value of the transaction</p></li>
-<li><p><code>transactionIndex</code>-Number: The index position of the transaction in the block</p></li>
-<li><p><code>from</code>-String: The address of the transaction sender</p></li>
-<li><p><code>to</code>-String: The address of the recipient of the transaction. For the transaction that created the contract, the value is null</p></li>
-<li><p><code>contractAddress</code>-String: For the transaction that creates a contract, the value is the address of the created contract, otherwise it is null</p></li>
-<li><p><code>cumulativeGasUsed</code>-Number: The cumulative total gas usage of the block where the transaction is executed</p></li>
-<li><p><code>gasUsed</code>- Number: the total amount of gas for this transaction</p></li>
-<li><p><code>logs</code>-Array: The array of log objects generated by the transaction</p></li>
+<li><p><code>blockHash</code> 32 Bytes-String: The hash value of the exchange in the block.</p></li>
+<li><p><code>blockNumber</code>-Number: The number of the exchange in the block.</p></li>
+<li><p><code>transactionHash</code> 32 Bytes-String: hash value of the transaction.</p></li>
+<li><p><code>transactionIndex</code>-Number: The index position of the transaction in the block.</p></li>
+<li><p><code>from</code>-String: The address of the transaction sender.</p></li>
+<li><p><code>to</code>-String: The address of the recipient of the transaction. For the transaction that created the contract, the value is null.</p></li>
+<li><p><code>contractAddress</code>-String: For the transaction that creates a contract, the value is the address of the created contract, otherwise it is null.</p></li>
+<li><p><code>cumulativeGasUsed</code>-Number: The cumulative total gas usage of the block where the transaction is executed.</p></li>
+<li><p><code>gasUsed</code>- Number: the total amount of gas for this transaction.</p></li>
+<li><p><code>logs</code>-Array: The array of log objects generated by the transaction.</p></li>
 </ul>
 <p>Examples of how to use sendTransaction and waitForTransactionReceipt are as follows:</p>
 <pre><code class="hljs css language-python"># sendtransaction
@@ -455,8 +455,8 @@ If the transaction is pending, it returns null.</p>
 </code></pre>
 <p>parameter:</p>
 <ul>
-<li><p><code>address</code>: String-the address of the account to be queried</p></li>
-<li><p><code>defaultBlock</code>: Number|String-Optional, set this parameter to override the platon.defaultBlock property value</p>
+<li><p><code>address</code>: String-the address of the account to be queried.</p></li>
+<li><p><code>defaultBlock</code>: Number|String-Optional, set this parameter to override the platon.defaultBlock property value.</p>
 <p>return value:</p>
 <p>An AttributeDict object whose resolved value is the number of transactions issued by the specified address.</p></li>
 </ul>
@@ -468,20 +468,20 @@ If the transaction is pending, it returns null.</p>
 <ul>
 <li><p><code>signTransaction</code>: Object-The signed transaction object to be sent, including the following fields:</p>
 <ul>
-<li><p>from-String|Number: The account address of the transaction sender. If this field is not set, the platon.defaultAccount attribute value is used. Can be set as an address or the index number in the local wallet platon.accounts.wallet</p></li>
-<li><p>to-String: Optional, the destination address of the message, this field is null for contract creation transactions</p></li>
+<li><p>from-String|Number: The account address of the transaction sender. If this field is not set, the platon.defaultAccount attribute value is used. Can be set as an address or the index number in the local wallet platon.accounts.wallet    .</p></li>
+<li><p>to-String: Optional, the destination address of the message, this field is null for contract creation transactions   .</p></li>
 <li><p>value-Number|String|BN|BigNumber: (optional) The value transferred for the transaction in VON, also the endowment if it’s a contract-creation transaction.</p></li>
-<li><p>gas-Number: optional, default value: to be determined, the total amount of gas used for transactions, unused gas will be refunded</p></li>
-<li><p>gasPrice-Number|String|BN|BigNumber: Optional, the gas price of the transaction, in VON, the default value is platon.gasPrice property value</p></li>
-<li><p>data-String: Optional, it can be an ABI string containing contract method data, or the initialization code in the contract creation transaction</p></li>
-<li><p>nonce-Number: Optional, use this field to cover pending transactions that use the same nonce value</p></li>
+<li><p>gas-Number: optional, default value: to be determined, the total amount of gas used for transactions, unused gas will be refunded.</p></li>
+<li><p>gasPrice-Number|String|BN|BigNumber: Optional, the gas price of the transaction, in VON, the default value is platon.gasPrice property value.</p></li>
+<li><p>data-String: Optional, it can be an ABI string containing contract method data, or the initialization code in the contract creation transaction.</p></li>
+<li><p>nonce-Number: Optional, use this field to cover pending transactions that use the same nonce value.</p></li>
 </ul></li>
-<li><p>private-key: the private key used for signing</p>
+<li><p>private-key: the private key used for signing.</p>
 <p>return value:</p>
 <p>The return value is HexBytes containing the 32-byte transaction hash value.</p></li>
 </ul>
 <h5><a class="anchor" aria-hidden="true" id="7-platonreplacetransaction"></a><a href="#7-platonreplacetransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(7) platon.replaceTransaction()</h5>
-<p>Send a new transaction new_transaction to replace the original transaction transaction_hash (pending state)</p>
+<p>Send a new transaction new_transaction to replace the original transaction transaction_hash (pending state).</p>
 <p>transfer:</p>
 <pre><code class="hljs css language-python">platon.replaceTransaction`(transaction_hash,new_transaction)
 </code></pre>
@@ -490,7 +490,7 @@ If the transaction is pending, it returns null.</p>
 <li><p>transaction_hash-string: The hash value of the transaction in the pending state.</p></li>
 <li><p>new_transaction-dict: transaction object, including fields consistent with transactionObject in sendTransaction.</p>
 <p>return value:</p>
-<p>The hash value of new_transaction</p></li>
+<p>The hash value of new_transaction.</p></li>
 </ul>
 <h5><a class="anchor" aria-hidden="true" id="8-platongenerategasprice"></a><a href="#8-platongenerategasprice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(8) platon.generateGasPrice()</h5>
 <p>Use the selected gas price strategy to calculate a gas price</p>
@@ -505,19 +505,23 @@ If the transaction is pending, it returns null.</p>
 <pre><code class="hljs">platon.set<span class="hljs-constructor">GasPriceStrategy(<span class="hljs-params">gas_price_strategy</span>)</span>
 </code></pre>
 <p>parameter:</p>
-<p>​ gas_price_strategy: (web3, transaction_params), must be a signature method.</p>
-<p>return:</p>
-<p>​ The gas price value in wei</p>
+<ul>
+<li><p>gas_price_strategy: (web3, transaction_params), must be a signature method.</p>
+<p>return:</p></li>
+<li><p>The gas price value in wei</p></li>
+</ul>
 <h5><a class="anchor" aria-hidden="true" id="10-platonmodifytransaction"></a><a href="#10-platonmodifytransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(10) platon.modifyTransaction()</h5>
 <p>Send new parameters to modify the pending transaction</p>
 <p>transfer:</p>
 <pre><code class="hljs css language-python">platon.modifyTransaction(transaction_hash, **transaction_params)
 </code></pre>
 <p>parameter:</p>
-<p>-transaction_hash -string: The hash value of the transaction in the pending state.
--transaction_params: keyword statements corresponding to the parameters of transaction_hash. If value=1000, change the value value in the original transaction to 1000</p>
+<ul>
+<li><p>transaction_hash -string: The hash value of the transaction in the pending state.</p></li>
+<li><p>transaction_params: keyword statements corresponding to the parameters of transaction_hash. If value=1000, change the value value in the original transaction to 1000.</p>
 <p>return:</p>
-<p>​ The hash value of the revised transaction</p>
+<p>The hash value of the revised transaction  .</p></li>
+</ul>
 <h5><a class="anchor" aria-hidden="true" id="11-platonsign"></a><a href="#11-platonsign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(11) platon.sign()</h5>
 <p>The method uses the specified account to sign the data, and the account must be unlocked first.</p>
 <p>transfer:</p>
@@ -525,7 +529,7 @@ If the transaction is pending, it returns null.</p>
 </span></code></pre>
 <p>parameter:</p>
 <ul>
-<li><p><code>dataToSign</code>: String-The data to be signed. For the string, it will first use the utils.utf8ToHex() method to convert it to hexadecimal</p></li>
+<li><p><code>dataToSign</code>: String-The data to be signed. For the string, it will first use the utils.utf8ToHex() method to convert it to hexadecimal.</p></li>
 <li><p><code>address</code>: String|Number-The account address used for signing. Or the address or its serial number in the local wallet platon.accounts.wallet</p>
 <p>return value:</p>
 <p>The signature result string.</p></li>
@@ -551,9 +555,9 @@ If the transaction is pending, it returns null.</p>
 <ul>
 <li>params
 <ul>
-<li>'latest', create a filter in the node to be notified when a new block is generated. To check whether the status has changed</li>
-<li>'pending', create a filter in the node to notify when a pending transaction occurs. To check whether the status has changed</li>
-<li>Dictionary data, create a filter to notify when the client receives a matching whisper message</li>
+<li>'latest', create a filter in the node to be notified when a new block is generated. To check whether the status has changed.</li>
+<li>'pending', create a filter in the node to notify when a pending transaction occurs. To check whether the status has changed.</li>
+<li>Dictionary data, create a filter to notify when the client receives a matching whisper message.</li>
 </ul></li>
 </ul>
 <p>​</p>
@@ -565,12 +569,14 @@ If the transaction is pending, it returns null.</p>
 &lt;client_sdk_python.utils.filters.LogFilter object at <span class="hljs-number">0x0000020640B09D88</span>&gt;
 </code></pre>
 <h5><a class="anchor" aria-hidden="true" id="2-platongetfilterchanges"></a><a href="#2-platongetfilterchanges" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(2) platon.getFilterChanges()</h5>
-<p>Polling the specified filter and returning the newly generated log array since the last poll</p>
+<p>Polling the specified filter and returning the newly generated log array since the last poll.</p>
 <p>transfer:</p>
 <pre><code class="hljs">platon.get<span class="hljs-constructor">FilterChanges(<span class="hljs-params">filter_id</span>)</span>
 </code></pre>
 <p>parameter:</p>
-<p>-filter_id: filter_id of the specified filter</p>
+<ul>
+<li>filter_id: filter_id of the specified filter.</li>
+</ul>
 <p>Example:</p>
 <pre><code class="hljs css language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>filt=platon.filter(<span class="hljs-string">'latest'</span>)
 &gt;&gt;&gt;platon.getFilterChanges(filt.filter_id)
@@ -583,22 +589,22 @@ If the transaction is pending, it returns null.</p>
 <pre><code class="hljs">platon.get<span class="hljs-constructor">FilterLogs(<span class="hljs-params">filter_id</span>)</span>
 </code></pre>
 <p>parameter:</p>
-<p>-filter_id: filter_id of the specified filter</p>
+<ul>
+<li>filter_id: filter_id of the specified filter</li>
+</ul>
 <h5><a class="anchor" aria-hidden="true" id="4-platonuninstallfilter"></a><a href="#4-platonuninstallfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(4) platon.uninstallFilter()</h5>
 <p>Uninstall the specified filter and return the bool value of success or failure</p>
 <p>transfer:</p>
 <pre><code class="hljs">platon.get<span class="hljs-constructor">FilterLogs(<span class="hljs-params">filter_id</span>)</span>
 </code></pre>
-<ul>
-<li><p>Parameters:</p>
+<p>parameter:</p>
 <ul>
 <li>filter_id: filter_id of the specified filter</li>
 </ul>
 <p>Example:</p>
 <pre><code class="hljs css language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>platon.uninstallFilter(filt.filter_id)
 <span class="hljs-literal">True</span>
-</code></pre></li>
-</ul>
+</code></pre>
 <h5><a class="anchor" aria-hidden="true" id="5-platongetlogs"></a><a href="#5-platongetlogs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(5) platon.getLogs()</h5>
 <p>Return the history log according to the specified options.</p>
 <p>transfer:</p>
@@ -642,7 +648,8 @@ If the transaction is pending, it returns null.</p>
 <pre><code class="hljs"><span class="hljs-selector-tag">myContract</span><span class="hljs-selector-class">.functions</span><span class="hljs-selector-class">.myMethod</span>(<span class="hljs-selector-attr">[param1[, param2[, ...]</span>]])<span class="hljs-selector-class">.call</span>()
 </code></pre>
 <p>parameter:</p>
-<p>-[param1[, param2[, ...]]]: parameters entered according to the data type defined in myMethod</p>
+<ul>
+<li><p>[param1[, param2[, ...]]]: parameters entered according to the data type defined in myMethod</p>
 <p>return value:</p>
 <p>​ The parsed value is the return value of the contract method, the Mixed type. If the contract method returns multiple values, the resolved value is an object.</p>
 <pre><code class="hljs css language-python">tx_hash1 = payable.functions.setInt64(<span class="hljs-number">-9223372036854775808</span>).transact(
@@ -658,7 +665,8 @@ print(<span class="hljs-string">'get: {}'</span>.format(
 
 <span class="hljs-comment">#Output</span>
 get: <span class="hljs-number">-9223372036854775808</span>
-</code></pre>
+</code></pre></li>
+</ul>
 <h5><a class="anchor" aria-hidden="true" id="8-events"></a><a href="#8-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(8) events</h5>
 <p>Subscribe to the specified contract event.</p>
 <p>transfer:</p>
@@ -674,21 +682,21 @@ get: <span class="hljs-number">-9223372036854775808</span>
 </ul>
 <p>return value:</p>
 <p>EventEmitter: Event generator, declares the following events:</p></li>
-<li><p>&quot;data&quot; returns Object: Triggered when a new event is received, the parameter is the event object</p></li>
-<li><p>&quot;changed&quot; returns Object: Triggered when the event is removed from the blockchain, the event object will be added with an additional property &quot;removed: true&quot;</p></li>
-<li><p>&quot;error&quot; returns Object: Triggered when an error occurs</p>
+<li><p>&quot;data&quot; returns Object: Triggered when a new event is received, the parameter is the event object.</p></li>
+<li><p>&quot;changed&quot; returns Object: Triggered when the event is removed from the blockchain, the event object will be added with an additional property &quot;removed: true&quot;.</p></li>
+<li><p>&quot;error&quot; returns Object: Triggered when an error occurs.</p>
 <p>The returned event object structure is as follows:</p></li>
-<li><p>event-String: event name</p></li>
-<li><p>signature-String|Null: Event signature, if it is an anonymous event, it will be null</p></li>
-<li><p>address-String: Event source address</p></li>
+<li><p>event-String: event name.</p></li>
+<li><p>signature-String|Null: Event signature, if it is an anonymous event, it will be null.</p></li>
+<li><p>address-String: Event source address.</p></li>
 <li><p>returnValues-Object: Event return value, for example {myVar: 1, myVar2: '0x234...'}.</p></li>
-<li><p>logIndex-Number: The index position of the event in the block</p></li>
-<li><p>transactionIndex-Number: the index position of the event in the transaction</p></li>
-<li><p>transactionHash 32 Bytes-String: The hash value of the transaction where the event is located</p></li>
-<li><p>blockHash 32 Bytes-String: The hash value of the block where the event is located, the value of the pending block is null</p></li>
-<li><p>blockNumber-Number: The number of the block where the event is located, the value of the pending block is null</p></li>
-<li><p>raw.data-String: This field contains unindexed log parameters</p></li>
-<li><p>raw.topics-Array: Up to 4 32-byte long topic string arrays can be stored. Topics 1-3 include index parameters for events</p>
+<li><p>logIndex-Number: The index position of the event in the block.</p></li>
+<li><p>transactionIndex-Number: the index position of the event in the transaction.</p></li>
+<li><p>transactionHash 32 Bytes-String: The hash value of the transaction where the event is located.</p></li>
+<li><p>blockHash 32 Bytes-String: The hash value of the block where the event is located, the value of the pending block is null.</p></li>
+<li><p>blockNumber-Number: The number of the block where the event is located, the value of the pending block is null.</p></li>
+<li><p>raw.data-String: This field contains unindexed log parameters.</p></li>
+<li><p>raw.topics-Array: Up to 4 32-byte long topic string arrays can be stored. Topics 1-3 include index parameters for events.</p>
 <p>Sample code:</p>
 <pre><code class="hljs css language-python">greeter = platon.contract(address=tx_receipt.contractAddress, abi=abi)
 
@@ -782,10 +790,10 @@ print(contractAddress)
 <ul>
 <li><p>parameter:</p>
 <ul>
-<li><p>&quot;from&quot; The address of the account that sent the transaction</p></li>
-<li><p>&quot;data&quot; The data sent to the chain</p></li>
-<li><p>&quot;gas&quot; The amount of gas traded</p></li>
-<li><p>&quot;gasPrice&quot; fuel price</p></li>
+<li><p><code>from</code> The address of the account that sent the transaction.</p></li>
+<li><p><code>data</code> The data sent to the chain.</p></li>
+<li><p><code>gas</code> The amount of gas traded.</p></li>
+<li><p><code>gasPrice</code> fuel price.</p></li>
 </ul></li>
 </ul>
 <p>Need to write a reasonable value</p>
@@ -798,10 +806,12 @@ lax1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke
 </code></pre>
 <ul>
 <li><p>among them</p>
-<p>The first line of data is the transaction result of platon.sendTransaction in the function contract_deploy</p></li>
+<ul>
+<li>The first line of data is the transaction result of platon.sendTransaction in the function contract_deploy.</li>
+<li>The second line of data is the transaction receipt obtained by platon.waitForTransactionReceipt.</li>
+<li>The third line is the contract address where the contract is successfully deployed.</li>
+</ul></li>
 </ul>
-<p>​ The second line of data is the transaction receipt obtained by platon.waitForTransactionReceipt</p>
-<p>​ The third line is the contract address where the contract is successfully deployed</p>
 <h5><a class="anchor" aria-hidden="true" id="3-call-the-helloworld-contract-transaction-sending"></a><a href="#3-call-the-helloworld-contract-transaction-sending" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(3) Call the Helloworld contract (transaction sending)</h5>
 <p>Based on the successful deployment of the previous contract, the transaction is sent</p>
 <p>First define a function SendTxn(txn)</p>
@@ -837,11 +847,13 @@ result = contract_instance.functions.getIfControlResult().call()
 print(result)
 </code></pre>
 <p>parameter:</p>
-<p>​'chainId' chain id</p>
-<p>​'nonce' serial number</p>
-<p>​'gas' fuel</p>
-<p>​'value' value (starting balance of new contract account)</p>
-<p>​'gasPrice' fuel price</p>
+<ul>
+<li><p><code>chainId</code>: chain id.</p></li>
+<li><p><code>nonce</code>: serial number.</p></li>
+<li><p><code>gas</code> :fuel.</p></li>
+<li><p><code>value</code>: value (starting balance of new contract account).</p></li>
+<li><p><code>gasPrice</code>: fuel price.</p></li>
+</ul>
 <p>Need to write a reasonable value</p>
 <p>Call the method ifControl, and successfully pass the parameter 20 to the chain. Then get the corresponding information and data on the chain through the corresponding method getIfControlResult.</p>
 <p>The output is as follows:</p>
@@ -850,11 +862,16 @@ print(result)
 AttributeDict(('blockHash': HexBytes('0xbb1d1c3a7abecac<span class="hljs-number">991050</span>9ed3ff2ca97cebdba1e88db0b909ffd646a86d<span class="hljs-number">6959</span>7'),'blockNumber': <span class="hljs-number">305801</span>,'contractAddress': None,'cumulativeGaswUsedjj<span class="hljs-number">2538</span>2,'from [], 'logsBloom': HexBytes ( '0x<span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000000000</span><span class="hljs-number">00000000</span>'), 'status': <span class="hljs-number">1</span>, 'to': 'lax1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke', 'transactionHash': HexBytes ( '0x16c<span class="hljs-number">7638</span>7cdd06ab82a4beb330b<span class="hljs-number">3636</span>9a5cfa22b8cf6ddfff58c72aaae4a39df9'), 'transactionIndex': <span class="hljs-number">0</span>})
 you are a middle man
 </code></pre>
-<p>The first line of data is the transaction result of platon.sendRawTransaction in the function SendTxn</p>
-<p>The second line of data is the method ifControl sends information to the chain, the result of the transaction</p>
-<p>The third line method getIfControlResult gets the information on the chain and the result of the transaction</p>
+<ul>
+<li><p>among them</p>
+<ul>
+<li><p>The first line of data is the transaction result of platon.sendRawTransaction in the function SendTxn.</p></li>
+<li><p>The second line of data is the method ifControl sends information to the chain, the result of the transaction.</p></li>
+<li><p>The third line method getIfControlResult gets the information on the chain and the result of the transaction.</p></li>
+</ul></li>
+</ul>
 <h5><a class="anchor" aria-hidden="true" id="4-event-call-of-evm-contract"></a><a href="#4-event-call-of-evm-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(4) Event call of evm contract</h5>
-<p>The evm contract can monitor and log the detailed information of related transactions through events</p>
+<p>The evm contract can monitor and log the detailed information of related transactions through events.</p>
 <p>Take the evmevent contract as an example: it adds the event type MyEvent to the method setVar.</p>
 <p>Greeter is the successfully deployed evm contract.</p>
 <p>First call setVar through functions and pass the parameters to the chain</p>
@@ -880,17 +897,17 @@ print(topic_param)
 (AttributeDict({<span class="hljs-string">'args'</span>: AttributeDict({<span class="hljs-string">'_var'</span>: <span class="hljs-number">100</span>}),<span class="hljs-string">'event'</span>:<span class="hljs-string">'MyEvent'</span>,<span class="hljs-string">'logIndex'</span>: <span class="hljs-number">0</span>,<span class="hljs-string">'transactionIndex'</span>: <span class="hljs-number">0</span>,<span class="hljs-string">'transactionHash'</span>: HexBytes(<span class="hljs-string">'0xe36b5d2b679d5635ab6dd2b620caa483807f) '</span>address<span class="hljs-string">':'</span>lax1vc6phdxhdkmztpznv5ueduw6cae3swe40whlsn<span class="hljs-string">','</span>blockHash<span class="hljs-string">': HexBytes('</span><span class="hljs-number">0x78fb61da83dae555c8a8a87fc3296f466afeb7f90e9a3b0ac5689e8</span>)<span class="hljs-number">34435174</span><span class="hljs-string">'), '</span><span class="hljs-number">2014683</span>
 
 </code></pre>
-<p>The first line calls the function setVar, the transaction receipt after the transaction is successful</p>
-<p>The second line calls the event MyEvent() to get the transaction log information</p>
+<p>The first line calls the function setVar, the transaction receipt after the transaction is successful.</p>
+<p>The second line calls the event MyEvent() to get the transaction log information.</p>
 <p>Among the values ​​corresponding to'args':</p>
 <p>'_var' is the only parameter value</p>
 <p>In the event of the evm contract, the basic types of data are uint, int, bool, address, bytex.</p>
 <h4><a class="anchor" aria-hidden="true" id="4-sdk-calls-to-wasm-contract"></a><a href="#4-sdk-calls-to-wasm-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. SDK calls to wasm contract:</h4>
 <h5><a class="anchor" aria-hidden="true" id="1-use-platon-cdt-to-compile-wasm-contract-locally"></a><a href="#1-use-platon-cdt-to-compile-wasm-contract-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(1) Use PlatON-CDT to compile wasm contract locally</h5>
-<p>Take wasmcontract.cpp as an example. After installing PlatON-CDT on this machine, enter the code in PlatON-CDT/build/bin</p>
+<p>Take wasmcontract.cpp as an example. After installing PlatON-CDT on this machine, enter the code in PlatON-CDT/build/bin.</p>
 <pre><code class="hljs"><span class="hljs-selector-tag">platon-cpp</span> <span class="hljs-selector-tag">wasmcontract</span><span class="hljs-selector-class">.cpp</span>
 </code></pre>
-<p>After successful compilation, there are two files in wasmcontract/build/contracts</p>
+<p>After successful compilation, there are two files in wasmcontract/build/contracts.</p>
 <p>wasmcontract.abi.json and wasmcontract.wasm, where wasmcontract.abi.json is abi data (json format), wasmcontract.wasm is bin data (binary format).</p>
 <pre><code class="hljs css language-python"> <span class="hljs-keyword">import</span> binascii
  f = open(<span class="hljs-string">'D:/wasmcontract.wasm'</span>,<span class="hljs-string">'rb'</span>)
@@ -899,8 +916,8 @@ print(topic_param)
 </code></pre>
 <p>Because what our chain recognizes is hexadecimal data, we need to use methods similar to binascii.b2a_hex to convert the binary .wasm to hexadecimal bytecode. Facilitate our identification on the chain.</p>
 <h5><a class="anchor" aria-hidden="true" id="2-deploy-helloworld-contract-wasm-type-through-python-sdk"></a><a href="#2-deploy-helloworld-contract-wasm-type-through-python-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(2) Deploy Helloworld contract (wasm type) through python SDK</h5>
-<p>After obtaining the bin and abi of the wasm contract, deploy on the chain through Web3</p>
-<p>In the code below, bytecode is the bin data of the contract, and cabi is the abi data of the contract</p>
+<p>After obtaining the bin and abi of the wasm contract, deploy on the chain through Web3.</p>
+<p>In the code below, bytecode is the bin data of the contract, and cabi is the abi data of the contract.</p>
 <pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> client_sdk_python <span class="hljs-keyword">import</span> Web3, HTTPProvider
 <span class="hljs-keyword">from</span> client_sdk_python.eth <span class="hljs-keyword">import</span> PlatON
 true = <span class="hljs-literal">True</span>
@@ -993,378 +1010,324 @@ w3 = Web3(HTTPProvider(<span class="hljs-string">"http://localhost:6789"</span>)
 ppos = Ppos(w3)
 </code></pre>
 <h5><a class="anchor" aria-hidden="true" id="initiate-a-pledge"></a><a href="#initiate-a-pledge" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initiate a pledge</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.create<span class="hljs-constructor">Staking(<span class="hljs-params">benifit_address</span>, <span class="hljs-params">node_id</span>, <span class="hljs-params">external_id</span>, <span class="hljs-params">node_name</span>, <span class="hljs-params">website</span>, <span class="hljs-params">details</span>, <span class="hljs-params">amount</span>,<span class="hljs-params">program_version</span>,<span class="hljs-params">program_version_sign</span>, <span class="hljs-params">bls_pubkey</span>, <span class="hljs-params">bls_proof</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">reward_per</span>, <span class="hljs-params">typ</span>=2, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>typ</strong>: Indicates whether the account free amount or the account's lock amount is used for staking, 0: free amount; 1: lock amount;2: Give priority to lock amount, use free amount provided that staking amount over lock amount.</p></li>
+<li><p><strong>benifit_address</strong>: Income account for accepting block rewards and staking rewards.</p></li>
+<li><p><strong>node_id</strong>: The idled node Id (also called the candidate's node Id).</p></li>
+<li><p><strong>external_id</strong>: External Id (with length limit, Id for the third party to pull the node description).</p></li>
+<li><p><strong>node_name</strong>: The name of the staking node (with a length limit indicating the name of the node).</p></li>
+<li><p><strong>website</strong>: The third-party home page of the node (with a length limit indicating the home page of the node).</p></li>
+<li><p><strong>details</strong>: Description of the node (with a length limit indicating the description of the node).</p></li>
+<li><p><strong>amount</strong>: staking von (unit:von, 1LAT = 10**18 von).</p></li>
+<li><p><strong>program_version</strong>: The real version of the program, admin_getProgramVersion.</p></li>
+<li><p><strong>program_version_sign</strong>: The real version of the program is signed, admin_getProgramVersion.</p></li>
+<li><p><strong>bls_pubkey</strong>: Bls public key.</p></li>
+<li><p><strong>bls_proof</strong>: Proof of bls, obtained by pulling the proof interface, admin_getSchnorrNIZKProve.</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>reward_per</strong>: Proportion of the reward share obtained from the commission, using BasePoint 1BP = 0.01%.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>typ</strong>: Indicates whether the account free amount or the account's lock amount is used for staking, 0: free amount; 1: lock amount;2: Give priority to lock amount, use free amount provided that staking amount over lock amount
-<strong>benifit_address</strong>: Income account for accepting block rewards and staking rewards
-<strong>node_id</strong>: The idled node Id (also called the candidate's node Id)
-<strong>external_id</strong>: External Id (with length limit, Id for the third party to pull the node description)
-<strong>node_name</strong>: The name of the staking node (with a length limit indicating the name of the node)
-<strong>website</strong>: The third-party home page of the node (with a length limit indicating the home page of the node)
-<strong>details</strong>: Description of the node (with a length limit indicating the description of the node)
-<strong>amount</strong>: staking von (unit:von, 1LAT = 10**18 von)
-<strong>program_version</strong>: The real version of the program, admin_getProgramVersion
-<strong>program_version_sign</strong>: The real version of the program is signed, admin_getProgramVersion
-<strong>bls_pubkey</strong>: Bls public key
-<strong>bls_proof</strong>: Proof of bls, obtained by pulling the proof interface, admin_getSchnorrNIZKProve
-<strong>pri_key</strong>: Private key for transaction
-<strong>reward_per</strong>: Proportion of the reward share obtained from the commission, using BasePoint 1BP = 0.01%
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="modify-pledge-information"></a><a href="#modify-pledge-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modify pledge information</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.edit<span class="hljs-constructor">Candidate(<span class="hljs-params">benifit_address</span>, <span class="hljs-params">node_id</span>, <span class="hljs-params">external_id</span>, <span class="hljs-params">node_name</span>, <span class="hljs-params">website</span>, <span class="hljs-params">details</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">reward_per</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>benifit_address</strong>: Income account for accepting block rewards and staking rewards.</p></li>
+<li><p><strong>node_id</strong>: The idled node Id (also called the candidate's node Id).</p></li>
+<li><p><strong>external_id</strong>: External Id (with length limit, Id for the third party to pull the node description).</p></li>
+<li><p><strong>node_name</strong>: The name of the staking node (with a length limit indicating the name of the node).</p></li>
+<li><p><strong>website</strong>: The third-party home page of the node (with a length limit indicating the home page of the node).</p></li>
+<li><p><strong>details</strong>: Description of the node (with a length limit indicating the description of the node).</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>reward_per</strong>: Proportion of the reward share obtained from the commission, using BasePoint 1BP = 0.01%.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>benifit_address</strong>: Income account for accepting block rewards and staking rewards
-<strong>node_id</strong>: The idled node Id (also called the candidate's node Id)
-<strong>external_id</strong>: External Id (with length limit, Id for the third party to pull the node description)
-<strong>node_name</strong>: The name of the staking node (with a length limit indicating the name of the node)
-<strong>website</strong>: The third-party home page of the node (with a length limit indicating the home page of the node)
-<strong>details</strong>: Description of the node (with a length limit indicating the description of the node)
-<strong>pri_key</strong>: Private key for transaction
-<strong>reward_per</strong>: Proportion of the reward share obtained from the commission, using BasePoint 1BP = 0.01%
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="increase-stake"></a><a href="#increase-stake" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Increase stake</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.increase<span class="hljs-constructor">Staking(<span class="hljs-params">node_id</span>, <span class="hljs-params">amount</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">typ</span>=2, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>typ</strong>: Indicates whether the account free amount or the account's lock amount is used for staking, 0: free amount; 1: lock amount;2: Give priority to lock amount, use free amount provided that staking amount over lock amount.</p></li>
+<li><p><strong>node_id</strong>: The idled node Id (also called the candidate's node Id).</p></li>
+<li><p><strong>amount</strong>: staking von (unit:von, 1LAT = 10**18 von).</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration..</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>typ</strong>: Indicates whether the account free amount or the account's lock amount is used for staking, 0: free amount; 1: lock amount;2: Give priority to lock amount, use free amount provided that staking amount over lock amount
-<strong>node_id</strong>: The idled node Id (also called the candidate's node Id)
-<strong>amount</strong>: staking von (unit:von, 1LAT = 10**18 von)
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="cancel-the-pledge-initiate-all-cancellation-at-one-time-and-arrive-at-the-account-multiple-times"></a><a href="#cancel-the-pledge-initiate-all-cancellation-at-one-time-and-arrive-at-the-account-multiple-times" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cancel the pledge (initiate all cancellation at one time, and arrive at the account multiple times)</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.withdrew<span class="hljs-constructor">Staking(<span class="hljs-params">node_id</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>node_id</strong>: The idled node Id (also called the candidate's node Id).</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>node_id</strong>: The idled node Id (also called the candidate's node Id)
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h4><a class="anchor" aria-hidden="true" id="2-delegate"></a><a href="#2-delegate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2 .delegate</h4>
 <h5><a class="anchor" aria-hidden="true" id="initiate-a-delegation"></a><a href="#initiate-a-delegation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initiate a delegation</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.delegate(typ, node_id, amount, pri_key, <span class="hljs-attribute">transaction_cfg</span>=None)
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>typ</strong>: Indicates whether the account free amount or the account's lock amount is used for delegate, 0: free amount; 1: lock amount.</p></li>
+<li><p><strong>node_id</strong>: The idled node Id (also called the candidate's node Id).</p></li>
+<li><p><strong>amount</strong>: Amount of delegate (unit:von, 1LAT = 10**18 von).</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>typ</strong>: Indicates whether the account free amount or the account's lock amount is used for delegate, 0: free amount; 1: lock amount
-<strong>node_id</strong>: The idled node Id (also called the candidate's node Id)
-<strong>amount</strong>: Amount of delegate (unit:von, 1LAT = 10**18 von)
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="shareholding-reductionrevocation-commission"></a><a href="#shareholding-reductionrevocation-commission" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shareholding reduction/revocation commission</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.withdrew<span class="hljs-constructor">Delegate(<span class="hljs-params">staking_blocknum</span>, <span class="hljs-params">node_id</span>, <span class="hljs-params">amount</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>staking_blocknum</strong>: A unique indication of a pledge of a node.</p></li>
+<li><p><strong>node_id</strong>: The idled node Id (also called the candidate's node Id).</p></li>
+<li><p><strong>amount</strong>: The amount of the entrusted reduction (unit:von, 1LAT = 10**18 von).</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>staking_blocknum</strong>: A unique indication of a pledge of a node
-<strong>node_id</strong>: The idled node Id (also called the candidate's node Id)
-<strong>amount</strong>: The amount of the entrusted reduction (unit:von, 1LAT = 10**18 von)
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="withdrawing-delegated-rewards"></a><a href="#withdrawing-delegated-rewards" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Withdrawing delegated rewards</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.withdraw<span class="hljs-constructor">DelegateReward(<span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h4><a class="anchor" aria-hidden="true" id="3query"></a><a href="#3query" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.query</h4>
 <h5><a class="anchor" aria-hidden="true" id="query-the-validator-queue-of-the-current-settlement-cycle"></a><a href="#query-the-validator-queue-of-the-current-settlement-cycle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the validator queue of the current settlement cycle</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">VerifierList(<span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-list-of-validators-in-the-current-consensus-cycle"></a><a href="#query-the-list-of-validators-in-the-current-consensus-cycle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the list of validators in the current consensus cycle</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">ValidatorList(<span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-list-of-all-real-time-candidates"></a><a href="#query-the-list-of-all-real-time-candidates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the list of all real-time candidates</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">CandidateList(<span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-nodeid-and-pledge-id-of-the-node-entrusted-by-the-current-account-address"></a><a href="#query-the-nodeid-and-pledge-id-of-the-node-entrusted-by-the-current-account-address" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the NodeID and pledge Id of the node entrusted by the current account address</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">RelatedListByDelAddr(<span class="hljs-params">del_addr</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>del_addr</strong>: Client's account address.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>del_addr</strong>: Client's account address
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-current-delegation-information-of-a-single-node"></a><a href="#query-the-current-delegation-information-of-a-single-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the current delegation information of a single node</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">DelegateInfo(<span class="hljs-params">staking_blocknum</span>, <span class="hljs-params">del_address</span>, <span class="hljs-params">node_id</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>staking_blocknum</strong>: Block height at the time of staking.</li>
+<li><strong>del_address</strong>: Client's account address.</li>
+<li><strong>node_id</strong>: Verifier's node ID.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>staking_blocknum</strong>: Block height at the time of staking
-<strong>del_address</strong>: Client's account address
-<strong>node_id</strong>: Verifier's node ID
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-pledge-information-of-the-current-node"></a><a href="#query-the-pledge-information-of-the-current-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the pledge information of the current node</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">CandidateInfo(<span class="hljs-params">node_id</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>node_id</strong>: Verifier's node ID.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>node_id</strong>: Verifier's node ID
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-block-reward-of-the-current-settlement-cycle"></a><a href="#query-the-block-reward-of-the-current-settlement-cycle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the block reward of the current settlement cycle</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">PackageReward(<span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-pledge-reward-of-the-current-settlement-cycle"></a><a href="#query-the-pledge-reward-of-the-current-settlement-cycle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the pledge reward of the current settlement cycle</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">StakingReward(<span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-average-time-of-packing-blocks"></a><a href="#query-the-average-time-of-packing-blocks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the average time of packing blocks</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">AvgPackTime(<span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="the-query-account-has-not-withdrawn-commission-rewards-at-each-node"></a><a href="#the-query-account-has-not-withdrawn-commission-rewards-at-each-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The query account has not withdrawn commission rewards at each node.</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.get<span class="hljs-constructor">DelegateReward(<span class="hljs-params">address</span>, <span class="hljs-params">node_ids</span>=[])</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>address</strong>:account address to be queried.</li>
+<li><strong>node_ids</strong>:the string array of the node id to be queried, if it is empty, query all nodes delegated by the account.</li>
 </ul>
-<blockquote>
-<p><strong>address</strong>:account address to be queried</p>
-<p><strong>node_ids</strong>:the string array of the node id to be queried, if it is empty, query all nodes delegated by the account</p>
-</blockquote>
 <h4><a class="anchor" aria-hidden="true" id="4-double-sign"></a><a href="#4-double-sign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Double sign</h4>
 <h5><a class="anchor" aria-hidden="true" id="report-double-sign"></a><a href="#report-double-sign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Report double sign</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.report<span class="hljs-constructor">DuplicateSign(<span class="hljs-params">typ</span>, <span class="hljs-params">data</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>typ</strong>: Represents duplicate sign type, 1:prepareBlock, 2: prepareVote, 3:viewChange.</p></li>
+<li><p><strong>data</strong>: Json value of single evidence, format reference RPC interface Evidences.</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>typ</strong>: Represents duplicate sign type, 1:prepareBlock, 2: prepareVote, 3:viewChange
-<strong>data</strong>: Json value of single evidence, format reference RPC interface Evidences
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-whether-the-node-has-been-reported-too-much-signature"></a><a href="#query-whether-the-node-has-been-reported-too-much-signature" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query whether the node has been reported too much signature</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.check<span class="hljs-constructor">DuplicateSign(<span class="hljs-params">typ</span>, <span class="hljs-params">node_id</span>, <span class="hljs-params">block_number</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>typ</strong>: Represents double sign type, 1:prepareBlock, 2: prepareVote, 3:viewChange.</li>
+<li><strong>check_address</strong>: Reported node address.</li>
+<li><strong>block_number</strong>: Duplicate-signed block height.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>typ</strong>: Represents double sign type, 1:prepareBlock, 2: prepareVote, 3:viewChange
-<strong>check_address</strong>: Reported node address
-<strong>block_number</strong>: Duplicate-signed block height
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h4><a class="anchor" aria-hidden="true" id="5-lock-position"></a><a href="#5-lock-position" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Lock position</h4>
 <h5><a class="anchor" aria-hidden="true" id="create-a-hedging-plan"></a><a href="#create-a-hedging-plan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a hedging plan</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">ppos.create<span class="hljs-constructor">RestrictingPlan(<span class="hljs-params">account</span>, <span class="hljs-params">plan</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
-</ul>
-<blockquote>
-<p><strong>account</strong>: Locked account release account
-<strong>plan</strong>:
-An is a list of <code>RestrictingPlan</code> types (array), and <code>RestrictingPlan</code> is defined as follows:
-type RestrictingPlan struct {
-Epoch uint64
-Amount *big.Int
+<li><p><strong>account</strong>: Locked account release account.</p></li>
+<li><p><strong>plan</strong>:
+An is a list of <code>RestrictingPlan</code> types (array), and <code>RestrictingPlan</code> is defined as follows:</p>
+<pre><code class="hljs"><span class="hljs-keyword">type</span> <span class="hljs-type">RestrictingPlan</span> struct {
+<span class="hljs-type">Epoch</span> uint64
+<span class="hljs-type">Amount</span> *big.<span class="hljs-type">Int</span>
 }
-where Epoch: represents a multiple of the billing period.
-The product of the number of blocks per billing cycle indicates that the locked fund
-s are released at the target block height. Epoch * The number of blocks per cycle is
-at least greater than the maximum irreversible block height.
-Amount: indicates the amount to be released on the target block.
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
-<h5><a class="anchor" aria-hidden="true" id="get-lock-information"></a><a href="#get-lock-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get lock information</h5>
-<ul>
-<li>Calling method</li>
-</ul>
-<pre><code class="hljs">ppos.get<span class="hljs-constructor">RestrictingInfo(<span class="hljs-params">account</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
 <ul>
-<li>Parameter Description</li>
+<li>where Epoch: represents a multiple of the billing period.
+The product of the number of blocks per billing cycle indicates that the locked fund
+s are released at the target block height. Epoch * The number of blocks per cycle is
+at least greater than the maximum irreversible block height.</li>
+<li>Amount: indicates the amount to be released on the target block.</li>
+</ul></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>account</strong>: Locked account release account
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
+<h5><a class="anchor" aria-hidden="true" id="get-lock-information"></a><a href="#get-lock-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get lock information</h5>
+<p>Calling method</p>
+<pre><code class="hljs">ppos.get<span class="hljs-constructor">RestrictingInfo(<span class="hljs-params">account</span>, <span class="hljs-params">from_address</span>=None)</span>
+</code></pre>
+<p>Parameter Description</p>
+<ul>
+<li><strong>account</strong>: Locked account release account.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
+</ul>
 <h4><a class="anchor" aria-hidden="true" id="6-governance"></a><a href="#6-governance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. Governance</h4>
 <pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> client_sdk_python <span class="hljs-keyword">import</span> Web3, HTTPProvider
 <span class="hljs-keyword">from</span> client_sdk_python.pip <span class="hljs-keyword">import</span> Pip
@@ -1372,242 +1335,207 @@ w3 = Web3(HTTPProvider(<span class="hljs-string">"http://localhost:6789"</span>)
 pip = Pip(w3)
 </code></pre>
 <h5><a class="anchor" aria-hidden="true" id="text-proposal"></a><a href="#text-proposal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text proposal</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.submit<span class="hljs-constructor">Text(<span class="hljs-params">verifier</span>, <span class="hljs-params">pip_id</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>verifier</strong>: The certified submitting the proposal.</p></li>
+<li><p><strong>pip_id</strong>: PIPID.</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>verifier</strong>: The certified submitting the proposal
-<strong>pip_id</strong>: PIPID
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="upgrade-proposal"></a><a href="#upgrade-proposal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upgrade proposal</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.submit<span class="hljs-constructor">Version(<span class="hljs-params">verifier</span>, <span class="hljs-params">pip_id</span>, <span class="hljs-params">new_version</span>, <span class="hljs-params">end_voting_rounds</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
-</ul>
-<blockquote>
-<p><strong>verifier</strong>: The certified submitting the proposal
-<strong>pip_id</strong>: PIPID
-<strong>new_version</strong>: upgraded version
-<strong>end_voting_rounds</strong>: The number of voting consensus rounds.
+<li><p><strong>verifier</strong>: The certified submitting the proposal.</p></li>
+<li><p><strong>pip_id</strong>: PIPID.</p></li>
+<li><p><strong>new_version</strong>: upgraded version.</p></li>
+<li><p><strong>end_voting_rounds</strong>: The number of voting consensus rounds.
 Explanation: Assume that the transaction submitted by the proposal is rounded when the consensus round
 number of the package is packed into the block, then the proposal voting block is high,
 which is the 230th block height of the round of the round1 + endVotingRounds
 (assuming a consensus round out of block 250, ppos The list is 20 blocks high in advance,
 250, 20 are configurable), where 0 &lt;endVotingRounds &lt;= 4840 (about 2 weeks, the actual discussion
-can be calculated according to the configuration), and is an integer)
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
-<h5><a class="anchor" aria-hidden="true" id="parameter-proposal"></a><a href="#parameter-proposal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter proposal</h5>
-<ul>
-<li>Calling method</li>
+can be calculated according to the configuration), and is an integer).</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
+<h5><a class="anchor" aria-hidden="true" id="parameter-proposal"></a><a href="#parameter-proposal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter proposal</h5>
+<p>Calling method</p>
 <pre><code class="hljs">pip.submit<span class="hljs-constructor">Param(<span class="hljs-params">verifier</span>, <span class="hljs-params">pip_id</span>, <span class="hljs-params">module</span>, <span class="hljs-params">name</span>, <span class="hljs-params">new_value</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>verifier</strong>: The certified submitting the proposal.</p></li>
+<li><p><strong>pip_id</strong>: PIPID.</p></li>
+<li><p><strong>module</strong>: parameter module.</p></li>
+<li><p><strong>name</strong>: parameter name.</p></li>
+<li><p><strong>new_value</strong>: New parameter value.</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>verifier</strong>: The certified submitting the proposal
-<strong>pip_id</strong>: PIPID
-<strong>module</strong>: parameter module
-<strong>name</strong>: parameter name
-<strong>new_value</strong>: New parameter value
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="delete-proposal"></a><a href="#delete-proposal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete proposal</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.submit<span class="hljs-constructor">Cancel(<span class="hljs-params">verifier</span>, <span class="hljs-params">pip_id</span>, <span class="hljs-params">end_voting_rounds</span>, <span class="hljs-params">tobe_canceled_proposal_id</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
-</ul>
-<blockquote>
-<p><strong>verifier</strong>: The certified submitting the proposal
-<strong>pip_id</strong>: PIPID
-<strong>end_voting_rounds</strong>:
+<li><p><strong>verifier</strong>: The certified submitting the proposal.</p></li>
+<li><p><strong>pip_id</strong>: PIPID.</p></li>
+<li><p><strong>end_voting_rounds</strong>:
 The number of voting consensus rounds. Refer to the instructions for submitting the upgrade proposal.
-At the same time, the value of this parameter in this interface
-cannot be greater than the value in the corresponding upgrade proposal.
-<strong>tobe_canceled_proposal_id</strong>: Upgrade proposal ID to be cancelled
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
-<h5><a class="anchor" aria-hidden="true" id="vote"></a><a href="#vote" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vote</h5>
-<ul>
-<li>Calling method</li>
+At the same time, the value of this parameter in this interface.
+cannot be greater than the value in the corresponding upgrade proposal.</p></li>
+<li><p><strong>tobe_canceled_proposal_id</strong>: Upgrade proposal ID to be cancelled.</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.vote(verifier, proposal_id, <span class="hljs-keyword">option</span>, program_version, version_sign, pri_key, transaction_cfg=<span class="hljs-keyword">None</span>)
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>verifier</strong>: The certified submitting the proposal.</p></li>
+<li><p><strong>proposal_id</strong>: Proposal ID.</p></li>
+<li><p><strong>option</strong>: Voting option.</p></li>
+<li><p><strong>program_version</strong>: Node code version, obtained by rpc getProgramVersion interface.</p></li>
+<li><p><strong>version_sign</strong>: Code version signature, obtained by rpc getProgramVersion interface.</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>verifier</strong>: The certified submitting the proposal
-<strong>proposal_id</strong>: Proposal ID
-<strong>option</strong>: Voting option
-<strong>program_version</strong>: Node code version, obtained by rpc getProgramVersion interface
-<strong>version_sign</strong>: Code version signature, obtained by rpc getProgramVersion interface
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="version-statement"></a><a href="#version-statement" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Version Statement</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.declare<span class="hljs-constructor">Version(<span class="hljs-params">active_node</span>, <span class="hljs-params">program_version</span>, <span class="hljs-params">version_sign</span>, <span class="hljs-params">pri_key</span>, <span class="hljs-params">transaction_cfg</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><p><strong>active_node</strong>: The declared node can only be a verifier/candidate.</p></li>
+<li><p><strong>program_version</strong>: The declared version, obtained by rpc's getProgramVersion interface.</p></li>
+<li><p><strong>version_sign</strong>: The signed version signature, obtained by rpc's getProgramVersion interface.</p></li>
+<li><p><strong>pri_key</strong>: Private key for transaction.</p></li>
+<li><p><strong>transaction_cfg</strong>: Transaction basic configuration.</p>
+<pre><code class="hljs"><span class="hljs-symbol">type:</span> 
+  dict
+<span class="hljs-symbol">example:</span>
+    cfg = {
+         <span class="hljs-string">"gas"</span>:<span class="hljs-number">100000000</span>,
+         <span class="hljs-string">"gasPrice"</span>:<span class="hljs-number">2000000000000</span>,
+         <span class="hljs-string">"nonce"</span>:<span class="hljs-number">1</span>,
+     }
+</code></pre></li>
 </ul>
-<blockquote>
-<p><strong>active_node</strong>: The declared node can only be a verifier/candidate
-<strong>program_version</strong>: The declared version, obtained by rpc's getProgramVersion interface
-<strong>version_sign</strong>: The signed version signature, obtained by rpc's getProgramVersion interface
-<strong>pri_key</strong>: Private key for transaction
-<strong>transaction_cfg</strong>: Transaction basic configuration
-type: dict
-example:cfg = {
-&quot;gas&quot;:100000000,
-&quot;gasPrice&quot;:2000000000000,
-&quot;nonce&quot;:1,
-}</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-proposal"></a><a href="#query-proposal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query proposal</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.get<span class="hljs-constructor">Proposal(<span class="hljs-params">proposal_id</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>proposal_id</strong>: proposal id.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>proposal_id</strong>: proposal id
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-proposal-results"></a><a href="#query-proposal-results" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query proposal results</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.get<span class="hljs-constructor">TallyResult(<span class="hljs-params">proposal_id</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>proposal_id</strong>: proposal id.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>proposal_id</strong>: proposal id
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-cumulative-number-of-votes-available-for-a-proposal"></a><a href="#query-the-cumulative-number-of-votes-available-for-a-proposal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the cumulative number of votes available for a proposal</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs">pip.get<span class="hljs-constructor">AccuVerifiersCount(<span class="hljs-params">proposal_id</span>, <span class="hljs-params">block_hash</span>, <span class="hljs-params">from_address</span>=None)</span>
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>proposal_id</strong>: proposal id.</li>
+<li><strong>block_hash</strong>: block hash.</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>proposal_id</strong>: proposal id
-<strong>block_hash</strong>: block hash
-<strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-list-of-proposals"></a><a href="#query-the-list-of-proposals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the list of proposals</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs css language-python">pip.listProposal(from_address=<span class="hljs-literal">None</span>)
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-effective-version-of-the-nodes-chain"></a><a href="#query-the-effective-version-of-the-nodes-chain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the effective version of the node's chain</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs css language-python">pip.getActiveVersion(from_address=<span class="hljs-literal">None</span>)
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>from_address</strong>: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>from_address</strong>: Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-governance-parameter-value-of-the-current-block-height"></a><a href="#query-the-governance-parameter-value-of-the-current-block-height" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the governance parameter value of the current block height</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs css language-python">pip.getGovernParamValue(module, name, from_address=<span class="hljs-literal">None</span>)
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li><strong>module</strong>: Parameter module.</li>
+<li><strong>name</strong>: parameter name.</li>
+<li><strong>from_address</strong>:Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p><strong>module</strong>: Parameter module
-<strong>name</strong>: parameter name
-<strong>from_address</strong>:Used to call the rpc call method</p>
-</blockquote>
 <h5><a class="anchor" aria-hidden="true" id="query-the-governance-parameter-list"></a><a href="#query-the-governance-parameter-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query the governance parameter list</h5>
-<ul>
-<li>Calling method</li>
-</ul>
+<p>Calling method</p>
 <pre><code class="hljs css language-python">pip.listGovernParam(self, module=<span class="hljs-literal">None</span>, from_address=<span class="hljs-literal">None</span>)
 </code></pre>
+<p>Parameter Description</p>
 <ul>
-<li>Parameter Description</li>
+<li>module:Parameter module.</li>
+<li>from_address: Used to call the rpc call method.</li>
 </ul>
-<blockquote>
-<p>module:Parameter module
-from_address: Used to call the rpc call method</p>
-</blockquote>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PlatON_system_contract"><span class="arrow-prev">← </span><span>System Contract</span></a><a class="docs-next button" href="/docs/en/Java_SDK"><span>Java SDK</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#description">Description</a></li><li><a href="#quick-start">Quick start</a><ul class="toc-headings"><li><a href="#one-part-installation">One part: installation</a></li><li><a href="#second-part-use">Second part: use</a></li><li><a href="#third-part-the-contract">Third part: the contract</a></li><li><a href="#four-part-ppos">Four part: Ppos</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
