@@ -125,7 +125,7 @@
 <p>This interface is used to query the staking information of the node.</p>
 <p>Interface parameters reference Java SDK:<a href="/docs/en/Java_SDK#getstakinginfo"> Query the staking information of a node</a>.</p></li>
 <li><p>delegation</p>
-<p>This interface is used to delegate or incrementally delegate a verifier node. Users who have already pledged a node will not be able to delegate it. The user can delegate <code>LAT</code> to the verifier at any time with a minimum amount of 10 <code>LAT</code> per delegation. After a successful delegation, the <code>LAT</code> delegated by the delegator to the candidate verifier is transferred to the <code>Staking contract</code>. The new weight of the verifier will take effect in the next consensus cycle. When the verifier is selected to participate in the consensus, it will share the block-out and Staking rewards with the principal.</p></li>
+<p>This interface is used to delegate or incrementally delegate a verifier node. Users who have already pledged a node will not be able to delegate it. The user can delegate <code>LAT</code> to the verifier at any time with a minimum amount of 10 <code>LAT</code> per delegation. After a successful delegation, the <code>LAT</code> delegated by the delegator to the candidate verifier is transferred to the <code>Staking contract</code>. The new weight of the verifier will take effect in the next Epoch. When the verifier is selected to participate in the consensus, it will share the block-out and Staking rewards with the principal.</p></li>
 </ol>
 <p>Interface parameters reference Java SDK:<a href="/docs/en/Java_SDK#delegate"> delegation</a>.</p>
 <ol start="11">
