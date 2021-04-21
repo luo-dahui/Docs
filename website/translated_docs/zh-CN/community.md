@@ -24,7 +24,7 @@ sidebar_label: 社区项目
     <tr>
         <td><img alt="" src="/docs/img/platscanlogo.svg"></td>
         <td>
-            <p class="color"><a target="_blank" href="https://platscan.platon.network/?lang=zh">PlatScan</a></p>
+            <p class="color"><a target="_blank" href="https://platscan.platon.network/">PlatScan</a></p>
             PlatScan是PlatON区块链资源管理与分析平台。
         </td>
     </tr>
@@ -35,8 +35,8 @@ sidebar_label: 社区项目
     <tr>
         <td><img alt="" src="/docs/img/MTool_logo.svg"></td>
         <td>
-            <p class="color"><a target="_blank" href="https://download.platon.network/platon/mtool/windows/1.0.0/mtool-setup.exe">MTool</a></p>
-            节点管理工具。
+            <p class="color"><a target="_blank" href="https://download.platon.network/platon/mtool/windows/1.0.0/platon_mtool.exe">PlatON MTool</a></p>
+            PlatON节点管理工具。
         </td>
     </tr>
 </table>
