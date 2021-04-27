@@ -142,27 +142,7 @@
 <h3><a class="anchor" aria-hidden="true" id="查看"></a><a href="#查看" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看</h3>
 <p>可以通过PlatON<a href="https://scan.platon.network/tokens/tokensTranfer/prc20">浏览器</a>查看，也可以通过<a href="https://devdocs.platon.network/docs/zh-CN/ATON-user-manual/">ATON</a>查看PRC-20合约交易。</p>
 <h3><a class="anchor" aria-hidden="true" id="合约发行"></a><a href="#合约发行" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约发行</h3>
-<p>以truffle为例：</p>
-<ul>
-<li><p>准备工作</p>
-<ol>
-<li><p>安装platon-truffle，请参考<a href="https://platon-truffle.readthedocs.io/">platon-truffle官方文档</a></p></li>
-<li><p>创建一个truffle工程目录，进入该目录，并使用 <code>platon-truffle init</code> 初始化truffle工程</p></li>
-</ol></li>
-<li><p>编译说明</p>
-<ol>
-<li><p>将合约源码文件(.sol) 放入contracts目录下</p></li>
-<li><p>修改 truffle-config.js 中的 compilers 配置项</p></li>
-<li><p>执行 <code>platon-truffle compile</code></p></li>
-</ol></li>
-<li><p>部署说明</p>
-<ol>
-<li><p>进入 migrations 目录下，复制 1_initial_migration.js，命名为 2_template.js</p></li>
-<li><p>修改 2_template.js 的内容，将 artifacts.require 的内容修改为你要部署的合约二进制文件名称（不带后缀）</p></li>
-<li><p>修改 truffle-config.js 中的 network 配置项</p></li>
-<li><p>执行 <code>platon-truffle migrate --f 2 --to 2</code></p></li>
-</ol></li>
-</ul>
+<p>请参考<a href="/docs/zh-CN/Solidity_Dev_Manual#入门手册">Solidity合约入门手册</a>。</p>
 <h3><a class="anchor" aria-hidden="true" id="调用方法"></a><a href="#调用方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用方法</h3>
 <p>以python为例：</p>
 <h4><a class="anchor" aria-hidden="true" id="安装依赖"></a><a href="#安装依赖" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装依赖</h4>
@@ -176,7 +156,51 @@
 
 rpc, chain_id, hrp = <span class="hljs-string">'http://127.0.0.1:6789'</span>, <span class="hljs-number">100</span>, <span class="hljs-string">'lat'</span>
 w3 = Web3(HTTPProvider(rpc), chain_id=chain_id, hrp_type=hrp)
-abi = []                                <span class="hljs-comment"># 合约abi内容</span>
+abi = [
+  {
+    <span class="hljs-string">"inputs"</span>:[
+      {<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"initialSupply"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"uint256"</span>},
+      {<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"string"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"tokenName"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"string"</span>},
+      {<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"string"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"tokenSymbol"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"string"</span>}
+    ],
+    <span class="hljs-string">"stateMutability"</span>:<span class="hljs-string">"nonpayable"</span>,
+    <span class="hljs-string">"type"</span>:<span class="hljs-string">"constructor"</span>
+  },
+  {
+    <span class="hljs-string">"inputs"</span>:[],
+    <span class="hljs-string">"name"</span>:<span class="hljs-string">"totalSupply"</span>,
+    <span class="hljs-string">"outputs"</span>:[{<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">""</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"uint256"</span>}],
+    <span class="hljs-string">"stateMutability"</span>:<span class="hljs-string">"view"</span>,
+    <span class="hljs-string">"type"</span>:<span class="hljs-string">"function"</span>
+  },
+  {
+    <span class="hljs-string">"inputs"</span>:[{<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">""</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"address"</span>}],
+    <span class="hljs-string">"name"</span>:<span class="hljs-string">"balanceOf"</span>,
+    <span class="hljs-string">"outputs"</span>:[{<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">""</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"uint256"</span>}],
+    <span class="hljs-string">"stateMutability"</span>:<span class="hljs-string">"view"</span>,
+    <span class="hljs-string">"type"</span>:<span class="hljs-string">"function"</span>
+  },
+  {
+    <span class="hljs-string">"inputs"</span>:[
+      {<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_to"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"address"</span>},
+      {<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_value"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"uint256"</span>}
+    ],
+    <span class="hljs-string">"name"</span>:<span class="hljs-string">"transfer"</span>,
+    <span class="hljs-string">"outputs"</span>:[{<span class="hljs-string">"internalType"</span>:<span class="hljs-string">"bool"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"success"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"bool"</span>}],
+    <span class="hljs-string">"stateMutability"</span>:<span class="hljs-string">"nonpayable"</span>,
+    <span class="hljs-string">"type"</span>:<span class="hljs-string">"function"</span>
+  },
+  {
+    <span class="hljs-string">"anonymous"</span>:false,
+    <span class="hljs-string">"inputs"</span>:[
+      {<span class="hljs-string">"indexed"</span>:true, <span class="hljs-string">"internalType"</span>:<span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"from"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"address"</span>},
+      {<span class="hljs-string">"indexed"</span>:true, <span class="hljs-string">"internalType"</span>:<span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"to"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"address"</span>},
+      {<span class="hljs-string">"indexed"</span>:false, <span class="hljs-string">"internalType"</span>:<span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"value"</span>, <span class="hljs-string">"type"</span>:<span class="hljs-string">"uint256"</span>}
+    ],
+    <span class="hljs-string">"name"</span>:<span class="hljs-string">"Transfer"</span>,
+    <span class="hljs-string">"type"</span>:<span class="hljs-string">"event"</span>
+  }
+]                               <span class="hljs-comment"># 合约abi内容</span>
 prc20 = w3.eth.contract(address=<span class="hljs-string">'contract address'</span>, abi=abi)
 <span class="hljs-comment"># 查看合约所有的function 和 event</span>
 print([func <span class="hljs-keyword">for</span> func <span class="hljs-keyword">in</span> prc20.functions])

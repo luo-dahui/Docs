@@ -147,27 +147,7 @@ If a Smart Contract implements the following methods and events it can be called
 <h3><a class="anchor" aria-hidden="true" id="view"></a><a href="#view" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View</h3>
 <p>It can be viewed via PlatON <a href="https://scan.platon.network/tokens/tokensTranfer/prc20">browser</a> and also via [ATON](<a href="https://devdocs.platon.network/docs/zh-CN/">https://devdocs.platon.network/docs/zh-CN/</a> ATON-user-manual/) to view the PRC-20 contract transactions.</p>
 <h3><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h3>
-<p>Take platon-truffle as an example.</p>
-<ul>
-<li><p>Preparation</p>
-<ol>
-<li><p>To install platon-truffle, please refer to <a href="https://platon-truffle.readthedocs.io/">official documentation of platon-truffle</a></p></li>
-<li><p>Create a truffle project directory, enter it, and initialize the truffle project with <code>platon-truffle init</code></p></li>
-</ol></li>
-<li><p>Compilation</p>
-<ol>
-<li><p>Place the contract source code file (.sol) in the contracts directory</p></li>
-<li><p>Modify the compilers configuration item in truffle-config.js</p></li>
-<li><p>Exec <code>platon-truffle compile</code></p></li>
-</ol></li>
-<li><p>Deployment</p>
-<ol>
-<li><p>Go to the migrations directory, copy 1_initial_migration.js and name it 2_template.js</p></li>
-<li><p>Modify the contents of 2_template.js by changing the contents of artifacts.require to the name of the contract binary you want to deploy (without the suffix)</p></li>
-<li><p>Modify the network configuration item in truffle-config.js</p></li>
-<li><p>exec <code>platon-truffle migrate --f 2 --to 2</code></p></li>
-</ol></li>
-</ul>
+<p>please refer to <a href="/docs/en/Solidity_Dev_Manual#introduction">Solidity Contracts Getting Started Manual</a></p>
 <h3><a class="anchor" aria-hidden="true" id="invoking-functions"></a><a href="#invoking-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Invoking functions</h3>
 <p>Using python as an example:</p>
 <h4><a class="anchor" aria-hidden="true" id="installing-dependencies"></a><a href="#installing-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing Dependencies</h4>

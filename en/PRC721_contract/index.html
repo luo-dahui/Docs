@@ -157,85 +157,37 @@
           <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A URI pointing to a resource with mime type image/* representing the asset to which this NFT represents. Consider making any images at a width between 320 and 1080 pixels and aspect ratio between 1.91:1 and 4:5 inclusive."</span>
       }
   }
+}
 </code></pre></li>
+<li><p>totalSupply</p>
+<p>Query the total number of tokens owned by this contract.</p></li>
+<li><p>tokenByIndex</p>
+<p>Query token by index.</p></li>
+<li><p>tokenOfOwnerByIndex</p>
+<p>Find the user's token based on the index.</p></li>
 </ul>
-<p>}</p>
-<pre><code class="hljs"><span class="hljs-bullet">
-- </span>totalSupply
-
-Query the total number of tokens owned by this contract.
-<span class="hljs-bullet">
-- </span>tokenByIndex
-
-Query token by index.
-<span class="hljs-bullet">
-- </span>tokenOfOwnerByIndex
-
-Find the user's token based on the index.
-
-
-<span class="hljs-section">#### Event</span>
-<span class="hljs-bullet">
-- </span>Transfer
-
-This event is triggered when the ownership of any NFT changes (either way), and a log of ownership change information is recorded on the chain.
-<span class="hljs-bullet">
-- </span>Approval
-
-Triggered when the authorized address of the NFT is changed or confirmed, logging this information on the chain.
-<span class="hljs-bullet">
-- </span>ApprovalForAll
-
-Triggered when the owner enables or disables the operator (the operator can manage the NFTs held by the owner), logging this information in the chain.
-
-
-
-<span class="hljs-section">### Example</span>
-The PRC-721 standard is fully compatible with ERC-721, examples of which can be found [<span class="hljs-string">here</span>](<span class="hljs-link">https://github.com/0xcert/ethereum-erc721</span>).
-
-<span class="hljs-section">### View</span>
-It can be viewed through PlatON [<span class="hljs-string">browser</span>](<span class="hljs-link">https://scan.PlatON.network/tokens/tokensTranfer/prc721</span>) and also through [<span class="hljs-string">ATON</span>](<span class="hljs-link">https://devdocs.PlatON.network/docs/zh-CN/ ATON-user-manual/</span>) to view the PRC-721 contract transactions.
-
-
-<span class="hljs-section">## Calling methods</span>
-
-Using python as an example.
-
-<span class="hljs-section">#### Installing python dependencies</span>
-
-Use the following command to install the PlatON python library, Python version 3.7.5+ is recommended:
-
-<span class="hljs-code">```</span> shell
-pip install client-sdk-python
+<h4><a class="anchor" aria-hidden="true" id="event"></a><a href="#event" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event</h4>
+<ul>
+<li><p>Transfer</p>
+<p>This event is triggered when the ownership of any NFT changes (either way), and a log of ownership change information is recorded on the chain.</p></li>
+<li><p>Approval</p>
+<p>Triggered when the authorized address of the NFT is changed or confirmed, logging this information on the chain.</p></li>
+<li><p>ApprovalForAll</p>
+<p>Triggered when the owner enables or disables the operator (the operator can manage the NFTs held by the owner), logging this information in the chain.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<p>The PRC-721 standard is fully compatible with ERC-721, examples of which can be found <a href="https://github.com/0xcert/ethereum-erc721">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="view"></a><a href="#view" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View</h3>
+<p>It can be viewed through PlatON <a href="https://scan.PlatON.network/tokens/tokensTranfer/prc721">browser</a> and also through [ATON](<a href="https://devdocs.PlatON.network/docs/zh-CN/">https://devdocs.PlatON.network/docs/zh-CN/</a> ATON-user-manual/) to view the PRC-721 contract transactions.</p>
+<h3><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h3>
+<p>please refer to <a href="/docs/en/Solidity_Dev_Manual#introduction">Solidity Contracts Getting Started Manual</a></p>
+<h2><a class="anchor" aria-hidden="true" id="invoking-functions"></a><a href="#invoking-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Invoking functions</h2>
+<p>Using python as an example.</p>
+<h4><a class="anchor" aria-hidden="true" id="installing-python-dependencies"></a><a href="#installing-python-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing python dependencies</h4>
+<p>Use the following command to install the PlatON python library, Python version 3.7.5+ is recommended:</p>
+<pre><code class="hljs css language-shell">pip install client-sdk-python
 </code></pre>
 <p>During the installation process, some dependency packages will require c++14 compilation, please download <a href="http://go.microsoft.com/fwlink/?LinkId=691126">cppbuildtools</a> after you see the relevant prompt, use the default value to install it, and then re-execute the pip install command.</p>
-<h4><a class="anchor" aria-hidden="true" id="upload-metadata-to-ipfs-network"></a><a href="#upload-metadata-to-ipfs-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upload Metadata to IPFS network</h4>
-<p>Metadata is the metadata of NFT tokens in order to display more detailed information about NFT assets, stored under the chain, generally the issuance of an NFT token will specify a URI path to the Metadata data of this token.</p>
-<h5><a class="anchor" aria-hidden="true" id="1-install-ipfs"></a><a href="#1-install-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Install IPFS</h5>
-<p>Refer to the <a href="https://docs.ipfs.io/install/command-line/">IPFS</a> installation instructions to install and start.</p>
-<h5><a class="anchor" aria-hidden="true" id="2-adding-files-to-ipfs"></a><a href="#2-adding-files-to-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Adding files to ipfs</h5>
-<p>Prepare an image, name it PlatON.jpeg, and upload it to the ipfs node</p>
-<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add</span><span class="bash"> PlatON.jpeg</span>
-<span class="hljs-keyword">add</span><span class="bash"> QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy PlatON.jpeg</span>
-</code></pre>
-<p>If you open the link to the image in your browser and see the image, it means that the image was successfully downloaded:
-<a href="https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg">https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg</a></p>
-<p>With the image link above, you can use it to construct the metadata for NFT.</p>
-<p>First, follow the instructions in the PRC-721 document metadata to create a json file named PlatON.json:</p>
-<pre><code class="hljs">{
-    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"PlatON.jpg"</span>,
-    <span class="hljs-attr">"author"</span>: <span class="hljs-string">"PlatON"</span>,
-    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"use for prc721"</span>,
-    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg"</span>
-}
-</code></pre>
-<p>Upload to the ipfs node:</p>
-<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span>PlatON.<span class="hljs-keyword">json
-</span><span class="hljs-keyword">added </span>QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px PlatON.<span class="hljs-keyword">json
-</span></code></pre>
-<p>Open the uri of the metadata file in your browser:
-<a href="https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json">https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json</a></p>
-<p>Above, the upload is complete.</p>
 <h4><a class="anchor" aria-hidden="true" id="instantiate-the-contract"></a><a href="#instantiate-the-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instantiate the contract</h4>
 <p>The following is a sample python code.</p>
 <pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> client_sdk_python <span class="hljs-keyword">import</span> Web3, HTTPProvider
@@ -329,8 +281,34 @@ receipt = w3.eth.waitForTransactionReceipt(tx_hash)
 <p>Using the safeTransferFrom transaction event example, other event fetching methods are similar to this.</p>
 <pre><code class="hljs css language-python">events = prc721.events.Transfer().processReceipt(receiveipt)
 </code></pre>
-<p>Translated with <a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a> (free version)</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PRC20_contract"><span class="arrow-prev">← </span><span>PRC-20</span></a><a class="docs-next button" href="/docs/en/PlatON_BlockChain_Browser"><span class="function-name-prevnext">PlatScan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prc-721-contract">PRC-721 Contract</a><ul class="toc-headings"><li><a href="#protocol-standards">Protocol Standards</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h3><a class="anchor" aria-hidden="true" id="upload-metadata-to-ipfs-network"></a><a href="#upload-metadata-to-ipfs-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upload Metadata to IPFS network</h3>
+<p>Metadata is the metadata of NFT tokens in order to display more detailed information about NFT assets, stored under the chain, generally the issuance of an NFT token will specify a URI path to the Metadata data of this token.</p>
+<h4><a class="anchor" aria-hidden="true" id="1-install-ipfs"></a><a href="#1-install-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Install IPFS</h4>
+<p>Refer to the <a href="https://docs.ipfs.io/install/command-line/">IPFS</a> installation instructions to install and start.</p>
+<h4><a class="anchor" aria-hidden="true" id="2-adding-files-to-ipfs"></a><a href="#2-adding-files-to-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Adding files to ipfs</h4>
+<p>Prepare an image, name it PlatON.jpeg, and upload it to the ipfs node</p>
+<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add</span><span class="bash"> PlatON.jpeg</span>
+<span class="hljs-keyword">add</span><span class="bash"> QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy PlatON.jpeg</span>
+</code></pre>
+<p>If you open the link to the image in your browser and see the image, it means that the image was successfully downloaded:
+<a href="https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg">https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg</a></p>
+<p>With the image link above, you can use it to construct the metadata for NFT.</p>
+<p>First, follow the instructions in the PRC-721 document metadata to create a json file named PlatON.json:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"PlatON.jpg"</span>,
+    <span class="hljs-attr">"author"</span>: <span class="hljs-string">"PlatON"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"use for prc721"</span>,
+    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg"</span>
+}
+</code></pre>
+<p>Upload to the ipfs node:</p>
+<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span>PlatON.<span class="hljs-keyword">json
+</span><span class="hljs-keyword">added </span>QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px PlatON.<span class="hljs-keyword">json
+</span></code></pre>
+<p>Open the uri of the metadata file in your browser:
+<a href="https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json">https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json</a></p>
+<p>Above, the upload is complete.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PRC20_contract"><span class="arrow-prev">← </span><span>PRC-20</span></a><a class="docs-next button" href="/docs/en/PlatON_BlockChain_Browser"><span class="function-name-prevnext">PlatScan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prc-721-contract">PRC-721 Contract</a><ul class="toc-headings"><li><a href="#protocol-standards">Protocol Standards</a></li><li><a href="#example">Example</a></li><li><a href="#view">View</a></li><li><a href="#deploy">Deploy</a></li></ul></li><li><a href="#invoking-functions">Invoking functions</a><ul class="toc-headings"><li><a href="#upload-metadata-to-ipfs-network">Upload Metadata to IPFS network</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

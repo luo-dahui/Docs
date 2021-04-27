@@ -180,27 +180,7 @@
 <h3><a class="anchor" aria-hidden="true" id="查看"></a><a href="#查看" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看</h3>
 <p>可以通过PlatON<a href="https://scan.PlatON.network/tokens/tokensTranfer/prc721">浏览器</a>查看，也可以通过<a href="https://devdocs.PlatON.network/docs/zh-CN/ATON-user-manual/">ATON</a>查看PRC-721合约交易。</p>
 <h3><a class="anchor" aria-hidden="true" id="合约发行"></a><a href="#合约发行" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约发行</h3>
-<p>以truffle为例：</p>
-<ul>
-<li><p>准备工作</p>
-<ol>
-<li><p>安装platon-truffle，请参考<a href="https://platon-truffle.readthedocs.io/">platon-truffle官方文档</a></p></li>
-<li><p>创建一个truffle工程目录，进入该目录，并使用 <code>platon-truffle init</code> 初始化truffle工程</p></li>
-</ol></li>
-<li><p>编译说明</p>
-<ol>
-<li><p>将合约源码文件(.sol) 放入contracts目录下</p></li>
-<li><p>修改 truffle-config.js 中的 compilers 配置项</p></li>
-<li><p>执行 <code>platon-truffle compile</code></p></li>
-</ol></li>
-<li><p>部署说明</p>
-<ol>
-<li><p>进入 migrations 目录下，复制 1_initial_migration.js，命名为 2_template.js</p></li>
-<li><p>修改 2_template.js 的内容，将 artifacts.require 的内容修改为你要部署的合约二进制文件名称（不带后缀）</p></li>
-<li><p>修改 truffle-config.js 中的 network 配置项</p></li>
-<li><p>执行 <code>platon-truffle migrate --f 2 --to 2</code></p></li>
-</ol></li>
-</ul>
+<p>请参考<a href="/docs/zh-CN/Solidity_Dev_Manual#入门手册">Solidity合约入门手册</a>。</p>
 <h3><a class="anchor" aria-hidden="true" id="调用方法"></a><a href="#调用方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用方法</h3>
 <p>以python为例：</p>
 <h4><a class="anchor" aria-hidden="true" id="安装python依赖"></a><a href="#安装python依赖" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装python依赖</h4>
@@ -208,33 +188,6 @@
 <pre><code class="hljs css language-shell">pip install client-sdk-python
 </code></pre>
 <p>在安装过程中，部分依赖包会需要c++14 编译，请在看到相关提示后，下载<a href="http://go.microsoft.com/fwlink/?LinkId=691126">cppbuildtools</a>，使用默认值安装后，重新执行pip安装命令即可。</p>
-<h4><a class="anchor" aria-hidden="true" id="上传metadata到ipfs网络"></a><a href="#上传metadata到ipfs网络" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>上传Metadata到IPFS网络</h4>
-<p>Metadata 是NFT代币的元数据，以便更丰富地显示NFT资产的详细信息, 存储在链下，一般发行一枚NFT代币会指定一个URI路径，指向这枚代币的Metadata数据。</p>
-<h5><a class="anchor" aria-hidden="true" id="1安装ipfs"></a><a href="#1安装ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.安装IPFS</h5>
-<p>参照<a href="https://docs.ipfs.io/install/command-line/">IPFS</a>安装说明进行安装与启动。</p>
-<h5><a class="anchor" aria-hidden="true" id="2添加文件到ipfs"></a><a href="#2添加文件到ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.添加文件到ipfs</h5>
-<p>准备一张图片，将图片命名为PlatON.jpeg，上传到ipfs节点上</p>
-<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span> PlatON.<span class="hljs-keyword">jpeg
-</span><span class="hljs-keyword">added </span>QmZtmD2qt<span class="hljs-symbol">6f</span>Jot32nabSP3CUjicnypEBz<span class="hljs-symbol">7b</span>HVDhPQt9aAy PlatON.<span class="hljs-keyword">jpeg
-</span></code></pre>
-<p>在浏览器里面打开图片的链接，能看到图片说明图片能成功被下载:
-<a href="https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg">https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg</a></p>
-<p>有了上面的图片链接，就可以用它来构造用于NFT的metadata了。</p>
-<p>首先按照PRC-721文档中metadata的说明创建一个json文件，命名为PlatON.json:</p>
-<pre><code class="hljs">{
-    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"PlatON.jpg"</span>,
-    <span class="hljs-attr">"author"</span>:<span class="hljs-string">"PlatON"</span>,
-    <span class="hljs-attr">"description"</span>:<span class="hljs-string">"use for prc721"</span>,
-    <span class="hljs-attr">"image"</span>:<span class="hljs-string">"https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg"</span>
-}
-</code></pre>
-<p>上传到ipfs节点上:</p>
-<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span> PlatON.<span class="hljs-keyword">json
-</span><span class="hljs-keyword">added </span>QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px PlatON.<span class="hljs-keyword">json
-</span></code></pre>
-<p>在浏览器里面打开metadata文件的uri:
-<a href="https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json">https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json</a></p>
-<p>以上，上传完毕。</p>
 <h4><a class="anchor" aria-hidden="true" id="实例化合约"></a><a href="#实例化合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实例化合约</h4>
 <p>以下为python代码示例：</p>
 <pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> client_sdk_python <span class="hljs-keyword">import</span> Web3, HTTPProvider
@@ -328,7 +281,34 @@ receipt = w3.eth.waitForTransactionReceipt(tx_hash)
 <p>以safeTransferFrom交易事件示例，其他事件获取方法与此类似：</p>
 <pre><code class="hljs css language-python">events = prc721.events.Transfer().processReceipt(receipt)
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/PRC20_contract"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/zh-CN/PlatON_BlockChain_Browser"><span class="function-name-prevnext">PlatScan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prc-721合约">PRC-721合约</a><ul class="toc-headings"><li><a href="#协议标准">协议标准</a></li><li><a href="#示例">示例</a></li><li><a href="#查看">查看</a></li><li><a href="#合约发行">合约发行</a></li><li><a href="#调用方法">调用方法</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h3><a class="anchor" aria-hidden="true" id="上传metadata到ipfs网络"></a><a href="#上传metadata到ipfs网络" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>上传Metadata到IPFS网络</h3>
+<p>Metadata 是NFT代币的元数据，以便更丰富地显示NFT资产的详细信息, 存储在链下，一般发行一枚NFT代币会指定一个URI路径，指向这枚代币的Metadata数据。</p>
+<h4><a class="anchor" aria-hidden="true" id="1安装ipfs"></a><a href="#1安装ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.安装IPFS</h4>
+<p>参照<a href="https://docs.ipfs.io/install/command-line/">IPFS</a>安装说明进行安装与启动。</p>
+<h4><a class="anchor" aria-hidden="true" id="2添加文件到ipfs"></a><a href="#2添加文件到ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.添加文件到ipfs</h4>
+<p>准备一张图片，将图片命名为PlatON.jpeg，上传到ipfs节点上</p>
+<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span> PlatON.<span class="hljs-keyword">jpeg
+</span><span class="hljs-keyword">added </span>QmZtmD2qt<span class="hljs-symbol">6f</span>Jot32nabSP3CUjicnypEBz<span class="hljs-symbol">7b</span>HVDhPQt9aAy PlatON.<span class="hljs-keyword">jpeg
+</span></code></pre>
+<p>在浏览器里面打开图片的链接，能看到图片说明图片能成功被下载:
+<a href="https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg">https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg</a></p>
+<p>有了上面的图片链接，就可以用它来构造用于NFT的metadata了。</p>
+<p>首先按照PRC-721文档中metadata的说明创建一个json文件，命名为PlatON.json:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"PlatON.jpg"</span>,
+    <span class="hljs-attr">"author"</span>:<span class="hljs-string">"PlatON"</span>,
+    <span class="hljs-attr">"description"</span>:<span class="hljs-string">"use for prc721"</span>,
+    <span class="hljs-attr">"image"</span>:<span class="hljs-string">"https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg"</span>
+}
+</code></pre>
+<p>上传到ipfs节点上:</p>
+<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span> PlatON.<span class="hljs-keyword">json
+</span><span class="hljs-keyword">added </span>QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px PlatON.<span class="hljs-keyword">json
+</span></code></pre>
+<p>在浏览器里面打开metadata文件的uri:
+<a href="https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json">https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json</a></p>
+<p>以上，上传完毕。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/PRC20_contract"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/zh-CN/PlatON_BlockChain_Browser"><span class="function-name-prevnext">PlatScan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prc-721合约">PRC-721合约</a><ul class="toc-headings"><li><a href="#协议标准">协议标准</a></li><li><a href="#示例">示例</a></li><li><a href="#查看">查看</a></li><li><a href="#合约发行">合约发行</a></li><li><a href="#调用方法">调用方法</a></li><li><a href="#上传metadata到ipfs网络">上传Metadata到IPFS网络</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
