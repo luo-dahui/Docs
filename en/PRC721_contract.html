@@ -197,34 +197,7 @@ The PRC-721 standard is fully compatible with ERC-721, examples of which can be 
 It can be viewed through PlatON [<span class="hljs-string">browser</span>](<span class="hljs-link">https://scan.PlatON.network/tokens/tokensTranfer/prc721</span>) and also through [<span class="hljs-string">ATON</span>](<span class="hljs-link">https://devdocs.PlatON.network/docs/zh-CN/ ATON-user-manual/</span>) to view the PRC-721 contract transactions.
 
 
-<span class="hljs-section">### Contract Issuance</span>
-Take truffle as an example.
-<span class="hljs-bullet">
-- </span>Preparation
-<span class="hljs-bullet">
-1. </span>Install platon-truffle, please refer to the [<span class="hljs-string">official documentation of platon-truffle</span>](<span class="hljs-link">https://platon-truffle.readthedocs.io/</span>)
-<span class="hljs-bullet">
-2. </span>Create a truffle project directory, enter it, and use <span class="hljs-code">`platon-truffle init`</span> to initialize the truffle project
-<span class="hljs-bullet">
-- </span>Compilation instructions
-<span class="hljs-bullet">
-1. </span>Place the contract source code file (.sol) in the contracts directory
-<span class="hljs-bullet">
-2. </span>modify the compilers configuration in truffle-config.js
-<span class="hljs-bullet">
-3. </span>execute <span class="hljs-code">`platon-truffle compile`</span>.
-<span class="hljs-bullet">
-- </span>Deployment instructions
-<span class="hljs-bullet">
-1. </span>Go to the migrations directory, copy 1<span class="hljs-emphasis">_initial_</span>migration.js and name it 2_template.js. 2.
-<span class="hljs-bullet">
-2. </span>Modify the contents of 2_template.js by changing the contents of artifacts.require to the name of the contract binary you want to deploy (without the suffix)
-<span class="hljs-bullet">
-3. </span>modify the network configuration item in truffle-config.js
-<span class="hljs-bullet">
-4. </span>execute <span class="hljs-code">`platon-truffle migrate --f 2 --to 2 `</span>
-
-<span class="hljs-section">### Call method</span>
+<span class="hljs-section">## Calling methods</span>
 
 Using python as an example.
 
@@ -236,35 +209,128 @@ Use the following command to install the PlatON python library, Python version 3
 pip install client-sdk-python
 </code></pre>
 <p>During the installation process, some dependency packages will require c++14 compilation, please download <a href="http://go.microsoft.com/fwlink/?LinkId=691126">cppbuildtools</a> after you see the relevant prompt, use the default value to install it, and then re-execute the pip install command.</p>
-<p>Translated with <a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a> (free version)</p>
-<h3><a class="anchor" aria-hidden="true" id="upload-metadata-to-ipfs-network"></a><a href="#upload-metadata-to-ipfs-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upload Metadata to IPFS network</h3>
-<p>Metadata is the metadata of an NFT token to provide a richer display of the details of the NFT asset, stored under the chain, and generally the issuance of an NFT token specifies a URI path to the Metadata data of that token.</p>
-<h4><a class="anchor" aria-hidden="true" id="1installing-ipfs"></a><a href="#1installing-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.Installing IPFS</h4>
-<p>Refer to the <a href="https://docs.ipfs.io/install/command-line/">IPFS</a> installation instructions for installation and startup.</p>
-<h4><a class="anchor" aria-hidden="true" id="2adding-files-to-ipfs"></a><a href="#2adding-files-to-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.Adding files to ipfs</h4>
-<p>Prepare an image, name it PlatON.jpeg and upload it to the ipfs node</p>
-<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span> PlatON.<span class="hljs-keyword">jpeg
-</span><span class="hljs-keyword">added </span>QmZtmD2qt<span class="hljs-symbol">6f</span>Jot32nabSP3CUjicnypEBz<span class="hljs-symbol">7b</span>HVDhPQt9aAy PlatON.<span class="hljs-keyword">jpeg
-</span></code></pre>
-<p>Open the link to the image in your browser, and you will see the image indicating that the image was successfully downloaded:
+<h4><a class="anchor" aria-hidden="true" id="upload-metadata-to-ipfs-network"></a><a href="#upload-metadata-to-ipfs-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upload Metadata to IPFS network</h4>
+<p>Metadata is the metadata of NFT tokens in order to display more detailed information about NFT assets, stored under the chain, generally the issuance of an NFT token will specify a URI path to the Metadata data of this token.</p>
+<h5><a class="anchor" aria-hidden="true" id="1-install-ipfs"></a><a href="#1-install-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Install IPFS</h5>
+<p>Refer to the <a href="https://docs.ipfs.io/install/command-line/">IPFS</a> installation instructions to install and start.</p>
+<h5><a class="anchor" aria-hidden="true" id="2-adding-files-to-ipfs"></a><a href="#2-adding-files-to-ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Adding files to ipfs</h5>
+<p>Prepare an image, name it PlatON.jpeg, and upload it to the ipfs node</p>
+<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add</span><span class="bash"> PlatON.jpeg</span>
+<span class="hljs-keyword">add</span><span class="bash"> QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy PlatON.jpeg</span>
+</code></pre>
+<p>If you open the link to the image in your browser and see the image, it means that the image was successfully downloaded:
 <a href="https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg">https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg</a></p>
-<p>With the image link above, you can use it to construct the metadata used for NFT.</p>
-<p>First, create a json file named PlatON.json in accordance with the instructions for metadata in the PRC-721 document:</p>
+<p>With the image link above, you can use it to construct the metadata for NFT.</p>
+<p>First, follow the instructions in the PRC-721 document metadata to create a json file named PlatON.json:</p>
 <pre><code class="hljs">{
-    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"PlatON.jpg"</span>,
-    <span class="hljs-attr">"author"</span>:<span class="hljs-string">"PlatON"</span>,
-    <span class="hljs-attr">"description"</span>:<span class="hljs-string">"use for prc721"</span>,
-    <span class="hljs-attr">"image"</span>:<span class="hljs-string">"https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg"</span>
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"PlatON.jpg"</span>,
+    <span class="hljs-attr">"author"</span>: <span class="hljs-string">"PlatON"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"use for prc721"</span>,
+    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy?filename=PlatON.jpeg"</span>
 }
 </code></pre>
 <p>Upload to the ipfs node:</p>
-<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span> PlatON.<span class="hljs-keyword">json
+<pre><code class="hljs">$ ipfs <span class="hljs-keyword">add </span>PlatON.<span class="hljs-keyword">json
 </span><span class="hljs-keyword">added </span>QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px PlatON.<span class="hljs-keyword">json
 </span></code></pre>
 <p>Open the uri of the metadata file in your browser:
 <a href="https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json">https://ipfs.io/ipfs/QmQXqTVCb1w7CmdsYxHWR1T1qyaCHHgWwiPmoZDcQL39Px?filename=PlatON.json</a></p>
-<p>Above, upload is finished.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PRC20_contract"><span class="arrow-prev">← </span><span>PRC-20</span></a><a class="docs-next button" href="/docs/en/PlatON_BlockChain_Browser"><span class="function-name-prevnext">PlatScan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prc-721-contract">PRC-721 Contract</a><ul class="toc-headings"><li><a href="#protocol-standards">Protocol Standards</a></li><li><a href="#upload-metadata-to-ipfs-network">Upload Metadata to IPFS network</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>Above, the upload is complete.</p>
+<h4><a class="anchor" aria-hidden="true" id="instantiate-the-contract"></a><a href="#instantiate-the-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instantiate the contract</h4>
+<p>The following is a sample python code.</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> client_sdk_python <span class="hljs-keyword">import</span> Web3, HTTPProvider
+
+rpc, chain_id, hrp = <span class="hljs-string">'http://127.0.0.1:6789'</span>, <span class="hljs-number">100</span>, <span class="hljs-string">'lat'</span>
+w3 = Web3(HTTPProvider(rpc), chain_id=chain_id, hrp_type=hrp)
+abi = [
+  {
+    <span class="hljs-string">"inputs"</span>: [
+      { <span class="hljs-string">"internalType"</span>: <span class="hljs-string">"string"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_name"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>}
+      {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"string"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_symbol"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>}
+    ],
+    <span class="hljs-string">"stateMutability"</span>: <span class="hljs-string">"nonpayable"</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"constructor"</span>
+  },
+  {
+    <span class="hljs-string">"inputs"</span>: [
+      { <span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>: <span class="hljs-string">"_to"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span> }
+      {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_tokenId"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"uint256"</span>}, {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_tokenId"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"uint256"</span>},
+      {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"string"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_uri"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>}
+    ],
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"mint"</span>,
+    <span class="hljs-string">"outputs"</span>: [],
+    <span class="hljs-string">"stateMutability"</span>: <span class="hljs-string">"nonpayable"</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"function"</span>
+  },
+  {
+    <span class="hljs-string">"inputs"</span>: [{<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>: <span class="hljs-string">"_owner"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span>}],
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"balanceOf"</span>,
+    <span class="hljs-string">"outputs"</span>: [{<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"uint256"</span>}],
+    <span class="hljs-string">"stateMutability"</span>: <span class="hljs-string">"view"</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"function"</span>
+  },
+  {
+    <span class="hljs-string">"inputs"</span>: [{<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>: <span class="hljs-string">"_tokenId"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"uint256"</span>}],
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"ownerOf"</span>,
+    <span class="hljs-string">"outputs"</span>: [{<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>: <span class="hljs-string">"_owner"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span>}],
+    <span class="hljs-string">"stateMutability"</span>: <span class="hljs-string">"view"</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"function"</span>
+  },
+  {
+    <span class="hljs-string">"inputs"</span>: [
+      { <span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>: <span class="hljs-string">"_from"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span> }
+      {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_to"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span>}, {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_to"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span>}, {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_to"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span>},
+      {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_tokenId"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"uint256"</span>}, {<span class="hljs-string">"internalType"</span>: <span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_tokenId"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"uint256"</span>}
+    ],
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"safeTransferFrom"</span>,
+    <span class="hljs-string">"outputs"</span>: [],
+    <span class="hljs-string">"stateMutability"</span>: <span class="hljs-string">"nonpayable"</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"function"</span>
+  },
+  {
+    <span class="hljs-string">"anonymous"</span>: false,
+    <span class="hljs-string">"inputs"</span>: [
+      { <span class="hljs-string">"indexed"</span>: true, <span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>: <span class="hljs-string">"_from"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span> }
+      {<span class="hljs-string">"indexed"</span>: true, <span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_to"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span>}, <span class="hljs-string">"indexed"</span>: true, <span class="hljs-string">"internalType"</span>: <span class="hljs-string">"address"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_to"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"address"</span>},
+      {<span class="hljs-string">"indexed"</span>: true, <span class="hljs-string">"internalType"</span>: <span class="hljs-string">"uint256"</span>, <span class="hljs-string">"name"</span>:<span class="hljs-string">"_tokenId"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"uint256"</span>}
+    ],
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Transfer"</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"event"</span>
+  },
+]
+prc721 = w3.eth.contract(address=<span class="hljs-string">'contract address'</span>, abi=abi)
+<span class="hljs-comment"># View all functions and events of the contract</span>
+print([func <span class="hljs-keyword">for</span> func <span class="hljs-keyword">in</span> prc721.functions])
+print([event <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> prc721.events])
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="query-contract-information"></a><a href="#query-contract-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query contract information</h4>
+<p>With balanceOf, ownerOf example, other query methods are similar to this.</p>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># Count the number of NFTs held by users</span>
+prc721.functions.balanceOf(<span class="hljs-string">'your address'</span>).call()
+<span class="hljs-comment"># Query the holder of NFTs</span>
+prc721.functions.ownerOf(<span class="hljs-string">'your token id'</span>).call()
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="sending-contract-transactions"></a><a href="#sending-contract-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending contract transactions</h4>
+<p>Using the safeTransferFrom example, other transaction methods are similar to this.</p>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># Transfer ownership of NFT from one address to another</span>
+tx = {
+    <span class="hljs-string">'chainId'</span>: w3.chain_id,
+    <span class="hljs-string">'nonce'</span>: w3.eth.getTransactionCount(<span class="hljs-string">'your address'</span>),
+    <span class="hljs-string">'gas'</span>: <span class="hljs-number">4012388</span>,
+    <span class="hljs-string">'value'</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">'gasPrice'</span>: <span class="hljs-number">1000000000</span>,
+}
+txn = prc721.functions.safeTransferFrom(_from=<span class="hljs-string">'your address'</span>, _to=<span class="hljs-string">'to address'</span>, _tokenId=<span class="hljs-string">'your token id'</span>).buildTransaction(tx)
+signed_txn = w3.eth.account.signTransaction(txn, private_key=<span class="hljs-string">'your private key'</span>)
+tx_hash = w3.eth.sendRawTransaction(signed_txn.rawTransaction).hex()
+receipt = w3.eth.waitForTransactionReceipt(tx_hash)
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-contract-events"></a><a href="#get-contract-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get contract events</h4>
+<p>Using the safeTransferFrom transaction event example, other event fetching methods are similar to this.</p>
+<pre><code class="hljs css language-python">events = prc721.events.Transfer().processReceipt(receiveipt)
+</code></pre>
+<p>Translated with <a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a> (free version)</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/PRC20_contract"><span class="arrow-prev">← </span><span>PRC-20</span></a><a class="docs-next button" href="/docs/en/PlatON_BlockChain_Browser"><span class="function-name-prevnext">PlatScan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prc-721-contract">PRC-721 Contract</a><ul class="toc-headings"><li><a href="#protocol-standards">Protocol Standards</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.platon.network/en" class="nav-home"><img src="/docs/img/PlatON-logo2.svg" alt="PlatON" width="66" height="58"/></a><div><a href="https://www.platon.network/en">PlatON network</a><a href="https://latticex.foundation/home">Lattice.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 PLATON NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
